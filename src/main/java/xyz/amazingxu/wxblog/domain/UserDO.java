@@ -23,7 +23,7 @@ public class UserDO extends BaseDO{
 
     @Column(name = "user_id",length = 40)
     private String user_id;
-    @Column
+    @Column(name = "username",unique=true,nullable = false , length = 20)
     private String username;
     @Column(name = "password",nullable = false , length = 20)
     private String password;
