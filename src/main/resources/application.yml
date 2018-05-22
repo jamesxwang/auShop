@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  context-path: /
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://114.215.125.223:88;DatabaseName=WangXu_db
+    username: sa
+    password: crm_2015
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  http:
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true
