@@ -1,10 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>用户登录</title>
-</head>
-<body>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>用户登录</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/login.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html"/>
+    <![endif]-->
+    <script>
+        if (window.top !== window.self) {
+            window.top.location = window.location
+        }
+        ;
+    </script>
+
+</head>
+
+<body class="signin skin-2" ms-controller="wxApp">
+<div class="signinpanel" ng-controller="wxCtrl">
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="signin-info" style="color:#fff;">
+                <div class="logopanel m-b">
+                    <h1>云研发平台 2.0</h1>
+                </div>
+                <div class="m-b"></div>
+                <h4><strong>基于 Java™ 1.8 技术研发</strong></h4>
+                <h6>基于 multi-tenancy technology 架构的研发平台</h6>
+                <ul class="m-b" style="font-size:10px">
+                    <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Spring Boot</li>
+                    <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Spring Security + Jwt</li>
+                    <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Spring Data Jpa</li>
+                    <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Hibernate</li>
+                    <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> MapStruct</li>
+                    <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Logback</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <form class="animated fadeInDown" style="color:#fff">
+                <h4 class="no-margins text-center"><i class="glyphicon glyphicon-user fa-3x"></i></h4>
+                <p class="m-t-md text-center">用户登陆</p>
+                <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="uid" type="text" class="form-control uname" placeholder="用户名"/>
+                <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="pwd" type="password" class="form-control pword m-b" placeholder="密码"/>
+                <a class="btn btn-success btn-block" ms-on-click="DoLogin()">登录</a>
+            </form>
+        </div>
+    </div>
+    <div class="signup-footer">
+        <div class="pull-left" style="color:#fff">
+            &copy; 2018-2019 amazingxu.xyz
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/plugins/avalon/avalon.js"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+<script src="js/plugins/layer/layer.js"></script>
+<script src="js/api.js"></script>
+<script type="text/javascript">
+    var vm = avalon.define({
+        $id: "wxApp",
+        uid:'',
+        pwd:'',
+        DoLogin:function(){
+            $.api.ClearAll();
+            $.api.DoLogin(vm.uid,vm.pwd);
+        }, handleEnterEvent:function(e){
+            var keycode = window.event?e.keyCode:e.which;
+            if(keycode==13){
+                vm.DoLogin();
+            }
+        },
+        HandleWeixin:function(){
+            var ua = navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i)=="micromessenger") {
+                $.api.Alert("不支持微信，请在电脑上使用本系统!");
+            }
+        }
+    });
+    vm.HandleWeixin();
+</script>
 </body>
+
 </html>
