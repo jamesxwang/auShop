@@ -17,23 +17,24 @@ public class UserDO extends BaseDO{
         return "UserDO{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", user_id='" + user_id + '\'' +
+                ", userId='" + userId + '\'' +
                 '}';
     }
 
     @Column(name = "user_id",length = 40)
-    private String user_id;
+    private String userId;
     @Column(name = "username",unique=true,nullable = false , length = 20)
     private String username;
     @Column(name = "password",nullable = false , length = 20)
     private String password;
 
-    public String getUser_id() {
-        return user_id;
+
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getUsername() {

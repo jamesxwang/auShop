@@ -47,7 +47,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
         }else {
             Map<String, Object> claims = new HashMap<>();
             UserContextDTO userContextDTO = getUserContextByUserId(userDO.getId());
-            claims.put("userId",userContextDTO.getUserId());
+            claims.put("user_id",userContextDTO.getUserId());
             claims.put("username",userContextDTO.getUsername());
             token = Jwts.builder()
                     .setSubject(userDO.getId())
@@ -61,8 +61,8 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
     @Override
     public UserContextDTO getUserContextByUserId(String userId) {
         StringBuffer stringBufferSql = new StringBuffer();
-        stringBufferSql.append("SELECT a.id AS user_id, a.username AS username, a.remark AS remark");
-        stringBufferSql.append("FROM userinfo a");
+        stringBufferSql.append("SELECT a.id AS user_id, a.username AS username, a.remark AS remark ");
+        stringBufferSql.append("FROM userinfo a ");
         stringBufferSql.append("WHERE a.id = ?");
         List<Map> userResult = sqlQuery(stringBufferSql.toString(),new Object[]{userId});
         UserContextDTO userContextDTO = new UserContextDTO();

@@ -10,14 +10,12 @@ public class UserContextDTO {
         return "UserContextDTO{" +
                 "userId=" + userId + '\'' +
                 ", username='" + username + '\'' +
-                ", mainUrl='" + mainUrl + '\'' +
                 ", token='" + token + '\'' +
                 '}';
     }
 
     private String userId;
     private String username;
-    private String mainUrl;
     private String token;
 
     public String getUserId() {
@@ -34,14 +32,6 @@ public class UserContextDTO {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getMainUrl() {
-        return mainUrl;
-    }
-
-    public void setMainUrl(String mainUrl) {
-        this.mainUrl = mainUrl;
     }
 
     public String getToken() {

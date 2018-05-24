@@ -24,6 +24,42 @@
 </head>
 
 <body class="signin skin-2" ms-controller="wxBlog">
+
+<!--顶部栏-->
+<div id="header" class="header fixed">
+    <div class="header-top">
+        <div class="wp clearfix header-top-con"><h1 class="fl logo"><a href="http://www.acfun.cn"><img
+                src="http://cdn.aixifan.com/acfun-pc/2.3.35/img/logo.png" width="88" height="27"></a></h1>
+
+            <ul id="header-guide" class="fr header-guide">
+                <li class="guide-item guide-user">
+                    <a href="http://www.acfun.cn/login/" target="_blank" class="item user-login">登录/注册</a>
+                    <span class="user-message-count hidden"></span>
+                    <div class="guide-item-con">
+                        <p class="clearfix">
+                            <a href="http://www.acfun.cn/member/" target="_blank" class="fl user-name"></a>
+                            <a href="http://www.acfun.cn/logout.aspx" class="fr icon icon-logout user-logout">退出</a>
+                        </p>
+                        <div id="user-message" class="user-message"></div>
+                    </div>
+                </li>
+            </ul>
+
+            <div id="search-box" class="fr search-box">
+                <form id="search-form" target="_blank" method="get" action="http://www.acfun.cn/search/"><input
+                        id="search-text" type="text" placeholder="请输入搜索内容" data-url="http://www.acfun.cn/v/ac4363749"
+                        value="" autocomplete="off">
+                    <button id="search-btn" class="search-btn"><i class="icon icon-search"></i><span>搜索</span></button>
+                    <div class="search-result hidden"></div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--登录框-->
 <div class="signinpanel" ng-controller="wxCtrl">
     <div class="row">
         <div class="middle-box">

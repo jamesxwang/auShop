@@ -28,12 +28,22 @@ public class Swagger2 {
 
     @Bean
     public Docket createRestApi() {
+        ParameterBuilder tokenPar = new ParameterBuilder();
+        List<Parameter> pars = new ArrayList<>();
+        tokenPar.name("Authorization")
+                .description("令牌")
+                .modelRef(new ModelRef("string"))
+                .defaultValue("Bearer ")
+                .parameterType("header")
+                .required(false).build();
+        pars.add(tokenPar.build());
+
         return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("xyz.amazingxu.wxblog.controller"))
-                .paths(PathSelectors.any())
-                .build();
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                .build()
+                .globalOperationParameters(pars)
+                .apiInfo(apiInfo());
     }
 
     private ApiInfo apiInfo(){

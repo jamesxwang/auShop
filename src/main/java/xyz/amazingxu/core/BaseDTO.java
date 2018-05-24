@@ -10,6 +10,7 @@ import java.util.UUID;
  * @author xuwang <121894598@qq.com>
  * @date 2018/5/22 17:25
  */
+
 public abstract class BaseDTO {
 
     public BaseDTO(){

@@ -34,7 +34,7 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
 
     private IUserService userService;
 
-    public JwtAuthenticationFilter(AuthenticationManager authenticationManager,IUserService userService) {
+    public JwtAuthenticationFilter(AuthenticationManager authenticationManager, IUserService userService) {
         super(authenticationManager);
         this.userService = userService;
     }
@@ -81,6 +81,17 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
                 UserContextDTO userDto = new UserContextDTO();
                 userDto.setUserId((String)user.get("userId"));
                 userDto.setUsername((String)user.get("userName"));
+//                userDto.setTenantId((String)user.get("tenantId"));
+//                userDto.setTenantName((String)user.get("tenantName"));
+//                userDto.setEntPersonnelId((String)user.get("entPersonnelId"));
+//                userDto.setEntPersonnelName((String)user.get("entPersonnelName"));
+//                userDto.setEntId((String)user.get("entId"));
+//                userDto.setEntName((String)user.get("entName"));
+//                userDto.setEntDeptId((String)user.get("entDeptId"));
+//                userDto.setEntDeptName((String)user.get("entDeptName"));
+//                userDto.setAppId((String)user.get("appId"));
+//                userDto.setAppName((String)user.get("appName"));
+//                userDto.setAppMainUrl((String)user.get("mainUrl"));
 
                 String authStr = (String)user.get("_auth");
                 List<String> auths = Arrays.asList(StringUtils.commaDelimitedListToStringArray(authStr));
