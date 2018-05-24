@@ -86,7 +86,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>xyz.amazingxu.wxblog.WxblogApplication</mainClass>
+					<mainClass>xyz.amazingxu.WxblogApplication</mainClass>
 				</configuration>
 				<executions>
 					<execution>
