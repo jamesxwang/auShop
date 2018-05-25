@@ -1,14 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>博客网</title>
+    <link href="web/css/bootstrap.min.css" rel="stylesheet">
+    <link href="web/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="web/css/animate.min.css" rel="stylesheet">
+    <link href="web/css/style.min.css" rel="stylesheet">
+    <link href="web/css/login.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href=" web/img/wxblog.ico" />
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html"/>
+    <![endif]-->
+    <script>
+        if (window.top !== window.self) {
+            window.top.location = window.location
+        }
+        ;
+    </script>
 </head>
-<body>
+<body class="signin">
+
+<!--导航栏-->
+<nav class="navbar navbar-default" style="background-color: #1A759B">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--logo-->
+            <a class="navbar-brand">
+                <a href="index.html"><img src="web/img/logo/3_White_logo_on_color1_101x73.png" width="50" height="50"></a>
+            </a>
+        </div>
+        <!--搜索框-->
+        <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav ">
+                <form class="navbar-form navbar-left" method="get" action="web/search.html">
+                    <input type="text" placeholder="请输入搜索内容" data-url="https://www.amazingxu.xyz/search" class="form-control" autocomplete="off">
+                    <button type="submit" class="btn btn-default" style="color: #2F4050">搜索</button>
+                    <div class="search-result hidden"></div>
+                </form>
+                <!--登录退出按钮-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="web/login.html" style="color: #fff">登录/注册</a></li>
+                    <li><a href="#" style="color: #fff">退出</a></li>
+                </ul>
+            </ul>
+        </div>
+
+    </div><!-- /.container-fluid -->
+</nav>
+
 <div>
     <h1>主页面</h1>
+    <br><br><br><br><br><br><br><br><br>
     <a href="swagger-ui.html">跳转到api文档</a>
-    <a href="web/login.html">跳转到主页面</a>
+    <!--<a href="web/login.html">跳转到主页面</a>-->
 </div>
+
 </body>
 </html>

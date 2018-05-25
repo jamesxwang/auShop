@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <title>用户登录</title>
+    <title>搜索结果</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
@@ -22,10 +22,9 @@
         }
         ;
     </script>
+
 </head>
-
-<body class="signin" ms-controller="wxBlog">
-
+<body class="signin">
 <!--导航栏-->
 <nav class="navbar navbar-default" style="background-color: #1A759B">
     <div class="container-fluid">
@@ -60,55 +59,12 @@
 
     </div><!-- /.container-fluid -->
 </nav>
+<div>
 
-<!--登录框-->
-<div class="signinpanel" ng-controller="wxCtrl">
-    <div class="row">
-        <div class="middle-box">
-            <form class="animated fadeInDown" style="color:#fff">
-                <h4 class="no-margins">用户登录：</h4>
-                <p class="m-t-md ">登录到博客网</p>
-                <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="uid" type="text" class="form-control uname" placeholder="用户名"/>
-                <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="pwd" type="password" class="form-control pword m-b" placeholder="密码"/>
-                <a class="btn btn-success btn-block" ms-on-click="DoLogin()">登录</a>
-            </form>
-        </div>
-    </div>
-    <div class="signup-footer">
-        <div class="middle-box" style="color:#fff">
-            &copy; 2018-2019 amazingxu.xyz
-        </div>
-    </div>
+    <ul>
+        <br><br><br><br><br>
+        搜索结果展示
+    </ul>
 </div>
-
-<script src="js/jquery.min.js?v=2.1.4"></script>
-<script src="js/plugins/avalon/avalon.js"></script>
-<script src="js/bootstrap.min.js?v=3.3.6"></script>
-<script src="js/plugins/layer/layer.js"></script>
-<script src="js/api.js"></script>
-<script type="text/javascript">
-    var vm = avalon.define({
-        $id: "wxBlog",
-        uid:'',
-        pwd:'',
-        DoLogin:function(){
-            $.api.ClearAll();
-            $.api.DoLogin(vm.uid,vm.pwd);
-        }, handleEnterEvent:function(e){
-            var keycode = window.event?e.keyCode:e.which;
-            if(keycode==13){
-                vm.DoLogin();
-            }
-        },
-        HandleWeixin:function(){
-            var ua = navigator.userAgent.toLowerCase();
-            if(ua.match(/MicroMessenger/i)=="micromessenger") {
-                $.api.Alert("不支持微信，请在电脑上使用本系统!");
-            }
-        }
-    });
-    vm.HandleWeixin();
-</script>
 </body>
-
 </html>

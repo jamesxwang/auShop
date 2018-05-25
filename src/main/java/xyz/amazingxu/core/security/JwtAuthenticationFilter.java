@@ -44,7 +44,7 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
 
         String header = request.getHeader("Authorization");
         if ((header != null) && header.startsWith(SystemVars.AUTHENTICATION_HEAD)) {
-            //当token和原有的一致则不重新生成token，已减少开销
+            //当token和原有的一致则不重新生成token，以减少开销
             String token = request.getHeader("Authorization");
             UsernamePasswordAuthenticationToken authentication = getAuthentication(token);
             if (authentication != null) {
