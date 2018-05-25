@@ -93,7 +93,7 @@
                 setTimeout(function(){
                     $.api.Post('/user/getMyUserContext',{},function(user){
                         $.api.SetUserInfo(user.data);
-                        location.href = "login.html";
+                        location.href = "../../index.html";
                     });
                 });
             });
