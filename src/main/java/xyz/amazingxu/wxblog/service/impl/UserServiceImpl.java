@@ -4,6 +4,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import xyz.amazingxu.core.utils.SystemVars;
 import xyz.amazingxu.wxblog.dao.IUserDAO;
 import xyz.amazingxu.wxblog.domain.UserDO;
 import xyz.amazingxu.wxblog.dto.ChangePasswordDTO;
@@ -53,6 +54,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
                     .setSubject(userDO.getId())
                     .setClaims(claims)
                     .setExpiration(new Date(System.currentTimeMillis() + 60 * 60 * 24 * 1000))
+                    .signWith(SignatureAlgorithm.HS512, SystemVars.JWT_SECRET)
                     .compact();
         }
         return token;

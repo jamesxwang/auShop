@@ -91,9 +91,9 @@
             setTimeout(function () {
                 $.api.SetToken(result.data);
                 setTimeout(function(){
-                    $.api.Post('/user/getMyUserInfo',{},function(user){
+                    $.api.Post('/user/getMyUserContext',{},function(user){
                         $.api.SetUserInfo(user.data);
-                        location.href = "platform.html";
+                        location.href = "index.html";
                     });
                 });
             });

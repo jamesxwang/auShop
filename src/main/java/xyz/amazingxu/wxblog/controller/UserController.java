@@ -39,7 +39,7 @@ public class UserController {
     }
 
     @ApiOperation(value = "获取用户信息")
-    @PostMapping
+    @PostMapping("getMyUserContext")
     public WebResults getMyUserContext(){
         return WebUtils.success(userService.getMyUserContext());
     }
