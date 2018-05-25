@@ -1,7 +1,7 @@
 ﻿$.api = {
     token: localStorage.getItem("token"),
-    root: "http://localhost:8082",
-    //root:"http://"+location.host,
+    // root: "http://localhost:8082",
+    root:"http://"+location.host,
     ClearAll: function () {
         localStorage.clear();
     },
@@ -93,7 +93,7 @@
                 setTimeout(function(){
                     $.api.Post('/user/getMyUserContext',{},function(user){
                         $.api.SetUserInfo(user.data);
-                        location.href = "index.html";
+                        location.href = "login.html";
                     });
                 });
             });
