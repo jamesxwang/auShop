@@ -1,6 +1,5 @@
 ﻿$.api = {
     token: localStorage.getItem("token"),
-    // root: "http://localhost:8082",
     root:"http://"+location.host,
     ClearAll: function () {
         localStorage.clear();

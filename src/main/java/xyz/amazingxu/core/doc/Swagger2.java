@@ -31,7 +31,7 @@ public class Swagger2 {
         ParameterBuilder tokenPar = new ParameterBuilder();
         List<Parameter> pars = new ArrayList<>();
         tokenPar.name("Authorization")
-                .description("令牌")
+                .description("Token")
                 .modelRef(new ModelRef("string"))
                 .defaultValue("Bearer ")
                 .parameterType("header")

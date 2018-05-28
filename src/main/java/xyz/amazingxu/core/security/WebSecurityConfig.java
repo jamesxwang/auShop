@@ -30,9 +30,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
                 .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
-//                .antMatchers("/favicon.ico").permitAll()
+                .antMatchers("/favicon.ico").permitAll()
                 .antMatchers("/user/login").permitAll()
-                .antMatchers("/sys/init").permitAll()
+//                .antMatchers("/sys/init").permitAll()
                 .antMatchers("/web/**").permitAll()
                 .antMatchers("/v2/api-docs",
                         "/configuration/ui",

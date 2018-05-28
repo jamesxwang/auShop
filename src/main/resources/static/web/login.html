@@ -11,7 +11,7 @@
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/style.min.css" rel="stylesheet">
     <link href="css/login.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href=" img/wxblog.ico" />
+    <link rel="icon" href="../favicon.ico" />
 
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html"/>
@@ -27,7 +27,7 @@
 <body class="signin" ms-controller="wxBlog">
 
 <!--导航栏-->
-<nav class="navbar navbar-default" style="background-color: #1A759B">
+<nav class="navbar navbar-default navbar-top-links" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -38,23 +38,25 @@
                 <span class="icon-bar"></span>
             </button>
             <!--logo-->
-            <a class="navbar-brand">
-                <a href="../index.html"><img src="img/logo/3_White_logo_on_color1_101x73.png" width="50" height="50"></a>
+            <a class="navbar-brand" href="../index.html">
+                <img alt="Logo" src="img/logo/3_White_logo_on_color1_101x73.png" width="20" height="20">
             </a>
         </div>
         <!--搜索框-->
-        <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav ">
-                <form class="navbar-form navbar-left" method="get" action="search.html">
-                    <input type="text" placeholder="请输入搜索内容" data-url="https://www.amazingxu.xyz/search" class="form-control" autocomplete="off">
-                    <button type="submit" class="btn btn-default" style="color: #2F4050">搜索</button>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="请输入搜索内容" onautocomplete="false" data-target="https://www.amazingxu.xyz/search">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
                     <div class="search-result hidden"></div>
                 </form>
-                <!--登录退出按钮-->
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="login.html" style="color: #fff">登录/注册</a></li>
-                    <li><a href="#" style="color: #fff">退出</a></li>
-                </ul>
+            </ul>
+            <!--登录退出按钮-->
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="login.html" style="color: #fff">登录/注册</a></li>
+                <li><a href="#" style="color: #fff">退出</a></li>
             </ul>
         </div>
     </div><!-- /.container-fluid -->
@@ -69,7 +71,16 @@
                 <p class="m-t-md ">登录到博客网</p>
                 <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="uid" type="text" class="form-control uname" placeholder="用户名"/>
                 <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="pwd" type="password" class="form-control pword m-b" placeholder="密码"/>
-                <a class="btn btn-success btn-block" ms-on-click="DoLogin()">登录</a>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a class="btn btn-success btn-block" ms-on-click="DoLogin()">登录</a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a class="btn bg-info btn-block" href="register.html">注册</a>
+                    </div>
+
+                      <!--style="color: #1a7bb9; background-color: #efefef" -->
+                </div>
             </form>
         </div>
     </div>
@@ -82,7 +93,7 @@
 
 <script src="js/jquery.min.js?v=2.1.4"></script>
 <script src="js/plugins/avalon/avalon.js"></script>
-<script src="js/bootstrap.min.js?v=3.3.6"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/plugins/layer/layer.js"></script>
 <script src="js/api.js"></script>
 <script type="text/javascript">

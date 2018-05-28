@@ -1,6 +1,8 @@
 package xyz.amazingxu.core;
 
 import io.swagger.annotations.ApiModelProperty;
+import org.springframework.security.core.context.SecurityContextHolder;
+import xyz.amazingxu.wxblog.dto.UserContextDTO;
 
 import java.util.Date;
 import java.util.UUID;
@@ -16,8 +18,24 @@ public abstract class BaseDTO {
     public BaseDTO(){
         this.id = UUID.randomUUID().toString();
         this.deleted = false;
-        this.createUser = "dev";
+        try {
+            UserContextDTO userContextDTO = (UserContextDTO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            this.createUser = userContextDTO.getUsername();
+        } catch (Exception e) {
+            this.createUser = "dev";
+        }
         this.createTime = new Date();
+    }
+
+    @Override
+    public String toString() {
+        return "BaseDTO{" +
+                "id='" + id + '\'' +
+                ", deleted=" + deleted +
+                ", createUser='" + createUser + '\'' +
+                ", createTime=" + createTime +
+                ", remark='" + remark + '\'' +
+                '}';
     }
 
     @ApiModelProperty(hidden = true)

@@ -23,7 +23,6 @@ import xyz.amazingxu.wxblog.service.IUserService;
 public class UserController {
     @Autowired
     private IUserService userService;
-
     @ApiOperation(value = "登录")
     @PostMapping("login")
     public WebResults login(@RequestBody UserDTO userDTO){
@@ -39,8 +38,8 @@ public class UserController {
     }
 
     @ApiOperation(value = "获取用户信息")
-    @PostMapping("getMyUserContext")
-    public WebResults getMyUserContext(){
+    @PostMapping("getMyUserInfo")
+    public WebResults getMyUserInfo(){
         return WebUtils.success(userService.getMyUserContext());
     }
 

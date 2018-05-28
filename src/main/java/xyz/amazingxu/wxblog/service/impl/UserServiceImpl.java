@@ -70,7 +70,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
         UserContextDTO userContextDTO = new UserContextDTO();
         if (userResult.size() != 0){
             Map user = userResult.get(0);
-            userContextDTO.setUserId((String)user.get("userId"));
+            userContextDTO.setUserId((String)user.get("user_id"));
             userContextDTO.setUsername((String)user.get("username"));
         }
         return  userContextDTO;

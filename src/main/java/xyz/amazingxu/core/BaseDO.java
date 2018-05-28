@@ -1,7 +1,11 @@
 package xyz.amazingxu.core;
 
+import org.springframework.security.core.context.SecurityContextHolder;
+import xyz.amazingxu.wxblog.dto.UserContextDTO;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 /**
  * 领域基类
@@ -12,6 +16,28 @@ import java.util.Date;
 @MappedSuperclass
 public abstract class BaseDO {
 
+    @Override
+    public String toString() {
+        return "BaseDO{" +
+                "id='" + id + '\'' +
+                ", deleted=" + deleted +
+                ", createUser='" + createUser + '\'' +
+                ", createTime=" + createTime +
+                ", remark='" + remark + '\'' +
+                '}';
+    }
+
+    public BaseDO(){
+        this.id = UUID.randomUUID().toString();
+        this.deleted = false;
+        try {
+            UserContextDTO userContextDTO = (UserContextDTO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            this.createUser = userContextDTO.getUsername();
+        } catch (Exception e) {
+            this.createUser = "dev";
+        }
+        this.createTime = new Date();
+    }
     /**
      * 主键id
      */
