@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @author xuwang <121894598@qq.com>
  * @date 2018/5/23 15:09
  */
+@SuppressWarnings("unchecked")
 public class WebUtils {
     /**
      * 当正确时返回的值

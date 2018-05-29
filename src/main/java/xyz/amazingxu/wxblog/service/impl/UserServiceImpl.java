@@ -16,7 +16,6 @@ import xyz.amazingxu.wxblog.service.IUserService;
 import javax.persistence.criteria.Path;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -47,8 +46,9 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
             throw new RuntimeException("该用户已被禁用！");
         }else {
             Map<String, Object> claims = new HashMap<>();
-            UserContextDTO userContextDTO = getUserContextByUserId(userDO.getId());
-            claims.put("user_id",userContextDTO.getUserId());
+            UserContextDTO userContextDTO = getUserContextById(userDO.getId());
+            claims.put("id",userContextDTO.getId());
+            claims.put("name",userContextDTO.getName());
             claims.put("username",userContextDTO.getUsername());
             token = Jwts.builder()
                     .setSubject(userDO.getId())
@@ -61,31 +61,25 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
     }
 
     @Override
-    public UserContextDTO getUserContextByUserId(String userId) {
-        StringBuffer stringBufferSql = new StringBuffer();
-        stringBufferSql.append("SELECT a.id AS user_id, a.username AS username, a.remark AS remark ");
-        stringBufferSql.append("FROM userinfo a ");
-        stringBufferSql.append("WHERE a.id = ?");
-        List<Map> userResult = sqlQuery(stringBufferSql.toString(),new Object[]{userId});
+    public UserContextDTO getUserContextById(String id) {
+        UserDO userDO = userDAO.findOne(id);
         UserContextDTO userContextDTO = new UserContextDTO();
-        if (userResult.size() != 0){
-            Map user = userResult.get(0);
-            userContextDTO.setUserId((String)user.get("user_id"));
-            userContextDTO.setUsername((String)user.get("username"));
-        }
+            userContextDTO.setId(userDO.getId());
+            userContextDTO.setName(userDO.getName());
+            userContextDTO.setUsername(userDO.getUsername());
         return  userContextDTO;
     }
 
     @Override
     public UserContextDTO getMyUserContext() {
-        UserContextDTO user = getUserContext();
-        return getUserContextByUserId(user.getUserId());
+        UserContextDTO user = getUserContext();   //获取不到id
+        return getUserContextById(user.getId()); //获取不到id
     }
 
     @Override
     public void changePassword(ChangePasswordDTO changePasswordDTO) {
         UserContextDTO user = getMyUserContext();
-        UserDO userDO = userDAO.findOne(user.getUserId());
+        UserDO userDO = userDAO.findOne(user.getId());
         if (userDO != null && userDO.getPassword().equals(changePasswordDTO.getOldPassword())){
             userDO.setPassword(changePasswordDTO.getNewPassword());
             userDAO.save(userDO);

@@ -23,6 +23,7 @@ public class BaseServiceImpl implements IBaseService {
     EntityManager entityManager;
 
     @Override
+    @SuppressWarnings("unchecked")
     public UserContextDTO getUserContext() {
         UserContextDTO userContextDTO = (UserContextDTO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return userContextDTO;

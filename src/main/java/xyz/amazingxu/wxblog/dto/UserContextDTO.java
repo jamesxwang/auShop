@@ -8,22 +8,22 @@ public class UserContextDTO {
     @Override
     public String toString() {
         return "UserContextDTO{" +
-                "userId=" + userId + '\'' +
+                "Id='" + id + '\'' +
                 ", username='" + username + '\'' +
-                ", token='" + token + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 
-    private String userId;
+    private String name;
     private String username;
-    private String token;
+    private String id;
 
-    public String getUserId() {
-        return userId;
+    public String getName() {
+        return name;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getUsername() {
@@ -34,12 +34,16 @@ public class UserContextDTO {
         this.username = username;
     }
 
-    public String getToken() {
-        return token;
+    public String getId() {
+        return id;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setId(String id) {
+        this.id = id;
     }
+
+
+
+
 
 }

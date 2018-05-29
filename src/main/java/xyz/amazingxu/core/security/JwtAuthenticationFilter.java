@@ -79,7 +79,7 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
                         .getBody();
                 String userId = (String)user.get("sub");
                 UserContextDTO userDto = new UserContextDTO();
-                userDto.setUserId((String)user.get("userId"));
+                userDto.setName((String)user.get("name"));
                 userDto.setUsername((String)user.get("userName"));
 
                 String authStr = (String)user.get("_auth");

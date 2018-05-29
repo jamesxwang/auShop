@@ -25,7 +25,7 @@
     },
     CheckLogin: function () {
         if ($.api.token == null) {
-            location.href = 'login.html';
+            location.href = '/login.html';
         }
     },
     Copy: function (obj) {

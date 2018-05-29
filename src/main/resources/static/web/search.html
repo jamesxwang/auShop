@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
     <title>搜索结果</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/style.min.css" rel="stylesheet">
-    <link href="css/login.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../favicon.ico" />
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='http://fonts.useso.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/navbar.css"/>
+    <link rel="icon" href="../favicon.ico" />
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html"/>
     <![endif]-->
@@ -20,50 +15,130 @@
         if (window.top !== window.self) {
             window.top.location = window.location
         }
-        ;
     </script>
-
 </head>
-<body class="signin">
-<!--导航栏-->
-<nav class="navbar navbar-default" style="background-color: #1A759B">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
+
+<body>
+
+<!--  Navigation Bar -->
+
+<nav class="navbar navbar-default navbar-fixed-top noBorder" role="navigation">
+    <div class="container">
+
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <!--logo-->
-            <a class="navbar-brand">
-                <a href="../index.html"><img src="img/logo/3_White_logo_on_color1_101x73.png" width="50" height="50"></a>
-            </a>
+            <a class="navbar-brand brandStyle" href="../index.html">WxBlog</a>
         </div>
-        <!--搜索框-->
-        <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav ">
-                <form class="navbar-form navbar-left" method="get" action="search.html">
-                    <input type="text" placeholder="请输入搜索内容" data-url="https://www.amazingxu.xyz/search" class="form-control" autocomplete="off">
-                    <button type="submit" class="btn btn-default" style="color: #2F4050">搜索</button>
-                    <div class="search-result hidden"></div>
-                </form>
-                <!--登录退出按钮-->
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="login.html" style="color: #fff">登录/注册</a></li>
-                    <li><a href="#" style="color: #fff">退出</a></li>
+
+        <div class="collapse navbar-collapse noPadding"	id="myNavbar">
+            <div class="navbar-right menustyle">
+                <ul class="nav navbar-nav">
+                    <!--搜索框-->
+                    <li><form class="navbar-form" action="search.html">
+                        <div class="form-group" >
+                            <input type="text" class="form-control" placeholder="请输入搜索内容" autocomplete="off" data-target="https://www.amazingxu.xyz/search">
+                        </div>
+                        <button type="submit" class="btn btn-default"><a>搜索</a></button>
+                        <div class="search-result hidden"></div>
+                    </form></li>
+                    <!--注册按钮-->
+                    <li><a href="register.html"><p>注册</p></a></li>
+                    <!--登录按钮-->
+                    <li><a href="login.html"><p>登录</p></a></li>
+                    <!--下拉菜单-->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">设置 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">账号设置</a></li>
+                            <li><a href="#">账号安全</a></li>
+                            <li><a href="#">消息中心</a></li>
+                            <li role="separator" class="divider"></li>
+                            <!--<li class="dropdown-header">Nav header</li>-->
+                            <li><a href="#">退出登录</a></li>
+                            <!--<li><a href="#">One more separated link</a></li>-->
+                        </ul>
+                    </li>
                 </ul>
-            </ul>
+            </div>
         </div>
-    </div><!-- /.container-fluid -->
+
+    </div>
 </nav>
 
-<div>
-    <ul style="color: #fff">
-        <br><br><br><br><br>
-        搜索结果展示
-    </ul>
+<!-- Main Page -->
+
+<div class="container-fluid noPadding">
+    <!--<img src="img/background.jpg">-->
+    <div class="container-fluid headpicture"></div>
+
+    <div class="container text-center">
+
+        <h1>Bootstrap Responsive Template</h1>
+
+        <p class="textStyle">
+            Hey there! This is a responsive template . It uses the bootstrap framework from twitter. Try resizing your browser window, or open the page on your smartphone. We hope you find our little template useful! <br><br>Feel free to share it with your friends, or, if possible, include a back link to our site if you use it. Thanks!
+        </p>
+
+        <h1>Latest Projects</h1>
+
+    </div>
+
+    <div class="container textstyle">
+        <div class="row text-center latestProjects">
+
+            <div class="col-md-4 col-sm-6">
+                <a href="http://dribbble.com/shots/1210363-Weather-App-Washing-Machine-iOS7" >
+                    <img class="imgsize" src="img/1.jpg" alt="weather app">
+                </a>
+                <p>Weather app design <a href="http://dribbble.com/shots/1210363-Weather-App-Washing-Machine-iOS7">learn more →</a></p>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <a href="http://dribbble.com/shots/202313-British-Tea-Cup" >
+                    <img class="imgsize" src="img/2.jpg" alt="british tea cup">
+                </a>
+                <p>3D modeling and rendering <a href="http://dribbble.com/shots/202313-British-Tea-Cup">learn more →</a></p>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+                <a href="http://dribbble.com/shots/606745-In-app-Visual-Data" >
+                    <img class="imgsize" src="img/3.jpg" alt="app visualization data">
+                </a>
+                <p>Mobile web application <a href="http://dribbble.com/shots/606745-In-app-Visual-Data">learn more →</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <div class="container footer">
+        <div class="col-xs-12 col-md-8 noPadding">
+            <p id="footerLogoText">Amazingxu.xyz © 2018</p>
+        </div>
+        <div class="col-xs-12 col-md-4 noPadding">
+            <div class="socialButtons responsiveAlign">
+                <a href="#" class="noPadding">
+                    <img src="img/twitter.svg" alt="image1">
+                </a>
+                <a href="#" class="noPadding">
+                    <img src="img/facebook.svg" alt="image1">
+                </a>
+                <a href="#" class="noPadding">
+                    <img src="img/behance.svg" alt="image1">
+                </a>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/myscript.js"></script>
 </body>
 </html>

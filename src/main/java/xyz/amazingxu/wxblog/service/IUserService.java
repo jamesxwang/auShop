@@ -18,11 +18,11 @@ public interface IUserService {
     String getTokenByLogin(UserDTO userDTO);
 
     /**
-     * 根据userId获取用户信息
-     * @param userId
+     * 根据Id获取用户信息
+     * @param id
      * @return
      */
-    UserContextDTO getUserContextByUserId(String userId);
+    UserContextDTO getUserContextById(String id);
 
     /**
      * 获取当前用户信息
