@@ -1,6 +1,8 @@
 ﻿$.api = {
     token: localStorage.getItem("token"),
+    // root:"http://localhost:8082", //开发环境
     root:"http://"+location.host,
+
     ClearAll: function () {
         localStorage.clear();
     },
@@ -85,7 +87,6 @@
         $.ajax(ajaxParam);
     },
     DoLogin: function (uid, pwd) {
-        var userinfo = localStorage.getItem("userinfo");
         $.api.Post('/user/login', {username: uid, password: pwd}, function (result) {
             setTimeout(function () {
                 $.api.SetToken(result.data);

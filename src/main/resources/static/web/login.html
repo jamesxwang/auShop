@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Sign in</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <head>
+        <title>Sign in</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="css/navbar.css"/>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-    <link rel="icon" href="../favicon.ico" />
-    <!--[if lt IE 9]>
-    <meta http-equiv="refresh" content="0;ie.html"/>
-    <![endif]-->
-    <script>
-        if (window.top !== window.self) {
-            window.top.location = window.location
-        }
-    </script>
-</head>
+        <link rel="stylesheet" type="text/css" href="css/navbar.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+        <link rel="icon" href="../favicon.ico" />
+        <!--[if lt IE 9]>
+        <meta http-equiv="refresh" content="0;ie.html"/>
+        <![endif]-->
+        <script>
+            if (window.top !== window.self) {
+                window.top.location = window.location
+            }
+        </script>
+    </head>
 
-<body class="signin" ms-controller="wxBlog">
+    <body class="signin" ms-controller="wxBlog">
 
-<!--  Navigation Bar -->
-<nav class="navbar navbar-default navbar-fixed-top noBorder" role="navigation">
+    <!--  Navigation Bar -->
+    <nav class="navbar navbar-default navbar-fixed-top noBorder" role="navigation">
     <div class="container">
 
         <div class="navbar-header">
@@ -45,7 +45,7 @@
                             <input type="text" class="form-control" placeholder="Search" autocomplete="off"
                                    data-target="https://www.amazingxu.xyz/search">
                         </div>
-                        <button type="submit" class="btn btn-default"><a>Search</a></button>
+                        <button type="submit" class="btn btn-default" style="margin-left: 3px;"><a>Search</a></button>
                         <div class="search-result hidden"></div>
                     </form></li>
                     <!--Register-->
@@ -73,56 +73,53 @@
     </div>
 </nav>
 
-
-<!-- Main Page -->
-<div class="signinpanel">
-    <div class="row">
-        <div class="middle-box">
-            <form class="animated fadeInDown" style="color:#fff">
-                <h4 class="no-margins text-center"><i class="glyphicon glyphicon-user fa-3x"></i></h4>
-                <p class="m-t-md text-center">Sign in</p>
-                <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="uid" type="text" class="form-control uname" placeholder="Username"/>
-                <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="pwd" type="password" class="form-control pword m-b" placeholder="Password"/>
-                <button class="btn btn-primary btn-block" ms-on-click="DoLogin()" >Login</button>
-            </form>
+    <!-- Sign in page -->
+    <div class="signinpanel">
+        <div class="row">
+            <div class="middle-box">
+                <div class="animated fadeInDown form" style="color:#fff">
+                    <h4 class="no-margins text-center"><i class="glyphicon glyphicon-user fa-3x"></i></h4>
+                    <p class="m-t-md text-center">Sign in</p>
+                    <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="uid" type="text" class="form-control uname" placeholder="Username"/>
+                    <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="pwd" type="password" class="form-control pword m-b" placeholder="Password"/>
+                    <button class="btn btn-primary btn-block" ms-on-click="DoLogin()" >Login</button>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
+    <div class="container-fluid noPadding text-center">
 
-
-
-
-<div class="container-fluid noPadding text-center">
-<!-- Footer -->
-
-<div class="container footer">
-    <div class="col-xs-12 col-md-8 noPadding">
-        <p id="footerLogoText" style="color: #000">Amazingxu.xyz © 2018</p>
-    </div>
-    <div class="col-xs-12 col-md-4 noPadding">
-        <div class="socialButtons responsiveAlign">
-            <a href="#" class="noPadding">
-                <img src="img/twitter.svg" alt="image1">
-            </a>
-            <a href="#" class="noPadding">
-                <img src="img/facebook.svg" alt="image1">
-            </a>
-            <a href="#" class="noPadding">
-                <img src="img/behance.svg" alt="image1">
-            </a>
+    <!-- Footer -->
+    <div class="container footer">
+        <div class="col-xs-12 col-md-8 noPadding">
+            <p id="footerLogoText" style="color: #000">&copy; 2018-2019 www.amazingxu.xyz</p>
+        </div>
+        <div class="col-xs-12 col-md-4 noPadding">
+            <div class="socialButtons responsiveAlign">
+                <a href="#" class="noPadding">
+                    <img src="img/twitter.svg" alt="image1">
+                </a>
+                <a href="#" class="noPadding">
+                    <img src="img/facebook.svg" alt="image1">
+                </a>
+                <a href="#" class="noPadding">
+                    <img src="img/behance.svg" alt="image1">
+                </a>
+            </div>
         </div>
     </div>
-</div>
 
-</div>
+    </div><!--/.container-fluid-->
 
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/plugins/avalon/avalon.js"></script>
-<script src="js/navbar.js"></script>
-<script src="js/api.js"></script>
-<script type="text/javascript">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/plugins/vendor/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/avalon/avalon.js"></script>
+    <script src="js/plugins/layer/layer.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/api.js"></script>
+    <script type="text/javascript">
     var vm = avalon.define({
         $id: "wxBlog",
         uid:'',
