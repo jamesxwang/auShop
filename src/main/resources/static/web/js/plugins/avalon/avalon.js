@@ -39,11 +39,11 @@ https://github.com/RubyLouvre/avalon/tree/2.2.4
     var modern = /NaN|undefined/.test(msie) || msie > 8;
 
     /*
-     https://github.com/rsms/js-lru
-     entry             entry             entry             entry        
-     ______            ______            ______            ______       
-     | head |.newer => |      |.newer => |      |.newer => | tail |      
-     |  A   |          |  B   |          |  C   |          |  D   |      
+        https://github.com/rsms/js-lru
+          entry             entry             entry             entry
+         ______            ______            ______            ______
+       | head |.newer => |      |.newer => |      |.newer => | tail |
+      |  A   |          |  B   |          |  C   |          |  D   |
      |______| <= older.|______| <= older.|______| <= older.|______|      
      
      removed  <--  <--  <--  <--  <--  <--  <--  <--  <--  <--  <--  added 

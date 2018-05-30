@@ -13,6 +13,10 @@ a{
 	color :#8d736c !important;
 }
 
+/*style*/
+.m-l-sm{margin-left: 6px}
+.black{color: #000}
+.white{color: #fff}
 
 /*-----------------------------------
 	Navigation Bar Styles
@@ -62,7 +66,7 @@ a{
 ------------------------------------*/
 
 .headpicture{
-	background:url(../images/header.jpg);
+	/*background:url(../images/header.jpg);*/
 	background-size:cover;
 	background-repeat:no-repeat;
 	width: 100%;
