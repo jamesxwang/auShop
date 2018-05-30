@@ -81,6 +81,7 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
                 UserContextDTO userDto = new UserContextDTO();
                 userDto.setName((String)user.get("name"));
                 userDto.setUsername((String)user.get("userName"));
+                userDto.setId((String)user.get("id"));
 
                 String authStr = (String)user.get("_auth");
                 List<String> auths = Arrays.asList(StringUtils.commaDelimitedListToStringArray(authStr));

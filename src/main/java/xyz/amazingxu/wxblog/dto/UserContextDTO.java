@@ -8,7 +8,7 @@ public class UserContextDTO {
     @Override
     public String toString() {
         return "UserContextDTO{" +
-                "Id='" + id + '\'' +
+                "id='" + id + '\'' +
                 ", username='" + username + '\'' +
                 ", name='" + name + '\'' +
                 '}';
