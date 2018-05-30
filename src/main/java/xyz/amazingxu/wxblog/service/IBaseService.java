@@ -11,20 +11,20 @@ import java.util.Map;
  */
 public interface IBaseService {
     /**
-     * 获取登陆用户上下文
+     * Get user context
      * @return
      */
     UserContextDTO getUserContext();
 
     /**
-     * 原生Sql查询
+     * SQL query
      * @param sql
      * @return
      */
     List<Map> sqlQuery(String sql);
 
     /**
-     * 原生Sql查询，带参数
+     * SQL query with parameters
      * @param sql
      * @param params
      * @return

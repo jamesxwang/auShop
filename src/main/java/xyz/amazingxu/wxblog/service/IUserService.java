@@ -11,27 +11,27 @@ import xyz.amazingxu.wxblog.dto.UserDTO;
  */
 public interface IUserService {
     /**
-     * 登陆(返回JwtToken)
+     * Login(return JwtToken)
      * @param userDTO
      * @return
      */
     String getTokenByLogin(UserDTO userDTO);
 
     /**
-     * 根据Id获取用户信息
+     * Get user information by id
      * @param id
      * @return
      */
     UserContextDTO getUserContextById(String id);
 
     /**
-     * 获取当前用户信息
+     * Get current user information
      * @return
      */
     UserContextDTO getMyUserContext();
 
     /**
-     * 当前用户更改密码
+     * Change password for current user
      * @param changePasswordDTO
      */
     void changePassword(ChangePasswordDTO changePasswordDTO);

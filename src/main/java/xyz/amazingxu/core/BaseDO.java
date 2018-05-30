@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.UUID;
 
 /**
- * 领域基类
+ * Domain base class
  * @author xuwang <121894598@qq.com>
  * @date 2018/5/18 22:38
  */

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @SuppressWarnings("unchecked")
 public class WebUtils {
     /**
-     * 当正确时返回的值
+     * Value returned when correct
      * @param data
      * @return
      */
@@ -19,7 +19,7 @@ public class WebUtils {
     }
 
     /**
-     * 当正确时返回的值
+     * Value returned when correct
      * @param code
      * @param data
      * @return
@@ -33,7 +33,7 @@ public class WebUtils {
     }
 
     /**
-     * 当错误返回的值
+     * Value returned when error
      * @return
      */
     public static WebResults success(){
@@ -41,7 +41,7 @@ public class WebUtils {
     }
 
     /**
-     * 当错误时返回的值
+     * Value returned when error
      * @param code
      * @param msg
      * @return
@@ -61,7 +61,7 @@ public class WebUtils {
     }
 
     /**
-     * 序列化成JsonString
+     * Sequence into JsonString
      * @param webResults
      * @return
      * @throws JsonProcessingException

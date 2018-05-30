@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 用户服务
+ * User Service Implements
  * @author xuwang <121894598@qq.com>
  * @date 2018/5/22 21:44
  */
@@ -41,9 +41,9 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
             );
         });
         if (userDO == null){
-            throw new RuntimeException("用户名或密码不正确！");
+            throw new RuntimeException("Username or password incorrect!");
         }else if (userDO.getDeleted()){
-            throw new RuntimeException("该用户已被禁用！");
+            throw new RuntimeException("The user has been banned!");
         }else {
             Map<String, Object> claims = new HashMap<>();
             UserContextDTO userContextDTO = getUserContextById(userDO.getId());
@@ -72,8 +72,8 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 
     @Override
     public UserContextDTO getMyUserContext() {
-        UserContextDTO user = getUserContext();   //获取不到id
-        return getUserContextById(user.getId()); //获取不到id
+        UserContextDTO user = getUserContext();
+        return getUserContextById(user.getId());
     }
 
     @Override
@@ -84,7 +84,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
             userDO.setPassword(changePasswordDTO.getNewPassword());
             userDAO.save(userDO);
         }else {
-            throw new wxblogException("原始密码不正确！");
+            throw new wxblogException("Please check your original password！");
         }
     }
 }

@@ -15,7 +15,7 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface UserMapper {
     /**
-     * DO转DTO
+     * DO to DTO
      * @param userDO
      * @return
      */
@@ -23,21 +23,21 @@ public interface UserMapper {
     public UserDTO from(UserDO userDO);
 
     /**
-     * DTO转DO
+     * DTO to DO
      * @param userDTO
      * @return
      */
     public UserDO to(UserDTO userDTO);
 
     /**
-     * List<DO>转List<DTO>
+     * List<DO> to List<DTO>
      * @param userDOS
      * @return
      */
     public List<UserDTO> from(List<UserDO> userDOS);
 
     /**
-     * List<DTO>转List<DO>
+     * List<DTO> to List<DO>
      * @param userDTOS
      * @return
      */

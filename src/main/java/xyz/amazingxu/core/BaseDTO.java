@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.UUID;
 
 /**
- * DTO 的基类
+ * Data Transfer Object base class
  * @author xuwang <121894598@qq.com>
  * @date 2018/5/22 17:25
  */

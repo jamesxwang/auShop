@@ -32,7 +32,7 @@ public class WxblogApplication {
 		});
 	}
 	/**
-	 * 提供跨域支持
+	 * multiple-domain mechanism
 	 * @return
 	 */
 	@Bean
@@ -49,7 +49,7 @@ public class WxblogApplication {
 		return bean;
 	}
 	/**
-	 * 入口
+	 * Main
 	 * @param args
 	 */
 	public static void main(String[] args) {
