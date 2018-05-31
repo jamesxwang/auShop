@@ -1,7 +1,7 @@
 ﻿$.api = {
     token: localStorage.getItem("token"),
     // root:"http://localhost:8082", //开发环境
-    root:"http://"+location.host,
+    root:"http://"+location.host, //生产环境
 
     ClearAll: function () {
         localStorage.clear();

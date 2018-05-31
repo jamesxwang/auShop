@@ -117,8 +117,3 @@ avalon.component('ms-nav',{
         content: ""
     }
 })
-
-var vm = avalon.define({
-    $id: "wxBlog",
-    UserInfo:$.api.GetUserInfo()
-})
