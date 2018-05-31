@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
-	<head>
+<head>
 		<title>WxBlog</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		<link rel="stylesheet" type="text/css" href="web/css/bootstrap.min.css"/>
-		<link rel="stylesheet" type="text/css" href="web/css/navbar.css"/>
-		<link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="web/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="web/css/navbar.css"/>
+
+    <link rel="icon" href="favicon.ico" />
+
 		<!--[if lt IE 9]>
 		<meta http-equiv="refresh" content="0;ie.html"/>
 		<![endif]-->
@@ -16,66 +18,17 @@
                 window.top.location = window.location
             }
 		</script>
-	</head>
+</head>
 
-	<body>
+<body ms-controller="wxBlog">
+    <!-- Navigation Bar -->
+    <ms-nav1></ms-nav1>
 
-	<!--  Navigation Bar -->
-	<nav class="navbar navbar-default navbar-fixed-top noBorder" role="navigation">
-	<div class="container">
-
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand brandStyle" href="index.html">WxBlog</a>
-		</div>
-
-		<div class="collapse navbar-collapse noPadding"	id="myNavbar">
-			<div class="navbar-right menustyle">
-				<ul class="nav navbar-nav">
-					<!--Search form-->
-					<li><form class="navbar-form" action="web/search.html">
-						<div class="form-group" >
-							<input type="text" class="form-control" placeholder="Search" autocomplete="off"
-								   data-target="https://www.amazingxu.xyz/search"><!--搜索接口-->
-						</div>
-						<button type="submit" class="btn btn-default" style="margin-left: 3px;"><a>Search</a></button>
-						<div class="search-result hidden"></div>
-					</form></li>
-					<!--Register-->
-					<li><a href="web/register.html"><p>Sign up</p></a></li>
-					<!--Login-->
-					<li><a href="web/login.html"><p>Sign in</p></a></li>
-					<!--Settings-->
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-						   aria-expanded="false">Settings <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Account</a></li>
-							<li><a href="#">Safe settings</a></li>
-							<li><a href="#">Messages</a></li>
-							<li role="separator" class="divider"></li>
-							<!--<li class="dropdown-header">Nav header</li>-->
-							<li><a href="#">Log out</a></li>
-							<!--<li><a href="#">One more separated link</a></li>-->
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-
-	</div>
-</nav>
-
-	<!-- Main Page -->
+    <!-- Main Page -->
 	<div class="container-fluid noPadding">
-
+        <h1 class="text-center">Index Page</h1>
 		<div class="text-center">
-			<a href="/swagger-ui.html" class="btn btn-info">跳转至 API 文档</a>
+			<a href="/swagger-ui.html" class=" text-center btn btn-info">跳转至 API 文档</a>
 		</div>
 		<div class="container-fluid headpicture"></div>
 
@@ -139,8 +92,20 @@
 
 	</div>
 
+    <!-- Script -->
+
+    <script src="web/js/plugins/avalon/avalon.js"></script>
     <script src="web/js/jquery-1.11.0.min.js"></script>
     <script src="web/js/bootstrap.min.js"></script>
+    <script src="web/js/api.js"></script>
+    <script src="web/js/component.js"></script>
     <script src="web/js/navbar.js"></script>
-	</body>
+    <script type="text/javascript">
+        var vm = avalon.define({
+            $id: "wxBlog",
+            UserInfo:$.api.GetUserInfo()
+        })
+    </script>
+
+</body>
 </html>

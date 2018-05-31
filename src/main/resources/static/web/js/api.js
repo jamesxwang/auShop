@@ -94,6 +94,7 @@
                     $.api.Post('/user/getMyUserContext',{},function(user){
                         $.api.SetUserInfo(user.data);
                         location.href = "../../index.html";
+
                     });
                 });
             });

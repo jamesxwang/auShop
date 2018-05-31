@@ -1,77 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Sign in</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+    <title>Sign in</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="css/navbar.css"/>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="css/animate.min.css">
-        <link rel="stylesheet" type="text/css" href="css/login.css">
-        <link rel="icon" href="../favicon.ico" />
-        <!--[if lt IE 9]>
-        <meta http-equiv="refresh" content="0;ie.html"/>
-        <![endif]-->
-        <script>
-            if (window.top !== window.self) {
-                window.top.location = window.location
-            }
-        </script>
-    </head>
+    <link rel="stylesheet" type="text/css" href="css/navbar.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="icon" href="../favicon.ico" />
 
-    <body class="signin" ms-controller="wxBlog">
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html"/>
+    <![endif]-->
 
+    <script>
+        if (window.top !== window.self) {
+            window.top.location = window.location
+        }
+    </script>
+</head>
+
+
+<body class="signin" ms-controller="wxBlog">
     <!--  Navigation Bar -->
-    <nav class="navbar navbar-default navbar-fixed-top noBorder" role="navigation">
-    <div class="container">
-
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand brandStyle" href="../index.html">WxBlog</a>
-        </div>
-
-        <div class="collapse navbar-collapse noPadding"	id="myNavbar">
-            <div class="navbar-right menustyle">
-                <ul class="nav navbar-nav">
-                    <!--Search form-->
-                    <li><form class="navbar-form" action="search.html">
-                        <div class="form-group" >
-                            <input type="text" class="form-control" placeholder="Search" autocomplete="off"
-                                   data-target="https://www.amazingxu.xyz/search">
-                        </div>
-                        <button type="submit" class="btn btn-default m-l-sm"><a>Search</a></button>
-                        <div class="search-result hidden"></div>
-                    </form></li>
-                    <!--Register-->
-                    <li><a href="register.html"><p>Sign up</p></a></li>
-                    <!--Login-->
-                    <li><a href="login.html"><p>Sign in</p></a></li>
-                    <!--Settings-->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">Settings <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Account</a></li>
-                            <li><a href="#">Safe settings</a></li>
-                            <li><a href="#">Messages</a></li>
-                            <li role="separator" class="divider"></li>
-                            <!--<li class="dropdown-header">Nav header</li>-->
-                            <li><a href="#">Log out</a></li>
-                            <!--<li><a href="#">One more separated link</a></li>-->
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</nav>
+    <ms-nav></ms-nav>
 
     <!-- Sign in page -->
     <div class="signinpanel">
@@ -88,6 +42,7 @@
         </div>
     </div>
 
+    <!--Footer-->
     <div class="container-fluid noPadding text-center">
 
     <!-- Footer -->
@@ -112,28 +67,32 @@
 
     </div><!--/.container-fluid-->
 
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <script src="js/plugins/vendor/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!--Script-->
     <script src="js/plugins/avalon/avalon.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/vendor/jquery.min.js"></script>
     <script src="js/plugins/layer/layer.js"></script>
+    <script src="js/component.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/api.js"></script>
     <script type="text/javascript">
-    var vm = avalon.define({
-        $id: "wxBlog",
-        uid:'',
-        pwd:'',
-        DoLogin:function(){
-            $.api.ClearAll();
-            $.api.DoLogin(vm.uid,vm.pwd);
-        }, handleEnterEvent:function(e){
-            var keycode = window.event?e.keyCode:e.which;
-            if(keycode==13){
-                vm.DoLogin();
+        var vm = avalon.define({
+            $id: "wxBlog",
+            UserInfo:$.api.GetUserInfo(),
+            uid:'',
+            pwd:'',
+            DoLogin:function(){
+                $.api.ClearAll();
+                $.api.DoLogin(vm.uid,vm.pwd);
+            }, handleEnterEvent:function(e){
+                var keycode = window.event?e.keyCode:e.which;
+                if(keycode==13){
+                    vm.DoLogin();
+                }
             }
-        }
-    });
-</script>
+        });
+    </script>
+
 </body>
 </html>

@@ -18,62 +18,15 @@
     </script>
 </head>
 
-    <body>
+    <body ms-controller="wxBlog">
 
     <!--  Navigation Bar -->
-    <nav class="navbar navbar-default navbar-fixed-top noBorder" role="navigation">
-    <div class="container">
-
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand brandStyle" href="../index.html">WxBlog</a>
-        </div>
-
-        <div class="collapse navbar-collapse noPadding"	id="myNavbar">
-            <div class="navbar-right menustyle">
-                <ul class="nav navbar-nav">
-                    <!--Search form-->
-                    <li><form class="navbar-form" action="search.html">
-                        <div class="form-group" >
-                            <input type="text" class="form-control" placeholder="Search" autocomplete="off"
-                                   data-target="https://www.amazingxu.xyz/search">
-                        </div>
-                        <button type="submit" class="btn btn-default m-l-sm"><a>Search</a></button>
-                        <div class="search-result hidden"></div>
-                    </form></li>
-                    <!--Register-->
-                    <li><a href="register.html"><p>Sign up</p></a></li>
-                    <!--Login-->
-                    <li><a href="login.html"><p>Sign in</p></a></li>
-                    <!--Settings-->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">Settings <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Account</a></li>
-                            <li><a href="#">Safe settings</a></li>
-                            <li><a href="#">Messages</a></li>
-                            <li role="separator" class="divider"></li>
-                            <!--<li class="dropdown-header">Nav header</li>-->
-                            <li><a href="#">Log out</a></li>
-                            <!--<li><a href="#">One more separated link</a></li>-->
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</nav>
+    <ms-nav></ms-nav>
 
     <!-- Main Page -->
     <div class="container-fluid noPadding">
         <!--<img src="img/background.jpg">-->
+        <h1 class="text-center">Search Result</h1>
         <div class="container-fluid headpicture"></div>
 
         <div class="container text-center">
@@ -84,40 +37,12 @@
                 Hey there! This is a responsive template . It uses the bootstrap framework from twitter. Try resizing your browser window, or open the page on your smartphone. We hope you find our little template useful! <br><br>Feel free to share it with your friends, or, if possible, include a back link to our site if you use it. Thanks!
             </p>
 
-            <h1>Latest Projects</h1>
-
-        </div>
-
-        <div class="container textstyle">
-            <div class="row text-center latestProjects">
-
-                <div class="col-md-4 col-sm-6">
-                    <a href="http://dribbble.com/shots/1210363-Weather-App-Washing-Machine-iOS7" >
-                        <img class="imgsize" src="img/1.jpg" alt="weather app">
-                    </a>
-                    <p>Weather app design <a href="http://dribbble.com/shots/1210363-Weather-App-Washing-Machine-iOS7">learn more →</a></p>
-                </div>
-
-                <div class="col-md-4 col-sm-6">
-                    <a href="http://dribbble.com/shots/202313-British-Tea-Cup" >
-                        <img class="imgsize" src="img/2.jpg" alt="british tea cup">
-                    </a>
-                    <p>3D modeling and rendering <a href="http://dribbble.com/shots/202313-British-Tea-Cup">learn more →</a></p>
-                </div>
-
-                <div class="col-md-4 col-sm-12">
-                    <a href="http://dribbble.com/shots/606745-In-app-Visual-Data" >
-                        <img class="imgsize" src="img/3.jpg" alt="app visualization data">
-                    </a>
-                    <p>Mobile web application <a href="http://dribbble.com/shots/606745-In-app-Visual-Data">learn more →</a></p>
-                </div>
-            </div>
         </div>
 
         <!-- Footer -->
         <div class="container footer">
             <div class="col-xs-12 col-md-8 noPadding">
-                <p id="footerLogoText" class="white">&copy; 2018-2019 www.amazingxu.xyz</p>
+                <p id="footerLogoText" class="black">&copy; 2018-2019 www.amazingxu.xyz</p>
             </div>
             <div class="col-xs-12 col-md-4 noPadding">
                 <div class="socialButtons responsiveAlign">
@@ -136,8 +61,22 @@
 
     </div>
 
+    <script src="js/plugins/avalon/avalon.js"></script>
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+
+    <script src="js/component.js"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/api.js"></script>
+
+    <script type="text/javascript">
+        var vm = avalon.define({
+            $id: "wxBlog",
+            UserInfo:$.api.GetUserInfo()
+        })
+    </script>
+
+
     </body>
 </html>

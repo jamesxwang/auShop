@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Settings</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/navbar.css"/>
+    <link rel="icon" href="../favicon.ico" />
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html"/>
+    <![endif]-->
+    <script>
+        if (window.top !== window.self) {
+            window.top.location = window.location
+        }
+    </script>
+</head>
+
+<body ms-controller="wxBlog">
+
+<!--  Navigation Bar -->
+<ms-nav></ms-nav>
+
+<!-- Main Page -->
+<div class="container-fluid noPadding">
+    <h1 class="text-center">Account Settings</h1>
+    <div class="container-fluid headpicture"></div>
+
+    <div class="container text-center">
+
+        <h1>Bootstrap Responsive Template</h1>
+
+        <p class="textStyle">
+            Hey there! This is a responsive template . It uses the bootstrap framework from twitter. Try resizing your browser window, or open the page on your smartphone. We hope you find our little template useful! <br><br>Feel free to share it with your friends, or, if possible, include a back link to our site if you use it. Thanks!
+        </p>
+
+
+    </div>
+
+    <!-- Footer -->
+    <div class="container footer">
+        <div class="col-xs-12 col-md-8 noPadding">
+            <p id="footerLogoText" class="black">&copy; 2018-2019 www.amazingxu.xyz</p>
+        </div>
+        <div class="col-xs-12 col-md-4 noPadding">
+            <div class="socialButtons responsiveAlign">
+                <a href="#" class="noPadding">
+                    <img src="img/twitter.svg" alt="image1">
+                </a>
+                <a href="#" class="noPadding">
+                    <img src="img/facebook.svg" alt="image1">
+                </a>
+                <a href="#" class="noPadding">
+                    <img src="img/behance.svg" alt="image1">
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/plugins/avalon/avalon.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+
+<script src="js/component.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/api.js"></script>
+
+<script type="text/javascript">
+    var vm = avalon.define({
+        $id: "wxBlog",
+        UserInfo:$.api.GetUserInfo()
+    })
+</script>
+
+
+</body>
+</html>
