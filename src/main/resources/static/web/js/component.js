@@ -61,6 +61,9 @@ avalon.component('ms-nav1',{
         UserInfo: $.api.GetUserInfo(),
         showLoginStatus: function () {
             return vm.UserInfo == null;
+        },
+        DoLogOut: function () {
+            $.api.DoLogOut();
         }
     }
 })
