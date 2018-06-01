@@ -125,3 +125,35 @@ avalon.component('ms-nav',{
         }
     }
 })
+
+avalon.component('ms-footer-black',{
+    template:'<div class="view"><div class="container footer">\n' +
+    '    <div class="col-xs-12 col-md-8 noPadding">\n' +
+    '        <p id="footerLogoText" class="black">&copy; 2018-2019 www.amazingxu.xyz</p>\n' +
+    '    </div>\n' +
+    '    <div class="col-xs-12 col-md-4 noPadding">\n' +
+    '        <div class="responsiveAlign">\n' +
+    '            <a href="http://www.miitbeian.gov.cn" target="_blank" class="noPadding"><p class="black">湘ICP备18010549号-1<p></a>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '</div></div>',
+    defaults: {
+        content: ""
+    }
+})
+
+avalon.component('ms-footer-white',{
+    template:'<div class="view"><div class="container footer">\n' +
+    '    <div class="col-xs-12 col-md-8 noPadding">\n' +
+    '        <p id="footerLogoText" class="white">&copy; 2018-2019 www.amazingxu.xyz</p>\n' +
+    '    </div>\n' +
+    '    <div class="col-xs-12 col-md-4 noPadding">\n' +
+    '        <div class="responsiveAlign">\n' +
+    '            <a href="http://www.miitbeian.gov.cn" target="_blank" class="noPadding"><p class="white">湘ICP备18010549号-1</p></a>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '</div></div>',
+    defaults: {
+        content: ""
+    }
+})
