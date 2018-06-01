@@ -1,7 +1,7 @@
 ﻿$.api = {
     token: localStorage.getItem("token"),
-    // root:"http://localhost:8082", //开发环境
-    root:"http://"+location.host, //生产环境
+    root:"http://localhost:8082", //开发环境
+    // root:"http://"+location.host, //生产环境
 
     ClearAll: function () {
         localStorage.clear();
@@ -20,7 +20,7 @@
     },
     DoLogOut:function () {
         localStorage.clear();
-        location.reload();
+        location.href = 'login.html';
     },
     GetUserInfo: function () {
         try {
@@ -31,7 +31,7 @@
     },
     CheckLogin: function () {
         if ($.api.token == null) {
-            location.href = '/login.html';
+            location.href = "/login.html";
         }
     },
     Copy: function (obj) {

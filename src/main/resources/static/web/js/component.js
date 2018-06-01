@@ -133,7 +133,7 @@ avalon.component('ms-nav',{
             return vm.UserInfo == null;
         },
         DoLogOut: function () {
-            $.api.DoLogOut();
+                $.api.DoLogOut();
         }
     }
 })
