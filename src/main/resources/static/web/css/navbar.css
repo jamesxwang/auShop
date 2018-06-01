@@ -66,7 +66,7 @@ a{
 ------------------------------------*/
 
 .headpicture{
-	/*background:url(../images/header.jpg);*/
+	/*background:url(../img/logo/1.jpg);*/
 	background-size:cover;
 	background-repeat:no-repeat;
 	width: 100%;
@@ -140,17 +140,7 @@ h1{
 }
 
 
-/*-----------------------------------
-		Footer
-------------------------------------*/
 
-.footer{
-	padding: 13px 0px 0px 0px;
-	border-top: 1px solid #e5e5e5;
-	color: #757879;
-	font-size: 12px;
-	margin:70px auto;
-}
 
 /* Social buttons */
 
@@ -166,11 +156,6 @@ h1{
 .socialButtons a:hover img{
 	opacity:0.8;
 }
-
-#footerLogoText{
-	line-height:30px;
-}
-
 
 
 /*-----------------------------------
@@ -228,16 +213,6 @@ h1{
 	
 	.titleStyle{
 		margin-top: 70px;
-	}
-	
-	/* Footer */
-	
-	.footer{
-		margin: 40px auto;
-	}
-	
-	#footerLogoText{
-		text-align: center;
 	}
 	
 	/* Sharing buttons */

@@ -1,7 +1,7 @@
 ﻿$.api = {
     token: localStorage.getItem("token"),
-    // root:"http://localhost:8082", //开发环境
-    root:"http://"+location.host, //生产环境
+    root:"http://localhost:8082", //开发环境
+    // root:"http://"+location.host, //生产环境
 
     ClearAll: function () {
         localStorage.clear();
@@ -93,7 +93,7 @@
                 setTimeout(function(){
                     $.api.Post('/user/getMyUserContext',{},function(user){
                         $.api.SetUserInfo(user.data);
-                        location.href = "../../index.html";
+                        location.href = "../index.html";
 
                     });
                 });

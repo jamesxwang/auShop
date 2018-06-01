@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="stylesheet" type="text/css" href="css/navbar.css"/>
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
@@ -43,7 +44,7 @@
     </div>
 
     <!--Footer-->
-    <div class="container-fluid noPadding text-center">
+    <div class="container-fluid noPadding">
 
     <!-- Footer -->
     <div class="container footer">
@@ -67,21 +68,21 @@
 
     </div><!--/.container-fluid-->
 
-    <!--Script-->
+    <!-- Script (pjb acn)-->
     <script src="js/plugins/avalon/avalon.js"></script>
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!--<script src="js/plugins/vendor/jquery.min.js"></script>-->
     <script src="js/plugins/layer/layer.js"></script>
+    <script src="js/api.js"></script>
     <script src="js/component.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/api.js"></script>
     <script type="text/javascript">
         var vm = avalon.define({
             $id: "wxBlog",
-            UserInfo:$.api.GetUserInfo(),
             uid:'',
             pwd:'',
+            UserInfo: $.api.GetUserInfo(),
             DoLogin:function(){
                 $.api.ClearAll();
                 $.api.DoLogin(vm.uid,vm.pwd);

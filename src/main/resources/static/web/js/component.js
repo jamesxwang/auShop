@@ -27,11 +27,11 @@ avalon.component('ms-nav1',{
     '                    </form></li>\n' +
     '\n' +
     '                    <!--Register-->\n' +
-    '                    <li><a href="web/register.html" ><p>Sign up</p></a></li>\n' +
+    '                    <li><a href="web/register.html" ms-if="showLoginStatus()"><p>Sign up</p></a></li>\n' +
     '                    <!--Login-->\n' +
-    '                    <li><a href="web/login.html" ><p>Sign in</p></a></li>\n' +
+    '                    <li><a href="web/login.html" ms-if="showLoginStatus()"><p>Sign in</p></a></li>\n' +
     '                    <!--Welcome-->\n' +
-    '                    <li><a href="web/user_info.html" ms-if="UserInfo.id != null"><p>Welcome, {{UserInfo.name}}</p></a></li>\n' +
+    '                    <li><a href="web/user_info.html" ms-if="!showLoginStatus()"><p>Welcome, {{UserInfo.name}}</p></a></li>\n' +
     '\n' +
     '                    <!--Settings-->\n' +
     '                    <li class="dropdown">\n' +
@@ -54,7 +54,11 @@ avalon.component('ms-nav1',{
     '    </div>\n' +
     '</nav>\n</div>',
     defaults: {
-        content: ""
+        content: "",
+        UserInfo: $.api.GetUserInfo(),
+        showLoginStatus: function () {
+            return vm.UserInfo == null;
+        }
     }
 })
 
@@ -87,11 +91,11 @@ avalon.component('ms-nav',{
     '                    </form></li>\n' +
     '\n' +
     '                    <!--Register-->\n' +
-    '                    <li><a href="register.html" ><p>Sign up</p></a></li>\n' +
+    '                    <li><a href="register.html" ms-if="showLoginStatus()"><p>Sign up</p></a></li>\n' +
     '                    <!--Login-->\n' +
-    '                    <li><a href="login.html" ><p>Sign in</p></a></li>\n' +
+    '                    <li><a href="login.html" ms-if="showLoginStatus()"><p>Sign in</p></a></li>\n' +
     '                    <!--Welcome-->\n' +
-    '                    <li><a href="user_info.html" ms-if="UserInfo.id != null"><p>Welcome, {{UserInfo.name}}</p></a></li>\n' +
+    '                    <li><a href="user_info.html" ms-if="!showLoginStatus()"><p>Welcome, {{UserInfo.name}}</p></a></li>\n' +
     '\n' +
     '                    <!--Settings-->\n' +
     '                    <li class="dropdown">\n' +
@@ -114,6 +118,10 @@ avalon.component('ms-nav',{
     '    </div>\n' +
     '</nav>\n</div>',
     defaults: {
-        content: ""
+        content: "",
+        UserInfo: $.api.GetUserInfo(),
+        showLoginStatus: function () {
+            return vm.UserInfo == null;
+        }
     }
 })

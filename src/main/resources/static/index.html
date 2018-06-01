@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="web/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="web/css/navbar.css"/>
+    <link rel="stylesheet" type="text/css" href="web/css/footer.css">
 
     <link rel="icon" href="favicon.ico" />
 
@@ -92,7 +93,7 @@
 
 	</div>
 
-    <!-- Script -->
+    <!-- Script (pjb acn)-->
 
     <script src="web/js/plugins/avalon/avalon.js"></script>
     <script src="web/js/jquery-1.11.0.min.js"></script>
@@ -103,8 +104,9 @@
     <script type="text/javascript">
         var vm = avalon.define({
             $id: "wxBlog",
-            UserInfo:$.api.GetUserInfo()
-        })
+            UserInfo: $.api.GetUserInfo()
+        });
+		// alert(JSON.stringify(vm.UserInfo));
     </script>
 
 </body>

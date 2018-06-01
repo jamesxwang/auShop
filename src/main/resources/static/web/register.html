@@ -7,11 +7,10 @@
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/navbar.css"/>
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="icon" href="../favicon.ico" />
-
-    <link rel="import" href="navbar.html">
 
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html"/>
@@ -23,7 +22,7 @@
     </script>
 </head>
 
-<body class="signin">
+<body class="signin" ms-controller="wxBlog">
 
     <!--  Navigation Bar -->
     <ms-nav></ms-nav>
@@ -50,7 +49,7 @@
     </div>
 
     <!-- Footer -->
-    <div class="container-fluid noPadding text-center">
+    <div class="container-fluid noPadding">
     <div class="container footer">
         <div class="col-xs-12 col-md-8 noPadding">
             <p id="footerLogoText" class="white">&copy; 2018-2019 www.amazingxu.xyz</p>
@@ -72,15 +71,15 @@
 
     </div>
 
-    <!--Script-->
+    <!-- Script (pjb acn)-->
     <script src="js/plugins/avalon/avalon.js"></script>
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/vendor/jquery.min.js"></script>
-    <script src="js/plugins/layer/layer.js"></script>
+    <!--<script src="js/plugins/vendor/jquery.min.js"></script>-->
+    <!--<script src="js/plugins/layer/layer.js"></script>-->
+    <script src="js/api.js"></script>
     <script src="js/component.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/api.js"></script>
     <script type="text/javascript">
         var vm = avalon.define({
             $id: "wxBlog",
