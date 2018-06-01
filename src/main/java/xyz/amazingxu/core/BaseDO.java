@@ -21,7 +21,7 @@ public abstract class BaseDO {
         return "BaseDO{" +
                 "id='" + id + '\'' +
                 ", deleted=" + deleted +
-                ", createUser='" + createUser + '\'' +
+//                ", createUser='" + createUser + '\'' +
                 ", createTime=" + createTime +
                 ", remark='" + remark + '\'' +
                 '}';
@@ -30,12 +30,12 @@ public abstract class BaseDO {
     public BaseDO(){
         this.id = UUID.randomUUID().toString();
         this.deleted = false;
-        try {
-            UserContextDTO userContextDTO = (UserContextDTO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-            this.createUser = userContextDTO.getUsername();
-        } catch (Exception e) {
-            this.createUser = "dev";
-        }
+//        try {
+//            UserContextDTO userContextDTO = (UserContextDTO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//            this.createUser = userContextDTO.getUsername();
+//        } catch (Exception e) {
+//            this.createUser = "dev";
+//        }
         this.createTime = new Date();
     }
     /**
@@ -53,8 +53,8 @@ public abstract class BaseDO {
     /**
      * 创建人
      */
-    @Column(name = "create_user", nullable = false, length = 40)
-    private String createUser;
+//    @Column(name = "create_user", nullable = false, length = 40)
+//    private String createUser;
 
     /**
      * 创建时间
@@ -84,13 +84,13 @@ public abstract class BaseDO {
         this.deleted = deleted;
     }
 
-    public String getCreateUser() {
-        return createUser;
-    }
-
-    public void setCreateUser(String createUser) {
-        this.createUser = createUser;
-    }
+//    public String getCreateUser() {
+//        return createUser;
+//    }
+//
+//    public void setCreateUser(String createUser) {
+//        this.createUser = createUser;
+//    }
 
     public Date getCreateTime() {
         return createTime;

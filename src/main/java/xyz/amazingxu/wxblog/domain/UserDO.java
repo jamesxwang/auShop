@@ -18,17 +18,25 @@ public class UserDO extends BaseDO{
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
                 '}';
     }
 
 
     @Column(name = "name",length = 40)
     private String name;
-    @Column(name = "username",unique=true,nullable = false , length = 20)
+    @Column(name = "username" , unique=true, nullable = false , length = 20)
     private String username;
-    @Column(name = "password",nullable = false , length = 20)
+    @Column(name = "password" , nullable = false , length = 20)
     private String password;
-
+    @Column(name = "email" , length =  40)
+    private String email;
+    @Column(name = "gender")
+    private Boolean gender;
+    @Column(name = "phone",length = 15)
+    private String phone;
 
 
     public String getName() {
@@ -53,5 +61,29 @@ public class UserDO extends BaseDO{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public boolean isGender() {
+        return gender;
+    }
+
+    public void setGender(boolean gender) {
+        this.gender = gender;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

@@ -18,12 +18,12 @@ public abstract class BaseDTO {
     public BaseDTO(){
         this.id = UUID.randomUUID().toString();
         this.deleted = false;
-        try {
-            UserContextDTO userContextDTO = (UserContextDTO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-            this.createUser = userContextDTO.getUsername();
-        } catch (Exception e) {
-            this.createUser = "dev";
-        }
+//        try {
+//            UserContextDTO userContextDTO = (UserContextDTO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//            this.createUser = userContextDTO.getUsername();
+//        } catch (Exception e) {
+//            this.createUser = "dev";
+//        }
         this.createTime = new Date();
     }
 
@@ -32,7 +32,7 @@ public abstract class BaseDTO {
         return "BaseDTO{" +
                 "id='" + id + '\'' +
                 ", deleted=" + deleted +
-                ", createUser='" + createUser + '\'' +
+//                ", createUser='" + createUser + '\'' +
                 ", createTime=" + createTime +
                 ", remark='" + remark + '\'' +
                 '}';
@@ -42,8 +42,8 @@ public abstract class BaseDTO {
     private String id;
     @ApiModelProperty(hidden = true)
     private Boolean deleted;
-    @ApiModelProperty(hidden = true)
-    private String createUser;
+//    @ApiModelProperty(hidden = true)
+//    private String createUser;
     @ApiModelProperty(hidden = true)
     private Date createTime;
     @ApiModelProperty(hidden = true)
@@ -65,13 +65,13 @@ public abstract class BaseDTO {
         this.deleted = deleted;
     }
 
-    public String getCreateUser() {
-        return createUser;
-    }
-
-    public void setCreateUser(String createUser) {
-        this.createUser = createUser;
-    }
+//    public String getCreateUser() {
+//        return createUser;
+//    }
+//
+//    public void setCreateUser(String createUser) {
+//        this.createUser = createUser;
+//    }
 
     public Date getCreateTime() {
         return createTime;
