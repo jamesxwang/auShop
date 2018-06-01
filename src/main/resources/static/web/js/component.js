@@ -1,6 +1,8 @@
 //************** navbar for index.html **************
 avalon.component('ms-nav1',{
-    template:'<div class="view"><!--  Navigation Bar -->\n' +
+    template:'' +
+    '<div class="view">' +
+    '<!--  Navigation Bar -->\n' +
     '<nav class="navbar navbar-default navbar-fixed-top noBorder" role="navigation">\n' +
     '    <div class="container">\n' +
     '\n' +
@@ -36,14 +38,14 @@ avalon.component('ms-nav1',{
     '                    <!--Settings-->\n' +
     '                    <li class="dropdown">\n' +
     '                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"\n' +
-    '                           aria-expanded="false">Settings <span class="caret"></span></a>\n' +
+    '                           aria-expanded="false" ms-if="!showLoginStatus()">Settings <span class="caret"></span></a>\n' +
     '                        <ul class="dropdown-menu">\n' +
     '                            <li><a href="#">Account</a></li>\n' +
     '                            <li><a href="#">Safe settings</a></li>\n' +
     '                            <li><a href="#">Messages</a></li>\n' +
     '                            <li role="separator" class="divider"></li>\n' +
     '                            <!--<li class="dropdown-header">Nav header</li>-->\n' +
-    '                            <li><a href="#">Log out</a></li>\n' +
+    '                            <li><a href="#" ms-on-click="DoLogOut()">Log out</a></li>\n' +
     '                            <!--<li><a href="#">One more separated link</a></li>-->\n' +
     '                        </ul>\n' +
     '                    </li>\n' +
@@ -52,7 +54,8 @@ avalon.component('ms-nav1',{
     '        </div>\n' +
     '\n' +
     '    </div>\n' +
-    '</nav>\n</div>',
+    '</nav>\n' +
+    '</div>',
     defaults: {
         content: "",
         UserInfo: $.api.GetUserInfo(),
@@ -64,7 +67,9 @@ avalon.component('ms-nav1',{
 
 //************** navbar for other html files **************
 avalon.component('ms-nav',{
-    template:'<div class="view"><!--  Navigation Bar -->\n' +
+    template:'' +
+    '<div class="view">' +
+    '<!--  Navigation Bar -->\n' +
     '<nav class="navbar navbar-default navbar-fixed-top noBorder" role="navigation">\n' +
     '    <div class="container">\n' +
     '\n' +
@@ -100,14 +105,14 @@ avalon.component('ms-nav',{
     '                    <!--Settings-->\n' +
     '                    <li class="dropdown">\n' +
     '                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"\n' +
-    '                           aria-expanded="false">Settings <span class="caret"></span></a>\n' +
+    '                           aria-expanded="false" ms-if="!showLoginStatus()">Settings <span class="caret"></span></a>\n' +
     '                        <ul class="dropdown-menu">\n' +
-    '                            <li><a href="#">Account</a></li>\n' +
+    '                            <li><a href="#">My Account</a></li>\n' +
     '                            <li><a href="#">Safe settings</a></li>\n' +
     '                            <li><a href="#">Messages</a></li>\n' +
     '                            <li role="separator" class="divider"></li>\n' +
     '                            <!--<li class="dropdown-header">Nav header</li>-->\n' +
-    '                            <li><a href="#">Log out</a></li>\n' +
+    '                            <li><a href="#" ms-on-click="DoLogOut()">Log out</a></li>\n' +
     '                            <!--<li><a href="#">One more separated link</a></li>-->\n' +
     '                        </ul>\n' +
     '                    </li>\n' +
@@ -116,18 +121,25 @@ avalon.component('ms-nav',{
     '        </div>\n' +
     '\n' +
     '    </div>\n' +
-    '</nav>\n</div>',
+    '</nav>\n' +
+    '</div>',
     defaults: {
         content: "",
         UserInfo: $.api.GetUserInfo(),
         showLoginStatus: function () {
             return vm.UserInfo == null;
+        },
+        DoLogOut: function () {
+            $.api.DoLogOut();
         }
     }
 })
 
+//************** footer with black words **************
 avalon.component('ms-footer-black',{
-    template:'<div class="view"><div class="container footer">\n' +
+    template:'' +
+    '<div class="view">' +
+    '<div class="container footer">\n' +
     '    <div class="col-xs-12 col-md-8 noPadding">\n' +
     '        <p id="footerLogoText" class="black">&copy; 2018-2019 www.amazingxu.xyz</p>\n' +
     '    </div>\n' +
@@ -136,14 +148,18 @@ avalon.component('ms-footer-black',{
     '            <a href="http://www.miitbeian.gov.cn" target="_blank" class="noPadding"><p class="black">湘ICP备18010549号-1<p></a>\n' +
     '        </div>\n' +
     '    </div>\n' +
-    '</div></div>',
+    '</div>' +
+    '</div>',
     defaults: {
         content: ""
     }
 })
 
+//************** footer with white words **************
 avalon.component('ms-footer-white',{
-    template:'<div class="view"><div class="container footer">\n' +
+    template:'' +
+    '<div class="view">' +
+    '<div class="container footer">\n' +
     '    <div class="col-xs-12 col-md-8 noPadding">\n' +
     '        <p id="footerLogoText" class="white">&copy; 2018-2019 www.amazingxu.xyz</p>\n' +
     '    </div>\n' +
@@ -152,7 +168,8 @@ avalon.component('ms-footer-white',{
     '            <a href="http://www.miitbeian.gov.cn" target="_blank" class="noPadding"><p class="white">湘ICP备18010549号-1</p></a>\n' +
     '        </div>\n' +
     '    </div>\n' +
-    '</div></div>',
+    '</div>' +
+    '</div>',
     defaults: {
         content: ""
     }

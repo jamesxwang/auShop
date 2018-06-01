@@ -18,6 +18,10 @@
         var d = parseInt(days / (1000 * 60 * 60 * 24));
         return d;
     },
+    DoLogOut:function () {
+        localStorage.clear();
+        location.reload();
+    },
     GetUserInfo: function () {
         try {
             return JSON.parse(localStorage.getItem("userinfo"));
