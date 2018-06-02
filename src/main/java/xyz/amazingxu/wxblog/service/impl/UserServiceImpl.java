@@ -10,6 +10,7 @@ import xyz.amazingxu.wxblog.domain.UserDO;
 import xyz.amazingxu.wxblog.dto.ChangePasswordDTO;
 import xyz.amazingxu.wxblog.dto.UserContextDTO;
 import xyz.amazingxu.wxblog.dto.UserDTO;
+import xyz.amazingxu.wxblog.dto.UserRegisterDTO;
 import xyz.amazingxu.wxblog.exception.wxblogException;
 import xyz.amazingxu.wxblog.service.IUserService;
 
@@ -75,6 +76,13 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
         UserContextDTO user = getUserContext();
         return getUserContextById(user.getId());
     }
+
+    @Override
+    public UserRegisterDTO register() {
+        //TODO
+        return null;
+    }
+
 
     @Override
     public void changePassword(ChangePasswordDTO changePasswordDTO) {

@@ -43,4 +43,9 @@ public class UserController {
         return WebUtils.success(userService.getMyUserContext());
     }
 
+    @ApiOperation(value = "用户注册")
+    @PostMapping("register")
+    public WebResults register() {
+        return WebUtils.success(userService.register());
+    }
 }

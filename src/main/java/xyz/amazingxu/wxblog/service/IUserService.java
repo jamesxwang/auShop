@@ -3,6 +3,7 @@ package xyz.amazingxu.wxblog.service;
 import xyz.amazingxu.wxblog.dto.ChangePasswordDTO;
 import xyz.amazingxu.wxblog.dto.UserContextDTO;
 import xyz.amazingxu.wxblog.dto.UserDTO;
+import xyz.amazingxu.wxblog.dto.UserRegisterDTO;
 
 /**
  *
@@ -29,6 +30,12 @@ public interface IUserService {
      * @return
      */
     UserContextDTO getMyUserContext();
+
+    /**
+     * Register an account
+     * @return
+     */
+    UserRegisterDTO register();
 
     /**
      * Change password for current user

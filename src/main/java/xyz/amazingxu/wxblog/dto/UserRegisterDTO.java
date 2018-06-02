@@ -2,51 +2,22 @@ package xyz.amazingxu.wxblog.dto;
 
 /**
  * @author xuwang <121894598@qq.com>
- * @date 2018/5/22 21:50
+ * @date 2018/6/1 17:23
  */
-public class UserContextDTO {
+public class UserRegisterDTO {
     @Override
     public String toString() {
         return "UserContextDTO{" +
                 "id='" + id + '\'' +
                 ", username='" + username + '\'' +
                 ", name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
+//                ", gender='" + gender + '\'' +
                 ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
+//                ", phone='" + phone + '\'' +
                 '}';
     }
-
     private String name;
     private String username;
-    private String id;
-    private Boolean gender;
-    private String email;
-    private String phone;
-
-    public Boolean getGender() {
-        return gender;
-    }
-
-    public void setGender(Boolean gender) {
-        this.gender = gender;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 
     public String getName() {
         return name;
@@ -72,8 +43,16 @@ public class UserContextDTO {
         this.id = id;
     }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-
-
+    private String id;
+//    private Boolean gender;
+    private String email;
+//    private String phone;
 }

@@ -1,0 +1,22 @@
+server:
+  port: 8082
+  context-path: /
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost; DatabaseName=wxblog_dev
+    username: sa
+    password: 123456
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+  http:
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true
