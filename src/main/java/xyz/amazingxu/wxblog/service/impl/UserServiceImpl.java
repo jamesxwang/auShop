@@ -12,7 +12,6 @@ import xyz.amazingxu.wxblog.dto.UserContextDTO;
 import xyz.amazingxu.wxblog.dto.UserDTO;
 import xyz.amazingxu.wxblog.dto.UserRegisterReqDTO;
 import xyz.amazingxu.wxblog.exception.wxblogException;
-import xyz.amazingxu.wxblog.mapper.UserMapper;
 import xyz.amazingxu.wxblog.mapper.UserRegisterReqMapper;
 import xyz.amazingxu.wxblog.service.IUserService;
 
@@ -27,7 +26,7 @@ import java.util.Map;
  * @date 2018/5/22 21:44
  */
 @Service
-public class UserServiceImpl extends BaseServiceImpl implements IUserService{
+public class UserServiceImpl extends BaseServiceImpl implements IUserService {
 
     @Autowired
     private IUserDAO userDAO;
@@ -42,23 +41,23 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
             Path<String> uidPath = root.get("username");
             Path<String> pwdPath = root.get("password");
             return criteriaBuilder.and(
-                    criteriaBuilder.equal(uidPath,userDTO.getUsername()),
-                    criteriaBuilder.equal(pwdPath,userDTO.getPassword())
+                    criteriaBuilder.equal(uidPath, userDTO.getUsername()),
+                    criteriaBuilder.equal(pwdPath, userDTO.getPassword())
             );
         });
-        if (userDO == null){
+        if (userDO == null) {
             throw new wxblogException("Username or password incorrect!");
-        }else if (userDO.getDeleted()){
+        } else if (userDO.getDeleted()) {
             throw new wxblogException("User has been banned!");
-        }else {
+        } else {
             Map<String, Object> claims = new HashMap<>();
             UserContextDTO userContextDTO = getUserContextById(userDO.getId());
-            claims.put("id",userContextDTO.getId());
-            claims.put("name",userContextDTO.getName());
-            claims.put("username",userContextDTO.getUsername());
-            claims.put("email",userContextDTO.getEmail());
-            claims.put("gender",userContextDTO.getGender());
-            claims.put("phone",userContextDTO.getPhone());
+            claims.put("id", userContextDTO.getId());
+            claims.put("name", userContextDTO.getName());
+            claims.put("username", userContextDTO.getUsername());
+            claims.put("email", userContextDTO.getEmail());
+            claims.put("gender", userContextDTO.getGender());
+            claims.put("phone", userContextDTO.getPhone());
             token = Jwts.builder()
                     .setSubject(userDO.getId())
                     .setClaims(claims)
@@ -73,13 +72,13 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
     public UserContextDTO getUserContextById(String id) {
         UserDO userDO = userDAO.findOne(id);
         UserContextDTO userContextDTO = new UserContextDTO();
-            userContextDTO.setId(userDO.getId());
-            userContextDTO.setName(userDO.getName());
-            userContextDTO.setUsername(userDO.getUsername());
-            userContextDTO.setEmail(userDO.getEmail());
-            userContextDTO.setGender(userDO.getGender());
-            userContextDTO.setPhone(userDO.getPhone());
-        return  userContextDTO;
+        userContextDTO.setId(userDO.getId());
+        userContextDTO.setName(userDO.getName());
+        userContextDTO.setUsername(userDO.getUsername());
+        userContextDTO.setEmail(userDO.getEmail());
+        userContextDTO.setGender(userDO.getGender());
+        userContextDTO.setPhone(userDO.getPhone());
+        return userContextDTO;
     }
 
     @Override
@@ -90,16 +89,22 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 
     @Override
     public void register(UserRegisterReqDTO userRegisterReqDTO) {
-        UserDO userDO = userDAO.findOne(((root, query, cb) -> {
-            Path<String> namePath = root.get("username");
-            return cb.equal(namePath,userRegisterReqDTO.getUsername());
-        }));
-
-        if (userDO == null){
-            userDO = userRegisterReqMapper.to(userRegisterReqDTO);
-            userDAO.save(userDO);
-        }else {
-            throw new wxblogException("Account has already existed！");
+        if (userRegisterReqDTO.getUsername().equals("") || userRegisterReqDTO.equals("") || userRegisterReqDTO.getPassword().equals("")) {
+            throw new wxblogException("Username, Full name or Password cannot be empty!");
+        }else if (userRegisterReqDTO.getPassword().contains("'")) {
+            throw new wxblogException("Password invalid!");
+        } else {
+            //查找账号是否存在
+            long count = userDAO.count((root, query, cb) -> {
+                Path<String> usernamePath = root.get("username");
+                return cb.equal(usernamePath, userRegisterReqDTO.getUsername());
+            });
+            if (count>0){
+                throw new wxblogException("Account has already existed！");
+            } else {
+                UserDO userDO = userRegisterReqMapper.to(userRegisterReqDTO);
+                userDAO.save(userDO);
+            }
         }
     }
 
