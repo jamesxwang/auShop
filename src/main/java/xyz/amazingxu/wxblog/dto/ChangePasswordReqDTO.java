@@ -4,7 +4,7 @@ package xyz.amazingxu.wxblog.dto;
  * @author xuwang <121894598@qq.com>
  * @date 2018/5/22 22:00
  */
-public class ChangePasswordDTO {
+public class ChangePasswordReqDTO {
     @Override
     public String toString() {
         return super.toString();

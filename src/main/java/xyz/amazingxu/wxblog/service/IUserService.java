@@ -1,9 +1,9 @@
 package xyz.amazingxu.wxblog.service;
 
-import xyz.amazingxu.wxblog.dto.ChangePasswordDTO;
+import xyz.amazingxu.wxblog.dto.ChangePasswordReqDTO;
 import xyz.amazingxu.wxblog.dto.UserContextDTO;
 import xyz.amazingxu.wxblog.dto.UserDTO;
-import xyz.amazingxu.wxblog.dto.UserRegisterDTO;
+import xyz.amazingxu.wxblog.dto.UserRegisterReqDTO;
 
 /**
  *
@@ -35,12 +35,12 @@ public interface IUserService {
      * Register an account
      * @return
      */
-    UserRegisterDTO register();
+    void register(UserRegisterReqDTO userRegisterReqDTO);
 
     /**
      * Change password for current user
-     * @param changePasswordDTO
+     * @param changePasswordReqDTO
      */
-    void changePassword(ChangePasswordDTO changePasswordDTO);
+    void changePassword(ChangePasswordReqDTO changePasswordReqDTO);
 
 }

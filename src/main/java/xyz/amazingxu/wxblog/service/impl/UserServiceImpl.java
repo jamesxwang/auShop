@@ -7,11 +7,13 @@ import org.springframework.stereotype.Service;
 import xyz.amazingxu.core.utils.SystemVars;
 import xyz.amazingxu.wxblog.dao.IUserDAO;
 import xyz.amazingxu.wxblog.domain.UserDO;
-import xyz.amazingxu.wxblog.dto.ChangePasswordDTO;
+import xyz.amazingxu.wxblog.dto.ChangePasswordReqDTO;
 import xyz.amazingxu.wxblog.dto.UserContextDTO;
 import xyz.amazingxu.wxblog.dto.UserDTO;
-import xyz.amazingxu.wxblog.dto.UserRegisterDTO;
+import xyz.amazingxu.wxblog.dto.UserRegisterReqDTO;
 import xyz.amazingxu.wxblog.exception.wxblogException;
+import xyz.amazingxu.wxblog.mapper.UserMapper;
+import xyz.amazingxu.wxblog.mapper.UserRegisterReqMapper;
 import xyz.amazingxu.wxblog.service.IUserService;
 
 import javax.persistence.criteria.Path;
@@ -28,7 +30,10 @@ import java.util.Map;
 public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 
     @Autowired
-    IUserDAO userDAO;
+    private IUserDAO userDAO;
+
+    @Autowired
+    private UserRegisterReqMapper userRegisterReqMapper;
 
     @Override
     public String getTokenByLogin(UserDTO userDTO) {
@@ -78,18 +83,27 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
     }
 
     @Override
-    public UserRegisterDTO register() {
-        //TODO
-        return null;
+    public void register(UserRegisterReqDTO userRegisterReqDTO) {
+        UserDO userDO = userDAO.findOne(((root, query, cb) -> {
+            Path<String> namePath = root.get("username");
+            return cb.equal(namePath,userRegisterReqDTO.getUsername());
+        }));
+
+        if (userDO == null){
+            userDO = userRegisterReqMapper.to(userRegisterReqDTO);
+            userDAO.save(userDO);
+        }else {
+            throw new wxblogException("Account has already existed！");
+        }
     }
 
 
     @Override
-    public void changePassword(ChangePasswordDTO changePasswordDTO) {
+    public void changePassword(ChangePasswordReqDTO changePasswordReqDTO) {
         UserContextDTO user = getMyUserContext();
         UserDO userDO = userDAO.findOne(user.getId());
-        if (userDO != null && userDO.getPassword().equals(changePasswordDTO.getOldPassword())){
-            userDO.setPassword(changePasswordDTO.getNewPassword());
+        if (userDO != null && userDO.getPassword().equals(changePasswordReqDTO.getOldPassword())){
+            userDO.setPassword(changePasswordReqDTO.getNewPassword());
             userDAO.save(userDO);
         }else {
             throw new wxblogException("Please check your original password！");

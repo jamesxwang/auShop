@@ -43,6 +43,4 @@ public interface UserMapper {
      */
     public List<UserDO> to (List<UserDTO> userDTOS);
 
-
-
 }

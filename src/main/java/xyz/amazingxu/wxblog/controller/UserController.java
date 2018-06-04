@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import xyz.amazingxu.core.utils.WebResults;
 import xyz.amazingxu.core.utils.WebUtils;
-import xyz.amazingxu.wxblog.dto.ChangePasswordDTO;
+import xyz.amazingxu.wxblog.dto.ChangePasswordReqDTO;
 import xyz.amazingxu.wxblog.dto.UserDTO;
+import xyz.amazingxu.wxblog.dto.UserRegisterReqDTO;
 import xyz.amazingxu.wxblog.service.IUserService;
 
 /**
@@ -32,8 +33,8 @@ public class UserController {
 
     @ApiOperation(value = "修改密码")
     @PostMapping("changePassword")
-    public WebResults changePassword(@RequestBody ChangePasswordDTO changePasswordDTO){
-        userService.changePassword(changePasswordDTO);
+    public WebResults changePassword(@RequestBody ChangePasswordReqDTO changePasswordReqDTO){
+        userService.changePassword(changePasswordReqDTO);
         return WebUtils.success();
     }
 
@@ -45,7 +46,8 @@ public class UserController {
 
     @ApiOperation(value = "用户注册")
     @PostMapping("register")
-    public WebResults register() {
-        return WebUtils.success(userService.register());
+    public WebResults register(@RequestBody UserRegisterReqDTO userRegisterReqDTO) {
+        userService.register(userRegisterReqDTO);
+        return WebUtils.success();
     }
 }

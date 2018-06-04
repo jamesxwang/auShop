@@ -4,19 +4,39 @@ import xyz.amazingxu.core.BaseDTO;
 
 /**
  * @author xuwang <121894598@qq.com>
- * @date 2018/6/1 17:23
+ * @date 2018/6/4 11:23
  */
-public class UserDTO extends BaseDTO{
+public class UserRegisterReqDTO extends BaseDTO {
     @Override
     public String toString() {
         return "UserDTO{" +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 
     private String username;
-    private  String password;
+    private String password;
+    private String name;
+    private String email;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getUsername() {
         return username;
