@@ -47,9 +47,9 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
             );
         });
         if (userDO == null){
-            throw new RuntimeException("Username or password incorrect!");
+            throw new wxblogException("Username or password incorrect!");
         }else if (userDO.getDeleted()){
-            throw new RuntimeException("The user has been banned!");
+            throw new wxblogException("User has been banned!");
         }else {
             Map<String, Object> claims = new HashMap<>();
             UserContextDTO userContextDTO = getUserContextById(userDO.getId());

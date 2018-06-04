@@ -11,7 +11,7 @@ import javax.persistence.Entity;
  */
 
 /**
- * 用户信息表
+ * < userinfo > table
  */
 @Entity(name = "userinfo")
 public class UserDO extends BaseDO{
@@ -37,8 +37,6 @@ public class UserDO extends BaseDO{
     private String password;
     @Column(name = "email" , length =  40)
     private String email;
-
-
     @Column(name = "gender")
     private Boolean gender;
     @Column(name = "phone",length = 15)

@@ -22,8 +22,10 @@ import xyz.amazingxu.wxblog.service.IUserService;
 @RestController
 @RequestMapping("user")
 public class UserController {
+
     @Autowired
     private IUserService userService;
+
     @ApiOperation(value = "登录")
     @PostMapping("login")
     public WebResults login(@RequestBody UserDTO userDTO){

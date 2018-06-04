@@ -149,7 +149,7 @@
         layer.close(loader);
     },
     Msg: function (msg) {
-        layer.msg(msg, {offset: '0px',area: ['100%'],anim:6,zIndex: 99999999});
+        layer.msg(msg, {anim:6,zIndex: 99999999});
     },
     Alert: function (msg,callback) {
         layer.alert(msg,callback);
