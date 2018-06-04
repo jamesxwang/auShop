@@ -9,6 +9,10 @@ import javax.persistence.Entity;
  * @author xuwang <121894598@qq.com>
  * @date 2018/5/22 15:33
  */
+
+/**
+ * 用户信息表
+ */
 @Entity(name = "userinfo")
 public class UserDO extends BaseDO{
 
@@ -33,6 +37,8 @@ public class UserDO extends BaseDO{
     private String password;
     @Column(name = "email" , length =  40)
     private String email;
+
+
     @Column(name = "gender")
     private Boolean gender;
     @Column(name = "phone",length = 15)
@@ -71,11 +77,11 @@ public class UserDO extends BaseDO{
         this.email = email;
     }
 
-    public boolean isGender() {
+    public Boolean getGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(Boolean gender) {
         this.gender = gender;
     }
 

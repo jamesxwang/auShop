@@ -30,19 +30,19 @@
     <div class="signinpanel">
         <div class="row">
             <div class="middle-box">
-                <form class="animated fadeInUp form white">
+                <div class="animated fadeInUp form white">
                     <h4 class="no-margins text-center"><i class="glyphicon glyphicon-user"></i></h4>
                     <p class="m-t-md text-center">Sign up</p>
-                    <input class="form-control uname" type="text" placeholder="Username">
-                    <input class="form-control uname" type="text" placeholder="Full Name">
-                    <input class="form-control email" type="text" placeholder="Email">
-                    <input class="form-control pword" type="password" placeholder="Password">
-                    <input class="form-control pword" type="password" placeholder="Confirm your password">
-                    <button class="btn btn-info btn-block">Sign up</button>
+                    <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="username" class="form-control uname" type="text" placeholder="Username">
+                    <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="name" class="form-control uname" type="text" placeholder="Full Name">
+                    <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="email" class="form-control email" type="text" placeholder="Email">
+                    <input ms-on-keyup="handleEnterEvent($event)" class="form-control pword" type="password" placeholder="Password">
+                    <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="password" class="form-control pword" type="password" placeholder="Confirm your password">
+                    <button class="btn btn-info btn-block" ms-on-click="DoRegister()">Sign up</button>
                     <br><br>
                     <h5>Already have an account?</h5>
                     <a id="login" href="login.html" class="btn btn-primary btn-block">Sign in</a>
-            </form>
+            </div>
             </div>
         </div>
     </div>
@@ -55,15 +55,28 @@
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!--<script src="js/plugins/vendor/jquery.min.js"></script>-->
-    <!--<script src="js/plugins/layer/layer.js"></script>-->
+    <script src="js/plugins/layer/layer.js"></script>
     <script src="js/api.js"></script>
     <script src="js/component.js"></script>
     <script src="js/navbar.js"></script>
     <script type="text/javascript">
         var vm = avalon.define({
             $id: "wxBlog",
-            UserInfo:$.api.GetUserInfo()
-        })
+            username:'',
+            name:'',
+            email:'',
+            password:'',
+            UserInfo:$.api.GetUserInfo(),
+            DoRegister:function () {
+                $.api.ClearAll();
+                $.api.DoRegister(vm.username,vm.name,vm.email,vm.password);
+            }, handleEnterEvent:function(e){
+                var keycode = window.event?e.keyCode:e.which;
+                if(keycode==13){
+                    vm.DoLogin();
+                }
+            }
+        });
     </script>
 </body>
 </html>

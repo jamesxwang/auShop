@@ -104,6 +104,13 @@
             });
         });
     },
+    DoRegister: function (username,name,email,password) {
+        $.api.Post('/user/register',{username:username,name:name,email:email,password:password},function (result) {
+            setTimeout(function () {
+                $.api.DoLogin(username,password);
+            })
+        })
+    },
     ShowLoad: function (text) {
         if (text) {
             loader = layer.msg('&nbsp;' + text + '...', {

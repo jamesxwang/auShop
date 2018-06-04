@@ -56,6 +56,9 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
             claims.put("id",userContextDTO.getId());
             claims.put("name",userContextDTO.getName());
             claims.put("username",userContextDTO.getUsername());
+            claims.put("email",userContextDTO.getEmail());
+            claims.put("gender",userContextDTO.getGender());
+            claims.put("phone",userContextDTO.getPhone());
             token = Jwts.builder()
                     .setSubject(userDO.getId())
                     .setClaims(claims)
@@ -73,6 +76,9 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
             userContextDTO.setId(userDO.getId());
             userContextDTO.setName(userDO.getName());
             userContextDTO.setUsername(userDO.getUsername());
+            userContextDTO.setEmail(userDO.getEmail());
+            userContextDTO.setGender(userDO.getGender());
+            userContextDTO.setPhone(userDO.getPhone());
         return  userContextDTO;
     }
 
