@@ -30,7 +30,6 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
 
     @Autowired
     private IUserDAO userDAO;
-
     @Autowired
     private UserRegisterReqMapper userRegisterReqMapper;
 
@@ -89,10 +88,15 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
 
     @Override
     public void register(UserRegisterReqDTO userRegisterReqDTO) {
-        if (userRegisterReqDTO.getUsername().equals("") || userRegisterReqDTO.equals("") || userRegisterReqDTO.getPassword().equals("")) {
+        //TODO 这里可以用正则表达式优化
+        if (userRegisterReqDTO.getUsername().equals("") || userRegisterReqDTO.getName().equals("") || userRegisterReqDTO.getPassword().equals("")) {
             throw new wxblogException("Username, Full name or Password cannot be empty!");
-        }else if (userRegisterReqDTO.getPassword().contains("'")) {
+        } else if (userRegisterReqDTO.getPassword().contains("'")) {
             throw new wxblogException("Password invalid!");
+        } else if (userRegisterReqDTO.getPassword().length()<6){
+            throw new wxblogException("Password must be at least 6 words!");
+        } else if (!userRegisterReqDTO.getEmail().contains("@") && !userRegisterReqDTO.getEmail().contains(".")){
+           throw new wxblogException("Incorrect e-mail format!");
         } else {
             //查找账号是否存在
             long count = userDAO.count((root, query, cb) -> {
