@@ -91,7 +91,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
         //TODO 细化报错信息
         //账号只能是字母开头，允许6-20字节，允许字母数字下划线
         String usernamePattern = "^[a-zA-Z][a-zA-Z0-9_]{6,20}$";
-//        密码只能是0~9, a~z, A~Z,特殊字符包括  ^ % & ' , ; = ? $   长度为6~20
+        //密码只能是0~9, a~z, A~Z,特殊字符包括  ^ % & ' , ; = ? $   长度为6~20
         String passwordPattern = "[\\u4E00-\\u9FA5A-Za-z0-9_^%&',;=?$]{6,20}";
         //标准邮箱格式
         String emailPattern = "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";

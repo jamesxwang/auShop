@@ -7,9 +7,10 @@
 
     <link rel="stylesheet" type="text/css" href="web/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="web/css/navbar.css"/>
-    <link rel="stylesheet" type="text/css" href="web/css/login.css">
+	<link rel="stylesheet" href="web/css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="web/css/style.css"> <!-- Resource style -->
 
-    <link rel="icon" href="favicon.ico" />
+	<link rel="icon" href="favicon.ico" />
 
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html"/>
@@ -21,27 +22,100 @@
     </script>
 </head>
 
-<body ms-controller="wxBlog" class="signin">
+<body ms-controller="wxBlog">
 
     <!-- Navigation Bar -->
     <ms-nav1></ms-nav1>
 
     <!-- Main Page -->
 	<div class="container-fluid noPadding">
-        <h1 class="text-center">Index Page</h1>
+
+        <!--slide-->
+		<section class="cd-hero">
+			<ul class="cd-hero-slider">
+
+				<li class="selected">
+					<div class="cd-half-width">
+						<h2>Introduction</h2>
+						<p>Welcome to WxBlog! This website is an interest project by Xu Wang,
+                            integrated development with Spring Boot and Spring Data Jpa,
+                            automating deployment with Jenkins and Docker on Linux ECS.</p>
+						<a href="web/register.html" class="cd-btn">Start</a>
+						<a href="#" class="cd-btn secondary">Contact me</a>
+					</div> <!-- .cd-half-width -->
+
+					<div class="cd-half-width cd-img-container">
+						<img src="web/img/slide-0.jpg" alt="tech 1">
+					</div> <!-- .cd-half-width.cd-img-container -->
+				</li>
+
+				<li>
+					<div class="cd-half-width cd-img-container">
+						<img src="web/img/slide-1.jpg" alt="tech 2">
+					</div> <!-- .cd-half-width.cd-img-container -->
+
+					<div class="cd-half-width">
+						<h2>About this website</h2>
+						<p>The original intention of making this website is to improve my programming skills
+                            and meanwhile having my own project. Click "Start" to sign it up and check out what's inside this blog!</p>
+						<a href="web/register.html" class="cd-btn">Start</a>
+						<a href="#" class="cd-btn secondary">Contact me</a>
+					</div> <!-- .cd-half-width -->
+
+				</li>
+
+				<li>
+					<div class="cd-full-width">
+						<h2>Technical Support and Advices</h2>
+						<p>If you have any idea improving this website, or you are willing to participate in this project,
+                        please click "Contact me" below!</p>
+                        <a href="web/register.html" class="cd-btn">Start</a>
+						<a href="#" class="cd-btn secondary">Contact me</a>
+					</div> <!-- .cd-full-width -->
+				</li>
+
+				<li>
+					<div class="cd-full-width">
+						<h2>Links</h2>
+                        <p>Github: <a href="https://github.com/CN-WX" class="btn-link" style="color: #cccccc!important;" target="_blank">&nbsp;&nbsp;https://github.com/CN-WX</a></p>
+                        <p>CSDN: <a href="https://blog.csdn.net/cn_xuwang" class="btn-link" style="color: #cccccc!important;" target="_blank">&nbsp;&nbsp;https://blog.csdn.net/cn_xuwang</a></p>
+						<a href="web/register.html" class="cd-btn">Start</a>
+					</div> <!-- .cd-full-width -->
+				</li>
+			</ul> <!-- .cd-hero-slider -->
+
+			<div class="cd-slider-nav">
+				<nav>
+					<span class="cd-marker item-1"></span>
+
+					<ul>
+						<li class="selected"><a href="#">Intro</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Support</a></li>
+						<li><a href="#">Links</a></li>
+					</ul>
+				</nav>
+			</div> <!-- .cd-slider-nav -->
+
+		</section> <!-- .cd-hero -->
+
 		<div class="text-center">
-			<a href="/swagger-ui.html" class=" text-center btn btn-info">跳转至 API 文档</a>
+            <br><br><br><br><br><br><br><br>
+            <a>开发人员用： </a><a href="/swagger-ui.html" class=" text-center btn btn-info">跳转至 API 文档</a>
+            <br><br><br><br>
+            <a>👇往下翻👇</a>
 		</div>
 		<div class="container-fluid headpicture"></div>
 
 		<div class="container text-center">
-			<h1>Bootstrap Responsive Template</h1>
+			<h1 class="textStyle">【现有功能】</h1>
             <p class="textStyle">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere,
-                magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.<br>
-                Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.<br>
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                Proin pharetra nonummy pede. Mauris et orci.
+                1.注册账号<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;账号只能是字母开头，允许6-20字节，允许字母数字下划线。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;密码只能是0~9, a~z, A~Z,允许特殊字符包括<span style="font-style: italic">^ % & ' , ; = ? $</span>长度为6~20。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;邮箱格式检测。<br><br>
+                2.登录账号<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;登录之后自动跳转首页，导航栏可查看个人信息并登出<br>
             </p>
 		</div>
 
@@ -72,18 +146,22 @@
 		</div>
 
 		<!-- Footer -->
-        <ms-footer-white></ms-footer-white>
+        <ms-footer-black></ms-footer-black>
 	</div>
 
     <!-- Script (pjb acn)-->
 
     <script src="web/js/plugins/avalon/avalon.js"></script>
-    <script src="web/js/jquery-1.11.0.min.js"></script>
-    <script src="web/js/bootstrap.min.js"></script>
+    <!--<script src="web/js/jquery-1.11.0.min.js"></script>-->
+	<script src="web/js/jquery-2.1.1.js"></script>
+
+	<script src="web/js/bootstrap.min.js"></script>
     <script src="web/js/api.js"></script>
     <script src="web/js/component.js"></script>
     <script src="web/js/navbar.js"></script>
-    <script type="text/javascript">
+	<script src="web/js/slide.js"></script>
+
+	<script type="text/javascript">
         var vm = avalon.define({
             $id: "wxBlog",
             UserInfo: $.api.GetUserInfo()
