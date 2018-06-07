@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
 
     <link rel="stylesheet" type="text/css" href="web/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="web/css/navbar.css"/>
+    <link rel="stylesheet" type="text/css" href="web/css/globalStyle.css">
 	<link rel="stylesheet" href="web/css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="web/css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="web/css/slide.css"> <!-- Resource style -->
+
 
 	<link rel="icon" href="favicon.ico" />
 
@@ -22,7 +23,7 @@
     </script>
 </head>
 
-<body ms-controller="wxBlog">
+<body ms-controller="wxBlog" class="signin">
 
     <!-- Navigation Bar -->
     <ms-nav1></ms-nav1>
@@ -99,17 +100,16 @@
 
 		</section> <!-- .cd-hero -->
 
-		<div class="text-center">
-            <br><br><br><br><br><br><br><br>
-            <a>开发人员用： </a><a href="/swagger-ui.html" class=" text-center btn btn-info">跳转至 API 文档</a>
-            <br><br><br><br>
-            <a>👇往下翻👇</a>
-		</div>
-		<div class="container-fluid headpicture"></div>
 
+		<div class="container-fluid"></div>
+        <div class="text-center">
+            <br><br><br><br><br><br><br><br>
+            <a class="white">For Developers： </a><a href="/swagger-ui.html" class=" text-center btn btn-info">跳转至 API 文档</a>
+            <br><br><br><br>
+        </div>
 		<div class="container text-center">
-			<h1 class="textStyle">【现有功能】</h1>
-            <p class="textStyle">
+			<h1 class="textStyle white">【现有功能】</h1>
+            <p class="textStyle white">
                 1.注册账号<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;账号只能是字母开头，允许6-20字节，允许字母数字下划线。<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;密码只能是0~9, a~z, A~Z,允许特殊字符包括<span style="font-style: italic">^ % & ' , ; = ? $</span>长度为6~20。<br>
@@ -146,7 +146,7 @@
 		</div>
 
 		<!-- Footer -->
-        <ms-footer-black></ms-footer-black>
+        <ms-footer-white></ms-footer-white>
 	</div>
 
     <!-- Script (pjb acn)-->
