@@ -42,7 +42,7 @@ avalon.component('ms-nav1',{
     '                        <ul class="dropdown-menu">\n' +
     '                            <li><a href="#" class="navbarFont">Account</a></li>\n' +
     '                            <li><a href="#" class="navbarFont">Safe settings</a></li>\n' +
-    '                            <li><a href="#" class="navbarFont">Messages</a></li>\n' +
+    '                            <li><a href="#" class="navbarFont">Messages <span class="badge">3</span></a></li>\n' +
     '                            <li role="separator" class="divider"></li>\n' +
     '                            <!--<li class="dropdown-header">Nav header</li>-->\n' +
     '                            <li><a href="#" ms-on-click="DoLogOut()" class="navbarFont">Log out</a></li>\n' +
@@ -112,7 +112,7 @@ avalon.component('ms-nav',{
     '                        <ul class="dropdown-menu">\n' +
     '                            <li><a href="#" class="navbarFont">My Account</a></li>\n' +
     '                            <li><a href="#" class="navbarFont">Safe settings</a></li>\n' +
-    '                            <li><a href="#" class="navbarFont">Messages</a></li>\n' +
+    '                            <li><a href="#" class="navbarFont">Messages <span class="badge">3</span></a></li>\n' +
     '                            <li role="separator" class="divider"></li>\n' +
     '                            <!--<li class="dropdown-header">Nav header</li>-->\n' +
     '                            <li><a href="#" ms-on-click="DoLogOut()" class="navbarFont">Log out</a></li>\n' +

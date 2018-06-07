@@ -7,16 +7,17 @@
 
 body{
     font-family : Arial, sans-serif;
+    color: #fff;
     width: 100%;
     padding-top: 150px;
 }
 
 
 
-/*style*/
-.m-l-sm{margin-left: 6px}
-.black{color: #000!important;}
-.white{color: #fff!important;}
+.panel-body td{
+    color: slategray;
+}
+
 
 /*-----------------------------------
 	Navigation Bar Styles
@@ -65,36 +66,13 @@ body{
 
 
 /*-----------------------------------
-	Main Picture
-------------------------------------*/
-
-.headpicture{
-    /*background:url(../images/header.jpg);*/
-    background-size:cover;
-    background-repeat:no-repeat;
-    width: 100%;
-    height: 600px;
-}
-
-
-/*-----------------------------------
 		Text
 ------------------------------------*/
-
-/* Titles */
-
-h1{
-    color: #5a5b5b;
-    font-size:24px;
-    font-weight: bold;
-    margin-top: 150px;
-    font-family : Cabin, sans-serif;
-}
 
 /* Paragraphs */
 
 .textStyle{
-    color: #989999;
+    color: #fff;
     font-size: 18px;
     text-align: justify;
     line-height: 1.5;
@@ -124,7 +102,7 @@ h1{
 
 .latestProjects p{
     font-size: 16px;
-    color: #757879;
+    color: #fff;
     width: 260px;
     text-align: left;
     margin: 13px auto 60px auto;
@@ -190,7 +168,7 @@ h1{
 
 
 /*-----------------------------------
-	Media querries
+	Media queries
 ------------------------------------*/
 
 /* On smaller screens */
@@ -264,7 +242,9 @@ h1{
 }
 
 
-
+/*-----------------------------------
+	Main panel
+------------------------------------*/
 /*signin*/
 html{height:100%}
 body.signin{
@@ -285,6 +265,7 @@ body.signin{
 .signinpanel .btn{margin-top:15px}
 .signinpanel .form{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);-moz-box-shadow:0 3px 0 rgba(12,12,12,.03);-webkit-box-shadow:0 3px 0 rgba(12,12,12,.03);box-shadow:0 3px 0 rgba(12,12,12,.03);-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;padding:30px}
 .signup-footer{border-top:solid 1px rgba(255,255,255,.3);margin:20px 0;padding-top:15px}
+
 @media screen and (max-width:768px){
     .signinpanel,.signuppanel{margin:0 auto;width:420px!important;padding:20px}
     .signinpanel .form{margin-top:20px}
@@ -298,6 +279,7 @@ body.signin{
 
 /*middle-box*/
 .middle-box{max-width:400px;z-index:100;margin:0 auto;padding-top:40px}
+.middle-box-md{max-width:700px;margin:0 auto;}
 .lockscreen.middle-box{width:200px;padding-top:110px}
 .loginscreen.middle-box{width:300px}
 .loginColumns{max-width:800px;margin:0 auto;padding:100px 20px 20px}
@@ -307,6 +289,11 @@ body.signin{
 .wrapper .middle-box{margin-top:140px}
 
 /*style*/
-.no-margins{margin:0!important}
+.m-l-sm{margin-left: 6px}
+.m-b-sm{margin-bottom: 6px}
 .m-t-md{margin-top:20px}
-
+.m-t-lg{margin-top: 40px }
+.no-margins{margin:0}
+.W-tr{text-align: right}
+.black{color: #000;}
+.white{color: #fff;}

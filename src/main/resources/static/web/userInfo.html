@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/globalStyle.css">
 
+
     <link rel="icon" href="../favicon.ico" />
 
     <!--[if lt IE 9]>
@@ -26,28 +27,86 @@
     <ms-nav></ms-nav>
 
     <!-- Main Page -->
-    <div class="container-fluid noPadding">
-        <h1 class="text-center">User Info</h1>
-        <div class="container-fluid headpicture"></div>
+    <div class="container-fluid noPadding black">
+        <div class="container">
+            <div class="panel panel-default middle-box-md m-t-lg">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel-heading"><span class="glyphicon glyphicon-cog"></span> &nbsp;Account Settings</div>
+                    </div>
+                    <div class="col-md-12">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"> Password</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"> Phone Number</a></li>
+                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"> Full Name</a></li>
+                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"> E-mail</a></li>
+                        </ul>
 
-        <div class="container text-center">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="home">aaaa</div>
+                            <div role="tabpanel" class="tab-pane fade" id="profile">bbbb</div>
+                            <div role="tabpanel" class="tab-pane fade" id="messages">cccc</div>
+                            <div role="tabpanel" class="tab-pane fade" id="settings">dddd</div>
+                        </div>
+                    </div>
 
-            <h1>Bootstrap Responsive Template</h1>
-
-            <p class="textStyle">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere,
-                magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.<br>
-                Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.<br>
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                Proin pharetra nonummy pede. Mauris et orci.
-            </p>
-
+                </div>
+            </div>
         </div>
+
+
+        <!--<div class="container-fluid noPadding">-->
+            <!--<div class="container">-->
+                <!--<div class="panel panel-default middle-box-md m-t-lg">-->
+                    <!--<div class="panel-heading"><span class="glyphicon glyphicon-cog"></span> Account Settings</div>-->
+                    <!--<div class="row">-->
+                        <!--&lt;!&ndash;left&ndash;&gt;-->
+                        <!--<div class="col-md-3 ">-->
+                            <!--<table class="table">-->
+                                <!--<tr><th><span class="glyphicon glyphicon-user"></span> Username</th></tr>-->
+                                <!--<tr><th><span class="glyphicon glyphicon-user"></span> Full name</th></tr>-->
+                                <!--<tr><th><span class="glyphicon glyphicon-pencil"></span> Gender</th></tr>-->
+                                <!--<tr><th><span class="glyphicon glyphicon-envelope"></span> E-mail</th></tr>-->
+                                <!--<tr><th><span class="glyphicon glyphicon-phone"></span> Telephone</th></tr>-->
+                            <!--</table>-->
+                        <!--</div>-->
+
+                        <!--&lt;!&ndash;right  &ndash;&gt;-->
+                        <!--<div class="col-md-9">-->
+                            <!--<table class="table">-->
+                                <!--<tr>-->
+                                    <!--<td class="text-muted">admin</td>-->
+                                    <!--<td class="W-tr"><a href="changePassword.html">Change Password >></a></td>-->
+                                <!--</tr>-->
+                                <!--<tr>-->
+                                    <!--<td class="text-muted">管理员</td>-->
+                                    <!--<td class="W-tr"><a href="#">Edit</a></td>-->
+                                <!--</tr>-->
+                                <!--<tr>-->
+                                    <!--<td class="text-muted">Male</td>-->
+                                    <!--<td class="W-tr"><a href="#">Edit</a></td>-->
+                                <!--</tr>-->
+                                <!--<tr>-->
+                                    <!--<td class="text-muted">121894598@qq.com</td>-->
+                                    <!--<td class="W-tr"><a href="#">Edit</a></td>-->
+                                <!--</tr>-->
+                                <!--<tr>-->
+                                    <!--<td class="text-muted">15874021320</td>-->
+                                    <!--<td class="W-tr"><a href="#">Edit</a></td>-->
+                                <!--</tr>-->
+                            <!--</table>-->
+                        <!--</div>-->
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
         <!-- Footer -->
         <ms-footer-white></ms-footer-white>
     </div>
-
     <!-- Script (pjb acn)-->
     <script src="js/plugins/avalon/avalon.js"></script>
     <script src="js/jquery-1.11.0.min.js"></script>
