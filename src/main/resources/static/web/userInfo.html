@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/globalStyle.css">
 
-
     <link rel="icon" href="../favicon.ico" />
 
     <!--[if lt IE 9]>
@@ -30,79 +29,172 @@
     <div class="container-fluid noPadding black">
         <div class="container">
             <div class="panel panel-default middle-box-md m-t-lg">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="panel-heading"><span class="glyphicon glyphicon-cog"></span> &nbsp;Account Settings</div>
-                    </div>
-                    <div class="col-md-12">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"> Password</a></li>
-                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"> Phone Number</a></li>
-                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"> Full Name</a></li>
-                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"> E-mail</a></li>
-                        </ul>
+                <div class="form ">
+                    <div class="panel-heading"><span class="glyphicon glyphicon-cog"></span> Account Settings</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <ul class="nav nav-tabs nav-pills nav-stacked" role="tablist">
+                                    <li role="presentation" class="active"><a href="#home" aria-controls="My Account" role="tab" data-toggle="tab">My Account</a></li>
+                                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+                                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+                                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-8">
 
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade in active" id="home">aaaa</div>
-                            <div role="tabpanel" class="tab-pane fade" id="profile">bbbb</div>
-                            <div role="tabpanel" class="tab-pane fade" id="messages">cccc</div>
-                            <div role="tabpanel" class="tab-pane fade" id="settings">dddd</div>
+                            <div role="tabpanel" class="tab-pane tab fade in active" id="home">
+                            <p>My Account</p>
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <!--username-->
+                                <div class="panel panel-default m-b-sm">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <div  role="button" data-toggle="" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                <ul class="list-inline">
+                                                    <li class="titleName">Username: </li>
+                                                    <li class="titleContent text-muted"> {{UserInfo.username}}</li>
+                                                    <li class="titleOption pull-right"><a href="changePassword.html">Change Password >></a></li>
+                                                </ul>
+                                            </div>
+                                        </h4>
+                                    </div>
+
+                                </div>
+                                <!--telephone-->
+                                <div class="panel panel-default m-b-sm">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <div class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                <ul class="list-inline">
+                                                    <li class="titleName">Telephone: </li>
+                                                    <li class="titleContent text-muted"> {{UserInfo.phone}}</li>
+                                                    <li class="titleOption pull-right"><a href="#">Edit</a></li>
+                                                </ul>
+                                            </div>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <div>
+                                                <input type="text" placeholder="Old Contact Number" class=" form-control uname m-b-sm">
+                                                <input type="text" placeholder="New Contact Number" class=" form-control uname m-b-sm">
+                                                <div class="row">
+                                                    <div class="col-sm-2">
+                                                            <button class="btn btn-primary">update</button>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <button class="btn btn-default">cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--fullname-->
+                                <div class="panel panel-default m-b-sm">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title">
+                                            <div class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                <ul class="list-inline">
+                                                    <li class="titleName">Fullname: </li>
+                                                    <li class="titleContent text-muted "> {{UserInfo.name}}</li>
+                                                    <li class="titleOption pull-right"><a href="#">Edit</a></li>
+                                                </ul>
+                                            </div>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <div>
+                                                <p>Current Name: <span>{{UserInfo.name}}</span></p>
+                                                <input type="text" placeholder="Full Name" class=" form-control uname m-b-sm">
+                                                <div class="row">
+                                                    <div class="col-sm-2">
+                                                        <button class="btn btn-primary">update</button>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <button class="btn btn-default">cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--gender-->
+                                <div class="panel panel-default m-b-sm">
+                                <div class="panel-heading" role="tab" id="headingFour">
+                                    <h4 class="panel-title">
+                                        <div class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            <ul class="list-inline">
+                                                <li class="titleName">Gender: </li>
+                                                <li class="titleContent text-muted "> {{UserInfo.gender}}</li>
+                                                <li class="titleOption pull-right"><a href="#">Edit</a></li>
+                                            </ul>
+                                        </div>
+                                    </h4>
+                                </div>
+                                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                    <div class="panel-body">
+                                        <div>
+                                            <div class="input-group m-b-sm">
+                                                <p>Please select your gender:</p>
+                                                <input type="radio" name="gender" value="1">Male
+                                                <input type="radio" name="gender" value="0">Female
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-2">
+                                                    <button class="btn btn-primary">update</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <!--email-->
+                                <div class="panel panel-default m-b-sm">
+                                <div class="panel-heading" role="tab" id="headingFive">
+                                    <h4 class="panel-title">
+                                        <div class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            <ul class="list-inline">
+                                                <li class="titleName">E-mail: </li>
+                                                <li class="titleContent text-muted "> {{UserInfo.email}}</li>
+                                                <li class="titleOption pull-right"><a href="#">Edit</a></li>
+                                            </ul>
+                                        </div>
+                                    </h4>
+                                </div>
+                                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                    <div class="panel-body">
+                                        <div>
+                                            <p>Current email: <span>121894598@qq.com</span></p>
+                                            <input type="text" placeholder="New Email" class=" form-control uname">
+                                            <div class="row">
+                                                <div class="col-sm-2">
+                                                    <button class="btn btn-primary">update</button>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <button class="btn btn-default">cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="profile">Profile</div>
+                        <div role="tabpanel" class="tab-pane fade" id="messages">Messages</div>
+                        <div role="tabpanel" class="tab-pane fade" id="settings">Settings</div>
+
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
+    </div>
 
-
-        <!--<div class="container-fluid noPadding">-->
-            <!--<div class="container">-->
-                <!--<div class="panel panel-default middle-box-md m-t-lg">-->
-                    <!--<div class="panel-heading"><span class="glyphicon glyphicon-cog"></span> Account Settings</div>-->
-                    <!--<div class="row">-->
-                        <!--&lt;!&ndash;left&ndash;&gt;-->
-                        <!--<div class="col-md-3 ">-->
-                            <!--<table class="table">-->
-                                <!--<tr><th><span class="glyphicon glyphicon-user"></span> Username</th></tr>-->
-                                <!--<tr><th><span class="glyphicon glyphicon-user"></span> Full name</th></tr>-->
-                                <!--<tr><th><span class="glyphicon glyphicon-pencil"></span> Gender</th></tr>-->
-                                <!--<tr><th><span class="glyphicon glyphicon-envelope"></span> E-mail</th></tr>-->
-                                <!--<tr><th><span class="glyphicon glyphicon-phone"></span> Telephone</th></tr>-->
-                            <!--</table>-->
-                        <!--</div>-->
-
-                        <!--&lt;!&ndash;right  &ndash;&gt;-->
-                        <!--<div class="col-md-9">-->
-                            <!--<table class="table">-->
-                                <!--<tr>-->
-                                    <!--<td class="text-muted">admin</td>-->
-                                    <!--<td class="W-tr"><a href="changePassword.html">Change Password >></a></td>-->
-                                <!--</tr>-->
-                                <!--<tr>-->
-                                    <!--<td class="text-muted">管理员</td>-->
-                                    <!--<td class="W-tr"><a href="#">Edit</a></td>-->
-                                <!--</tr>-->
-                                <!--<tr>-->
-                                    <!--<td class="text-muted">Male</td>-->
-                                    <!--<td class="W-tr"><a href="#">Edit</a></td>-->
-                                <!--</tr>-->
-                                <!--<tr>-->
-                                    <!--<td class="text-muted">121894598@qq.com</td>-->
-                                    <!--<td class="W-tr"><a href="#">Edit</a></td>-->
-                                <!--</tr>-->
-                                <!--<tr>-->
-                                    <!--<td class="text-muted">15874021320</td>-->
-                                    <!--<td class="W-tr"><a href="#">Edit</a></td>-->
-                                <!--</tr>-->
-                            <!--</table>-->
-                        <!--</div>-->
-
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
 
         <!-- Footer -->
         <ms-footer-white></ms-footer-white>

@@ -289,11 +289,14 @@ body.signin{
 .wrapper .middle-box{margin-top:140px}
 
 /*style*/
-.m-l-sm{margin-left: 6px}
-.m-b-sm{margin-bottom: 6px}
-.m-t-md{margin-top:20px}
-.m-t-lg{margin-top: 40px }
+.m-l-sm{margin-left: 6px}  .m-r-sm{margin-right: 6px}  .m-b-sm{margin-bottom: 6px}  .m-t-sm{margin-top: 6px}
+.m-l-md{margin-top:20px}  .m-r-md{margin-top:20px}  .m-b-md{margin-top:20px}  .m-t-md{margin-top:20px}
+.m-l-lg{margin-top: 40px}  .m-r-lg{margin-top: 40px}  .m-b-lg{margin-top: 40px}  .m-t-lg{margin-top: 40px}
 .no-margins{margin:0}
-.W-tr{text-align: right}
+
 .black{color: #000;}
 .white{color: #fff;}
+
+.titleName{font-weight:bold; width: 100px}
+.titleContent{}
+.titleOption{}

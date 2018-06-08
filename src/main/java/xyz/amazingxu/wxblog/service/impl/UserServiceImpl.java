@@ -4,6 +4,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import xyz.amazingxu.core.utils.SystemVars;
 import xyz.amazingxu.wxblog.dao.IUserDAO;
 import xyz.amazingxu.wxblog.domain.UserDO;
@@ -87,6 +88,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void register(UserRegisterReqDTO userRegisterReqDTO) {
         //TODO 细化报错信息
         //账号只能是字母开头，允许6-20字节，允许字母数字下划线

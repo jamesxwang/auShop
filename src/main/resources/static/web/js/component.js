@@ -40,7 +40,7 @@ avalon.component('ms-nav1',{
     '                        <a class="dropdown-toggle navbarFont" data-toggle="dropdown" role="button" aria-haspopup="true"\n' +
     '                           aria-expanded="false" ms-if="!showLoginStatus()">Settings <span class="caret"></span></a>\n' +
     '                        <ul class="dropdown-menu">\n' +
-    '                            <li><a href="#" class="navbarFont">Account</a></li>\n' +
+    '                            <li><a href="web/userInfo.html" class="navbarFont">My Account</a></li>\n' +
     '                            <li><a href="#" class="navbarFont">Safe settings</a></li>\n' +
     '                            <li><a href="#" class="navbarFont">Messages <span class="badge">3</span></a></li>\n' +
     '                            <li role="separator" class="divider"></li>\n' +
@@ -110,7 +110,7 @@ avalon.component('ms-nav',{
     '                        <a class="dropdown-toggle navbarFont" data-toggle="dropdown" role="button" aria-haspopup="true"\n' +
     '                           aria-expanded="false" ms-if="!showLoginStatus()">Settings <span class="caret"></span></a>\n' +
     '                        <ul class="dropdown-menu">\n' +
-    '                            <li><a href="#" class="navbarFont">My Account</a></li>\n' +
+    '                            <li><a href="userInfo.html" class="navbarFont">My Account</a></li>\n' +
     '                            <li><a href="#" class="navbarFont">Safe settings</a></li>\n' +
     '                            <li><a href="#" class="navbarFont">Messages <span class="badge">3</span></a></li>\n' +
     '                            <li role="separator" class="divider"></li>\n' +
