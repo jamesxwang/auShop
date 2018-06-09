@@ -1,9 +1,7 @@
 package xyz.amazingxu.wxblog.service;
 
-import xyz.amazingxu.wxblog.dto.ChangePasswordReqDTO;
-import xyz.amazingxu.wxblog.dto.UserContextDTO;
-import xyz.amazingxu.wxblog.dto.UserDTO;
-import xyz.amazingxu.wxblog.dto.UserRegisterReqDTO;
+import xyz.amazingxu.wxblog.dto.*;
+import xyz.amazingxu.wxblog.dto.userinfo.*;
 
 /**
  *
@@ -42,5 +40,29 @@ public interface IUserService {
      * @param changePasswordReqDTO
      */
     void changePassword(ChangePasswordReqDTO changePasswordReqDTO);
+
+    /**
+     * Update phone number for current user
+     * @param changePhoneReqDTO
+     */
+    void changePhone(ChangePhoneReqDTO changePhoneReqDTO);
+
+    /**
+     * Update username for current user
+     * @param changeNameReqDTO
+     */
+    void changeName(ChangeNameReqDTO changeNameReqDTO);
+
+    /**
+     * Update gender for current user
+     * @param changeGenderReqDTO
+     */
+    void changeGender(ChangeGenderReqDTO changeGenderReqDTO);
+
+    /**
+     * Update Email for current user
+     * @param changeEmailReqDTO
+     */
+    void changeEmail(ChangeEmailReqDTO changeEmailReqDTO);
 
 }

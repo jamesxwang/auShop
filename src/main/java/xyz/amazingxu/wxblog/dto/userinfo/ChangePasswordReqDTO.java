@@ -1,4 +1,4 @@
-package xyz.amazingxu.wxblog.dto;
+package xyz.amazingxu.wxblog.dto.userinfo;
 
 /**
  * @author xuwang <121894598@qq.com>
@@ -12,6 +12,7 @@ public class ChangePasswordReqDTO {
 
     private String oldPassword;
     private String newPassword;
+
 
     public String getOldPassword() {
         return oldPassword;

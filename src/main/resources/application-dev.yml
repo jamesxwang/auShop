@@ -6,13 +6,13 @@ server:
 
 spring:
   datasource:
-    url: jdbc:sqlserver://localhost; DatabaseName=wxblog_dev
-    username: sa
+    url: jdbc:mysql://localhost:3306/wxblog_dev?serverTimezone=UTC
+    username: root
     password: 123456
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     show-sql: true
 
   http:

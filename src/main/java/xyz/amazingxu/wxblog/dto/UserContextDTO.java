@@ -17,18 +17,19 @@ public class UserContextDTO {
                 '}';
     }
 
+    private String id;
     private String name;
     private String username;
-    private String id;
-    private Boolean gender;
+    private String gender;
     private String email;
     private String phone;
 
-    public Boolean getGender() {
+
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

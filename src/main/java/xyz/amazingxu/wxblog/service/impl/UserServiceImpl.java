@@ -8,10 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import xyz.amazingxu.core.utils.SystemVars;
 import xyz.amazingxu.wxblog.dao.IUserDAO;
 import xyz.amazingxu.wxblog.domain.UserDO;
-import xyz.amazingxu.wxblog.dto.ChangePasswordReqDTO;
-import xyz.amazingxu.wxblog.dto.UserContextDTO;
-import xyz.amazingxu.wxblog.dto.UserDTO;
-import xyz.amazingxu.wxblog.dto.UserRegisterReqDTO;
+import xyz.amazingxu.wxblog.dto.*;
+import xyz.amazingxu.wxblog.dto.userinfo.*;
 import xyz.amazingxu.wxblog.exception.wxblogException;
 import xyz.amazingxu.wxblog.mapper.UserRegisterReqMapper;
 import xyz.amazingxu.wxblog.service.IUserService;
@@ -142,5 +140,55 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
         }else {
             throw new wxblogException("Please check your original password！");
         }
+    }
+
+    @Override
+    public void changePhone(ChangePhoneReqDTO changePhoneReqDTO) {
+            UserContextDTO user = getMyUserContext();
+            UserDO userDO = userDAO.findOne(user.getId());
+            if (userDO.getPhone() != null){
+                if (userDO.getPhone().equals(changePhoneReqDTO.getOldPhone())) {
+                    userDO.setPhone(changePhoneReqDTO.getNewPhone());
+                    userDAO.save(userDO);
+                }else {
+                    throw new wxblogException("Please check your original phone! ");
+                }
+            } else  {
+                userDO.setPhone(changePhoneReqDTO.getNewPhone());
+                userDAO.save(userDO);
+            }
+    }
+
+    @Override
+    public void changeName(ChangeNameReqDTO changeNameReqDTO) {
+        UserContextDTO user = getUserContext();
+        UserDO userDO = userDAO.findOne(user.getId());
+        userDO.setName(changeNameReqDTO.getNewName());
+        userDAO.save(userDO);
+    }
+
+    @Override
+    public void changeGender(ChangeGenderReqDTO changeGenderReqDTO) {
+        //TODO check
+        UserContextDTO user = getUserContext();
+        UserDO userDO = userDAO.findOne(user.getId());
+        if (userDO.getGender() != null) {
+            if (userDO.getGender().equals(changeGenderReqDTO.getOldGender())){
+                userDO.setGender(changeGenderReqDTO.getNewGender());
+                userDAO.save(userDO);
+            }
+        } else {
+            userDO.setGender(changeGenderReqDTO.getNewGender());
+            userDAO.save(userDO);
+        }
+    }
+
+    @Override
+    public void changeEmail(ChangeEmailReqDTO changeEmailReqDTO) {
+        //TODO change email service implements
+        UserContextDTO user = getUserContext();
+        UserDO userDO = userDAO.findOne(user.getId());
+        userDO.setEmail(changeEmailReqDTO.getNewEmail());
+        userDAO.save(userDO);
     }
 }

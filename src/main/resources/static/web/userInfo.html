@@ -77,11 +77,11 @@
                                     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                                         <div class="panel-body">
                                             <div>
-                                                <input type="text" placeholder="Old Contact Number" class=" form-control uname m-b-sm">
-                                                <input type="text" placeholder="New Contact Number" class=" form-control uname m-b-sm">
+                                                <input type="text" ms-duplex="oldPhone" placeholder="Old Contact Number" class=" form-control uname m-b-sm">
+                                                <input type="text" ms-duplex="newPhone" placeholder="New Contact Number" class=" form-control uname m-b-sm">
                                                 <div class="row">
                                                     <div class="col-sm-2">
-                                                            <button class="btn btn-primary">update</button>
+                                                            <button class="btn btn-primary" ms-on-click="ChangePhone()">update</button>
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <button class="btn btn-default">cancel</button>
@@ -108,10 +108,10 @@
                                         <div class="panel-body">
                                             <div>
                                                 <p>Current Name: <span>{{UserInfo.name}}</span></p>
-                                                <input type="text" placeholder="Full Name" class=" form-control uname m-b-sm">
+                                                <input type="text" ms-duplex="newName" placeholder="Full Name" class=" form-control uname m-b-sm">
                                                 <div class="row">
                                                     <div class="col-sm-2">
-                                                        <button class="btn btn-primary">update</button>
+                                                        <button class="btn btn-primary" ms-on-click="ChangeName()">update</button>
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <button class="btn btn-default">cancel</button>
@@ -139,8 +139,8 @@
                                         <div>
                                             <div class="input-group m-b-sm">
                                                 <p>Please select your gender:</p>
-                                                <input type="radio" name="gender" value="1">Male
-                                                <input type="radio" name="gender" value="0">Female
+                                                <input type="radio" name="gender" value="Male">Male
+                                                <input type="radio" name="gender" value="Female">Female
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-2">
@@ -167,11 +167,11 @@
                                 <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                                     <div class="panel-body">
                                         <div>
-                                            <p>Current email: <span>121894598@qq.com</span></p>
-                                            <input type="text" placeholder="New Email" class=" form-control uname">
+                                            <p>Current email: <span>{{UserInfo.email}}</span></p>
+                                            <input type="text" ms-duplex="newEmail" placeholder="New Email" class=" form-control uname m-b-sm">
                                             <div class="row">
                                                 <div class="col-sm-2">
-                                                    <button class="btn btn-primary">update</button>
+                                                    <button class="btn btn-primary" ms-on-click="ChangeEmail()">update</button>
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <button class="btn btn-default">cancel</button>
@@ -204,6 +204,7 @@
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
+    <script src="js/plugins/layer/layer.js"></script>
     <script src="js/api.js"></script>
     <script src="js/component.js"></script>
     <script src="js/navbar.js"></script>
@@ -211,7 +212,27 @@
     <script type="text/javascript">
         var vm = avalon.define({
             $id: "wxBlog",
-            UserInfo:$.api.GetUserInfo()
+            oldPhone:'',
+            newPhone:'',
+            newName:'',
+            newEmail:'',
+            UserInfo:$.api.GetUserInfo(),
+            ChangePhone:function () {
+                $.api.Post('/user/changePhone',{newPhone:vm.newPhone,oldPhone:vm.oldPhone},function (result) {
+                    $.api.Success("Change phone number success");
+
+                })
+            },
+            ChangeName:function () {
+                $.api.Post('/user/changeName',{newName:vm.newName},function (result) {
+                    $.api.Success("Change full name success");
+                })
+            },
+            ChangeEmail:function () {
+                $.api.Post('/user/changeEmail',{newEmail:vm.newEmail},function (result) {
+                    $.api.Success("Change E-mail success");
+                })
+            }
         })
     </script>
 

@@ -38,7 +38,7 @@ public class UserDO extends BaseDO{
     @Column(name = "email" , length =  40)
     private String email;
     @Column(name = "gender")
-    private Boolean gender;
+    private String gender;
     @Column(name = "phone",length = 15)
     private String phone;
 
@@ -75,11 +75,11 @@ public class UserDO extends BaseDO{
         this.email = email;
     }
 
-    public Boolean getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

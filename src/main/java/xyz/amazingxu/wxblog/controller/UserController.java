@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import xyz.amazingxu.core.utils.WebResults;
 import xyz.amazingxu.core.utils.WebUtils;
-import xyz.amazingxu.wxblog.dto.ChangePasswordReqDTO;
-import xyz.amazingxu.wxblog.dto.UserDTO;
-import xyz.amazingxu.wxblog.dto.UserRegisterReqDTO;
+import xyz.amazingxu.wxblog.dto.*;
+import xyz.amazingxu.wxblog.dto.userinfo.*;
 import xyz.amazingxu.wxblog.service.IUserService;
 
 /**
@@ -33,13 +32,6 @@ public class UserController {
         return WebUtils.success(token);
     }
 
-    @ApiOperation(value = "修改密码")
-    @PostMapping("changePassword")
-    public WebResults changePassword(@RequestBody ChangePasswordReqDTO changePasswordReqDTO){
-        userService.changePassword(changePasswordReqDTO);
-        return WebUtils.success();
-    }
-
     @ApiOperation(value = "获取用户信息")
     @PostMapping("getMyUserContext")
     public WebResults getMyUserContext(){
@@ -50,6 +42,42 @@ public class UserController {
     @PostMapping("register")
     public WebResults register(@RequestBody UserRegisterReqDTO userRegisterReqDTO) {
         userService.register(userRegisterReqDTO);
+        return WebUtils.success();
+    }
+
+    @ApiOperation(value = "修改密码")
+    @PostMapping("changePassword")
+    public WebResults changePassword(@RequestBody ChangePasswordReqDTO changePasswordReqDTO){
+        userService.changePassword(changePasswordReqDTO);
+        return WebUtils.success();
+    }
+
+    @ApiOperation(value = "修改手机")
+    @PostMapping("changePhone")
+    public WebResults changePhone(@RequestBody ChangePhoneReqDTO changePhoneReqDTO){
+        userService.changePhone(changePhoneReqDTO);
+        return WebUtils.success();
+    }
+
+    @ApiOperation(value = "更改昵称")
+    @PostMapping("changeName")
+    public WebResults changeName(@RequestBody ChangeNameReqDTO changeNameReqDTO){
+        userService.changeName(changeNameReqDTO);
+        return WebUtils.success();
+    }
+
+
+    @ApiOperation(value = "更改性别")
+    @PostMapping("changeGender")
+    public WebResults changeGender(@RequestBody ChangeGenderReqDTO changeGenderReqDTO){
+        userService.changeGender(changeGenderReqDTO);
+        return WebUtils.success();
+    }
+
+    @ApiOperation(value = "更改邮箱")
+    @PostMapping("changeEmail")
+    public WebResults changeEmail(@RequestBody ChangeEmailReqDTO changeEmailReqDTO){
+        userService.changeEmail(changeEmailReqDTO);
         return WebUtils.success();
     }
 }
