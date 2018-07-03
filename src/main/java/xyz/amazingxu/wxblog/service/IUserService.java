@@ -17,6 +17,12 @@ public interface IUserService {
     String getTokenByLogin(UserDTO userDTO);
 
     /**
+     * refreshToken
+     * @return
+     */
+    String refreshToken();
+
+    /**
      * Get user information by id
      * @param id
      * @return

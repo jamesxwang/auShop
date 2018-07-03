@@ -12,16 +12,7 @@ public class ChangeGenderReqDTO {
         return super.toString();
     }
 
-    private String oldGender;
     private String  newGender;
-
-    public String getOldGender() {
-        return oldGender;
-    }
-
-    public void setOldGender(String oldGender) {
-        this.oldGender = oldGender;
-    }
 
     public String getNewGender() {
         return newGender;

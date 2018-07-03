@@ -32,6 +32,13 @@ public class UserController {
         return WebUtils.success(token);
     }
 
+    @ApiOperation(value = "刷新登录信息")
+    @PostMapping("refresh")
+    public WebResults refreshToken(){
+        String newToken = userService.refreshToken();
+        return WebUtils.success(newToken);
+    }
+
     @ApiOperation(value = "获取用户信息")
     @PostMapping("getMyUserContext")
     public WebResults getMyUserContext(){

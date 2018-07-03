@@ -48,6 +48,7 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
             String token = request.getHeader("Authorization");
             UsernamePasswordAuthenticationToken authentication = getAuthentication(token);
             if (authentication != null) {
+                //用户信息存储在session中
                 SecurityContextHolder.getContext().setAuthentication(authentication);
                 AntPathRequestMatcher matcher;
                 for (GrantedAuthority ga : authentication.getAuthorities()) {
@@ -70,6 +71,12 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
             chain.doFilter(request, response);
         }
     }
+
+    /**
+     * token解析成UserContextDTO
+     * @param token
+     * @return
+     */
     private UsernamePasswordAuthenticationToken getAuthentication(String token) {
         if (token != null) {
             try {

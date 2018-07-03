@@ -70,7 +70,7 @@
                     if (data.code == 0) {
                         callback(data);
                     } else {
-                        $.api.Msg(data.message);
+                        $.api.Fail(data.message);
                     }
                 }
                 if (!hideLoad) {
@@ -82,7 +82,7 @@
                     $.api.HideLoad();
                 }
                 console.log(XMLHttpRequest);
-                $.api.Msg("请求失败,请检查网络&nbsp;"+url);
+                $.api.Fail("请求失败,请检查网络&nbsp;"+url);
             }
         };
         if ($.api.token != null) {
@@ -98,7 +98,6 @@
                     $.api.Post('/user/getMyUserContext',{},function(user){
                         $.api.SetUserInfo(user.data);
                         location.href = "../index.html";
-
                     });
                 });
             });
@@ -110,6 +109,9 @@
                 $.api.DoLogin(username,password);
             })
         })
+    },
+    DoRefreshUserInfo:function (uid,pwd) {
+
     },
     ShowLoad: function (text) {
         if (text) {
@@ -137,7 +139,7 @@
             title = "确认操作吗?";
         }
         var me = layer.confirm(title, {
-            btn: ['确定', '取消'] //按钮
+            btn: ['YES', 'NO'] //按钮
         }, function () {
             if (callback) callback();
             layer.close(me);
@@ -148,11 +150,14 @@
     HideLoad: function () {
         layer.close(loader);
     },
-    Msg: function (msg) {
-        layer.msg(msg, {anim:6,zIndex: 99999999});
+    Fail: function (msg) {
+        layer.msg("<span style=\"color:#000\">" + msg + "</span>", { icon: 5, zIndex: 99999999});
     },
-    Alert: function (msg,callback) {
-        layer.alert(msg,callback);
+    Success:function (msg) {
+        layer.msg("<span style=\"color:#000\">" + msg + "</span>", { icon: 6, zIndex: 99999999});
+    },
+    Alert: function (title,msg,callback) {
+        layer.alert(title,msg,callback);
     },
     CloseAll:function(){
         layer.closeAll();
