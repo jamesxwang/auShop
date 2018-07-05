@@ -30,7 +30,7 @@
 	<div class="container-fluid noPadding">
 
         <!--slide-->
-		<section class="cd-hero">
+		<section class="cd-hero" ms-if="LoggedIn()">
 			<ul class="cd-hero-slider">
 
 				<li class="selected">
@@ -89,10 +89,10 @@
 					<span class="cd-marker item-1"></span>
 
 					<ul>
-						<li class="selected"><a href="#">Intro</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Support</a></li>
-						<li><a href="#">Links</a></li>
+						<li class="selected"><a>Intro</a></li>
+						<li><a>About</a></li>
+						<li><a>Support</a></li>
+						<li><a>Links</a></li>
 					</ul>
 				</nav>
 			</div> <!-- .cd-slider-nav -->
@@ -124,24 +124,12 @@
 			<div class="row text-center latestProjects">
 
 				<div class="col-md-4 col-sm-6">
-					<a href="http://dribbble.com/shots/1210363-Weather-App-Washing-Machine-iOS7" >
-						<img class="imgsize" src="web/img/1.jpg" alt="weather app">
-					</a>
-					<p>Weather app design <a href="http://dribbble.com/shots/1210363-Weather-App-Washing-Machine-iOS7">learn more →</a></p>
 				</div>
 
 				<div class="col-md-4 col-sm-6">
-					<a href="http://dribbble.com/shots/202313-British-Tea-Cup" >
-						<img class="imgsize" src="web/img/2.jpg" alt="british tea cup">
-					</a>
-					<p>3D modeling and rendering <a href="http://dribbble.com/shots/202313-British-Tea-Cup">learn more →</a></p>
 				</div>
 
 				<div class="col-md-4 col-sm-12">
-					<a href="http://dribbble.com/shots/606745-In-app-Visual-Data" >
-						<img class="imgsize" src="web/img/3.jpg" alt="app visualization data">
-					</a>
-					<p>Mobile web application <a href="http://dribbble.com/shots/606745-In-app-Visual-Data">learn more →</a></p>
 				</div>
 			</div>
 		</div>
@@ -165,7 +153,10 @@
 	<script type="text/javascript">
         var vm = avalon.define({
             $id: "wxBlog",
-            UserInfo: $.api.GetUserInfo()
+            UserInfo: $.api.GetUserInfo(),
+			LoggedIn: function () {
+                return vm.UserInfo == null;
+            }
         });
 		// alert(JSON.stringify(vm.UserInfo));
     </script>
