@@ -3,6 +3,8 @@ server:
   context-path: /
   tomcat:
     uri-encoding: UTF-8
+  ssl:
+    key-store: classpath:www.amazingxu.xyz.jks
 
 spring:
   datasource:
