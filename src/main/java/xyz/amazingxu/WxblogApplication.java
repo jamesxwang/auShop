@@ -79,9 +79,9 @@ public class WxblogApplication {
 		connector.setScheme("http");
 		// Connector监听的http的端口号
 		connector.setPort(80);
-		//connector.setSecure(false);
+		connector.setSecure(false);
 		// 监听到http的端口号后转向到的https的端口号
-		connector.setRedirectPort(443);
+		connector.setRedirectPort(8443);
 		return connector;
 	}
 
