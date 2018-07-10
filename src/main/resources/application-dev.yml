@@ -1,9 +1,12 @@
 server:
-  port: 8082
+  port: 8443
   context-path: /
   tomcat:
     uri-encoding: UTF-8
-
+  ssl:
+      key-store: classpath:www.amazingxu.xyz.jks
+      key-store-password: XXff05141125
+      enabled: true
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/wxblog_dev?serverTimezone=UTC

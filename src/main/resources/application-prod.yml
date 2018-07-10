@@ -1,14 +1,14 @@
 server:
-  port: 8443
+  port: 443
   context-path: /
   tomcat:
     uri-encoding: UTF-8
-  #test function
   ssl:
     key-store: classpath:www.amazingxu.xyz.jks
     key-store-password: XXff05141125
     enabled: true
-
+    #key-store-type: JKS
+    #key-alias: tomcat
 
 spring:
   datasource:
