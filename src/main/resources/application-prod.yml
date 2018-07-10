@@ -7,8 +7,6 @@ server:
     key-store: classpath:www.amazingxu.xyz.jks
     key-store-password: XXff05141125
     enabled: true
-#    key-store-type: JKS
-#    key-alias: tomcat
 
 spring:
   datasource:
