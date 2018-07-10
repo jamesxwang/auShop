@@ -19,9 +19,6 @@ import org.springframework.web.filter.CorsFilter;
 @SpringBootApplication
 public class WxblogApplication {
 
-	@Value("${server.port}")
-	Integer port;
-
 	@Autowired
 	private RestTemplateBuilder builder;
 	@Bean
@@ -59,10 +56,10 @@ public class WxblogApplication {
 		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
 		connector.setScheme("http");
 		// Connector监听的http的端口号
-		connector.setPort(8888);
+		connector.setPort(8082);
 		connector.setSecure(false);
 		// 监听到http的端口号后转向到的https的端口号
-		connector.setRedirectPort(port);
+		connector.setRedirectPort(8443);
 		return connector;
 	}
 
