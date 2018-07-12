@@ -20,7 +20,6 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
-import xyz.amazingxu.core.utils.SSHConnection;
 
 @SpringBootApplication
 public class WxblogApplication {
@@ -88,11 +87,6 @@ public class WxblogApplication {
 		connector.setRedirectPort(port);
 		return connector;
 	}
-
-//	@Bean
-//	public SSHConnection sshConnection(){
-//		return new SSHConnection();
-//	}
 
 	/**
 	 * Main
