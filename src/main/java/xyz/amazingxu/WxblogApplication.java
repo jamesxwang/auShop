@@ -89,10 +89,10 @@ public class WxblogApplication {
 		return connector;
 	}
 
-	@Bean
-	public SSHConnection sshConnection(){
-		return new SSHConnection();
-	}
+//	@Bean
+//	public SSHConnection sshConnection(){
+//		return new SSHConnection();
+//	}
 
 	/**
 	 * Main
