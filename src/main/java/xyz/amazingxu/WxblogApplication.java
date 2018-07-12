@@ -20,6 +20,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import xyz.amazingxu.core.utils.SSHConnection;
 
 @SpringBootApplication
 public class WxblogApplication {
@@ -86,6 +87,11 @@ public class WxblogApplication {
 		// 监听到http的端口号后转向到的https的端口号
 		connector.setRedirectPort(port);
 		return connector;
+	}
+
+	@Bean
+	public SSHConnection sshConnection(){
+		return new SSHConnection();
 	}
 
 	/**

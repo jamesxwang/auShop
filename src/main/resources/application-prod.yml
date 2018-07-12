@@ -10,10 +10,10 @@ server:
 
 spring:
   datasource:
-    url: jdbc:sqlserver://114.215.125.223:88;DatabaseName=WangXu_db
-    username: sa
-    password: crm_2015
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:mysql://localhost:3306/wxblog_dev?serverTimezone=GMT&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
