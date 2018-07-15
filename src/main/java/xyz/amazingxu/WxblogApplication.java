@@ -15,6 +15,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.servlet.ErrorPage;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.cors.CorsConfiguration;
@@ -59,6 +60,7 @@ public class WxblogApplication {
 		return bean;
 	}
 
+	@Profile(value = "prod")
 	@Bean
 	public EmbeddedServletContainerFactory servletContainer(){
 		TomcatEmbeddedServletContainerFactory tomcat=new TomcatEmbeddedServletContainerFactory(){
@@ -76,6 +78,7 @@ public class WxblogApplication {
 		return tomcat;
 	}
 
+	@Profile(value = "prod")
 	@Bean
 	public Connector httpConnector() {
 		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
