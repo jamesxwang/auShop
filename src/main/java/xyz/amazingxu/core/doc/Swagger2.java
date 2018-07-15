@@ -48,9 +48,9 @@ public class Swagger2 {
 
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title("Api文档")
-                .description("基于Spring Boot的整合开发")
-                .termsOfServiceUrl("https://blog.csdn.net/CN_xuwang")
+                .title("RESTful API")
+                .description("Integrated with Spring Boot")
+                .termsOfServiceUrl("https://cn-wx.github.io")
                 .contact("Xu Wang")
                 .version("1.0")
                 .build();
