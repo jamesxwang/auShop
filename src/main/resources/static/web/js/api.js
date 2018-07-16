@@ -1,6 +1,7 @@
 ﻿$.api = {
     token: localStorage.getItem("token"),
     // root:"http://localhost:8082", //开发环境
+    // root:"https://www.amazingxu.xyz",
     root:"https://"+location.host, //生产环境
 
     ClearAll: function () {
