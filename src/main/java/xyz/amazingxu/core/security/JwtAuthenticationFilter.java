@@ -41,12 +41,13 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
+        WebUtils webUtils = new WebUtils();
 
         String header = request.getHeader("Authorization");
         if ((header != null) && header.startsWith(SystemVars.AUTHENTICATION_HEAD)) {
             //当token和原有的一致则不重新生成token，以减少开销
             String token = request.getHeader("Authorization");
-            UsernamePasswordAuthenticationToken authentication = getAuthentication(token);
+            UsernamePasswordAuthenticationToken authentication = webUtils.getAuthentication(token);
             if (authentication != null) {
                 //用户信息存储在session中
                 SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -72,44 +73,7 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
         }
     }
 
-    /**
-     * token解析成UserContextDTO
-     * @param token
-     * @return
-     */
-    private UsernamePasswordAuthenticationToken getAuthentication(String token) {
-        if (token != null) {
-            try {
-                Claims user = Jwts.parser()
-                        .setSigningKey(SystemVars.JWT_SECRET)
-                        .parseClaimsJws(token.replace(SystemVars.AUTHENTICATION_HEAD, ""))
-                        .getBody();
-                String userId = (String)user.get("sub");
-                UserContextDTO userDto = new UserContextDTO();
-                userDto.setName((String)user.get("name"));
-                userDto.setUsername((String)user.get("userName"));
-                userDto.setId((String)user.get("id"));
 
-                String authStr = (String)user.get("_auth");
-                List<String> auths = Arrays.asList(StringUtils.commaDelimitedListToStringArray(authStr));
-                List<SimpleAuthority> listPower = new ArrayList<SimpleAuthority>();
-
-                for(String auth : auths){
-                    SimpleAuthority sa = new SimpleAuthority();
-                    String[] authObj = auth.split(";");
-                    sa.setType(authObj[0]);
-                    sa.setUrl(authObj[1]);
-                    listPower.add(sa);
-                }
-                if (user != null) {
-                    return new UsernamePasswordAuthenticationToken(userDto, null, listPower);
-                }
-            } catch (Exception ex) {
-                return null;
-            }
-        }
-        return null;
-    }
     private void sendMessage(HttpServletResponse response,String message) throws IOException{
         response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
         response.setHeader("Pragma", "no-cache");

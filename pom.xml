@@ -54,13 +54,6 @@
 			<version>0.1.53</version>
 		</dependency>
 
-		<!-- sqlserver -->
-		<dependency>
-			<groupId>com.microsoft.sqlserver</groupId>
-			<artifactId>mssql-jdbc</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-
 		<!--mysql-->
 		<dependency>
 			<groupId>mysql</groupId>

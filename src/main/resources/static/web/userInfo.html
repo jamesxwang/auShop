@@ -223,7 +223,7 @@
                 $.api.Post('/user/changePhone',{newPhone:vm.newPhone,oldPhone:vm.oldPhone},function (result) {
                     $.api.Success("Change phone number success");
                 });
-                $.api.Post('/user/refresh');
+                $.api.DoRefreshUserInfo();
             },
             ChangeName:function () {
                 $.api.Post('/user/changeName',{newName:vm.newName},function (result) {

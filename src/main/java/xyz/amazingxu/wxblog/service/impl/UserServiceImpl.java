@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import xyz.amazingxu.core.security.JwtAuthenticationFilter;
 import xyz.amazingxu.core.utils.SystemVars;
+import xyz.amazingxu.core.utils.WebUtils;
 import xyz.amazingxu.wxblog.dao.IUserDAO;
 import xyz.amazingxu.wxblog.domain.UserDO;
 import xyz.amazingxu.wxblog.dto.*;
@@ -80,6 +81,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
     @Override
     public String refreshToken() {
         String newToken = null;
+        WebUtils webUtils = new WebUtils();
         UserContextDTO userContextDTO = (UserContextDTO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         UserDO userDO = userDAO.findOne(userContextDTO.getId());
 
@@ -96,8 +98,10 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
                 .setExpiration(new Date(System.currentTimeMillis() + 60 * 60 * 24 * 1000))
                 .signWith(SignatureAlgorithm.HS512, SystemVars.JWT_SECRET)
                 .compact();
-        //TODO 存到session里
-//        SecurityContextHolder.getContext().setAuthentication();
+        //存到session里
+        UsernamePasswordAuthenticationToken authenticationToken = webUtils.getAuthentication (newToken);
+        SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+
         return newToken;
     }
 
