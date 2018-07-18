@@ -228,21 +228,24 @@
             },
             ChangeName:function () {
                 $.api.Post('/user/changeName',{newName:vm.newName},function (result) {
-                    $.api.Success("Change full name success");
+                    setTimeout(function () {
+                        $.api.DoRefreshUserInfo();
+                    })
                 });
-                $.api.Post('/user/refresh');
             },
             ChangeEmail:function () {
                 $.api.Post('/user/changeEmail',{newEmail:vm.newEmail},function (result) {
-                    $.api.Success("Change E-mail success");
+                    setTimeout(function () {
+                        $.api.DoRefreshUserInfo();
+                    })
                 });
-                $.api.Post('/user/refresh');
             },
             ChangeGender:function () {
                 $.api.Post('/user/changeGender',{newGender:vm.newGender.valueOf()},function (result) {
-                    $.api.Success("Change Gender success");
+                    setTimeout(function () {
+                        $.api.DoRefreshUserInfo();
+                    })
                 });
-                $.api.Post('/user/refresh');
             }
         })
     </script>
