@@ -221,9 +221,10 @@
             UserInfo:$.api.GetUserInfo(),
             ChangePhone:function () {
                 $.api.Post('/user/changePhone',{newPhone:vm.newPhone,oldPhone:vm.oldPhone},function (result) {
-                    $.api.Success("Change phone number success");
+                    setTimeout(function () {
+                        $.api.DoRefreshUserInfo();
+                    })
                 });
-                $.api.DoRefreshUserInfo();
             },
             ChangeName:function () {
                 $.api.Post('/user/changeName',{newName:vm.newName},function (result) {

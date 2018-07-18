@@ -1,7 +1,6 @@
 ﻿$.api = {
     token: localStorage.getItem("token"),
     // root:"http://localhost:8082", //开发环境
-    // root:"https://www.amazingxu.xyz",
     root:"https://"+location.host, //生产环境
 
     ClearAll: function () {
@@ -10,6 +9,11 @@
     SetToken: function (token) {
         localStorage.setItem("token", token);
         $.api.token = localStorage.getItem("token");
+    },
+    SetNewToken:function (newToken) {
+        localStorage.setItem("newToken",newToken);
+        $.api.token = localStorage.getItem("newToken");
+        $.api.SetUserInfo();
     },
     SetUserInfo: function (userinfo) {
         localStorage.setItem("userinfo", JSON.stringify(userinfo));
@@ -111,8 +115,19 @@
             })
         })
     },
-    DoRefreshUserInfo:function (uid,pwd) {
-
+    DoRefreshUserInfo:function () {
+        $.api.Post('/user/refresh',{},function (result) {
+            setTimeout(function () {
+                $.api.SetNewToken(result.data);
+                setTimeout(function () {
+                    $.api.Post('/user/getMyUserContext',{},function (userinfo) {
+                        $.api.SetUserInfo(userinfo.data);
+                        $.api.Success("Change phone number success, please refresh the page.");
+                        // location.reload(true);
+                    })
+                });
+            })
+        });
     },
     ShowLoad: function (text) {
         if (text) {
