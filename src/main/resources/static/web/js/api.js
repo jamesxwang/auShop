@@ -122,8 +122,9 @@
                 setTimeout(function () {
                     $.api.Post('/user/getMyUserContext',{},function (userinfo) {
                         $.api.SetUserInfo(userinfo.data);
-                        $.api.Success("Change phone number success, please refresh the page.");
+                        $.api.Success("Update successful, please refresh the page.");
                         // location.reload(true);
+
                     })
                 });
             })

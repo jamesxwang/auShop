@@ -1,6 +1,7 @@
 package xyz.amazingxu.wxblog.service;
 
 import xyz.amazingxu.wxblog.dto.UserContextDTO;
+import xyz.amazingxu.wxblog.dto.product.ProductDTO;
 
 import java.util.List;
 import java.util.Map;

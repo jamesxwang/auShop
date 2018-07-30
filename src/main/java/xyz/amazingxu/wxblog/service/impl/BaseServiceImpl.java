@@ -3,6 +3,7 @@ package xyz.amazingxu.wxblog.service.impl;
 import org.hibernate.SQLQuery;
 import org.hibernate.transform.Transformers;
 import xyz.amazingxu.wxblog.dto.UserContextDTO;
+import xyz.amazingxu.wxblog.dto.product.ProductDTO;
 import xyz.amazingxu.wxblog.service.IBaseService;
 
 import javax.persistence.EntityManager;
@@ -28,6 +29,13 @@ public class BaseServiceImpl implements IBaseService {
         UserContextDTO userContextDTO = (UserContextDTO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return userContextDTO;
     }
+
+    @Override
+    public ProductDTO getProductContext() {
+        ProductDTO productDTO = (ProductDTO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return productDTO;
+    }
+
 
     @Override
     public List<Map> sqlQuery(String sql) {
