@@ -31,13 +31,6 @@ public class BaseServiceImpl implements IBaseService {
     }
 
     @Override
-    public ProductDTO getProductContext() {
-        ProductDTO productDTO = (ProductDTO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return productDTO;
-    }
-
-
-    @Override
     public List<Map> sqlQuery(String sql) {
         return sqlQuery(sql,null);
     }
