@@ -45,10 +45,10 @@ public class ProductServiceImpl implements IProductService {
                 if (null != productQueryDTO.getProd_name()){
                     predicates.add(cb.like(root.get("prod_name"),"%"+productQueryDTO.getProd_name()+"%"));
                 }
-                else if (null != productQueryDTO.getProd_category()){
+                if (null != productQueryDTO.getProd_category()){
                     predicates.add(cb.like(root.get("prod_category"),"%"+productQueryDTO.getProd_category()+"%"));
                 }
-                else if (null != productQueryDTO.getProd_price()){
+                if (null != productQueryDTO.getProd_price()){
                     predicates.add(cb.lessThan(root.get("prod_price"),productQueryDTO.getProd_price()));
                 }
             }
