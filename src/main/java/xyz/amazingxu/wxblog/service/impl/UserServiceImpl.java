@@ -40,7 +40,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
     //密码只能是0~9, a~z, A~Z和下划线，长度为6~20
     String passwordPattern = "[A-Za-z0-9_]{6,20}";
     //标准邮箱格式
-    String emailPattern = "/^(\\w|-)+(\\.(\\w|-)+)*@(\\w|-)+(\\.(\\w|-)+)*(\\.[a-z]{2,4})$/\n";
+    String emailPattern = "(\\w|-)+(\\.(\\w|-)+)*@(\\w|-)+(\\.(\\w|-)+)*(\\.[a-z]{2,4})";
 
 
     @Override
