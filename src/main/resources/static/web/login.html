@@ -1,80 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="auShop">
 <head>
-    <title>Sign in</title>
+    <title>用户登录</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0.8, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/globalStyle.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/auShop.css">
+    <link rel="stylesheet" type="text/css" href="css/user.css">
+
     <link rel="icon" href="../favicon.ico" />
-
-    <!--[if lt IE 9]>
-    <meta http-equiv="refresh" content="0;ie.html"/>
-    <![endif]-->
-
     <script>
         if (window.top !== window.self) {
             window.top.location = window.location
         }
     </script>
 </head>
+<body ng-controller="formCtrl" class="logPanel">
+<!--navbar-->
+<div class="navbar-wrapper">
+    <navbar></navbar>
+</div>
 
-
-<body class="signin" ms-controller="wxBlog">
-    <!--  Navigation Bar -->
-    <ms-nav></ms-nav>
-
-    <!-- Sign in page -->
-    <div class="signinpanel">
-        <div class="row">
-            <div class="middle-box">
-                <div class="animated fadeInDown form white">
-                    <h4 class="no-margins text-center"><i class="glyphicon glyphicon-user"></i></h4>
-                    <p class="m-t-md text-center">Sign in</p>
-                    <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="uid" type="text" class="form-control uname" placeholder="Username"/>
-                    <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="pwd" type="password" class="form-control pword" placeholder="Password"/>
-                    <button class="btn btn-primary btn-block" ms-on-click="DoLogin()" >Login</button>
-                    <br><br>
-                    <h5>Do not have an account? <a href="register.html">&nbsp; Sign up</a></h5>
+<!--login-->
+<div id="login-banner-wrap">
+    <div class="row noMargin">
+        <div class="col-sm-7">
+            <!--http://placehold.it/1190x670-->
+            <a href="#"><img src="" alt=""></a>
+        </div>
+        <div class="col-sm-5">
+            <!--TODO 小屏幕响应-->
+            <div class="login-box">
+                <div class="form">
+                    <h4 class="noMargin text-center"><span class="glyphicon glyphicon-user"></span></h4>
+                    <p class="m-t-md text-center">会员登录</p>
+                    <input ng-keyup="enterEvent($event)" ng-model="username" type="text" class="form-control uname" placeholder="会员名"/>
+                    <input ng-keyup="enterEvent($event)" ng-model="password" type="password" class="form-control pword" placeholder="密码"/>
+                    <button class="btn btn-primary btn-block" ng-click="DoLogin()">登录</button><br>
+                    <div class="row pull-right">
+                        <div class="col-sm-6">
+                            <a class="pull-right" href="#" onclick="$.api.Developing()">忘记密码</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a class="pull-right" href="register.html">免费注册</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container-fluid noPadding">
+<!--footer-->
+<div class="footer-wrapper">
+    <footer></footer>
+</div>
 
-        <!-- Footer -->
-        <ms-footer-white></ms-footer-white>
-    </div><!--/.container-fluid-->
-
-    <!-- Script (pjb acn)-->
-    <script src="js/plugins/avalon/avalon.js"></script>
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!--<script src="js/plugins/vendor/jquery.min.js"></script>-->
-    <script src="js/plugins/layer/layer.js"></script>
-    <script src="js/api.js"></script>
-    <script src="js/component.js"></script>
-    <script src="js/navbar.js"></script>
-    <script type="text/javascript">
-        var vm = avalon.define({
-            $id: "wxBlog",
-            uid:'',
-            pwd:'',
-            UserInfo: $.api.GetUserInfo(),
-            DoLogin:function(){
-                $.api.ClearAll();
-                $.api.DoLogin(vm.uid,vm.pwd);
-            }, handleEnterEvent:function(e){
-                var keycode = window.event?e.keyCode:e.which;
-                if(keycode==13){
-                    vm.DoLogin();
-                }
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/layer/layer.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/footer.js"></script>
+<script type="text/javascript">
+    app.controller('formCtrl',function ($scope) {
+        $scope.username = '';
+        $scope.password = '';
+        $scope.UserInfo = $.api.GetUserInfo();
+        $scope.DoLogin = function () {
+            $.api.ClearAll();
+            $.api.DoLogin($scope.username,$scope.password);
+        };$scope.enterEvent = function(e) {
+            var keycode = window.event?e.keyCode:e.which;
+            if(keycode==13){
+                $scope.DoLogin();
             }
-        });
-    </script>
+        }
+    })
+</script>
 
 </body>
 </html>

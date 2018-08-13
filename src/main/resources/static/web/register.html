@@ -1,159 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="auShop">
 <head>
-    <title>Sign up</title>
+    <title>新会员注册</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0.8, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/globalStyle.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/auShop.css">
+    <link rel="stylesheet" type="text/css" href="css/user.css">
     <link rel="icon" href="../favicon.ico" />
-
-    <!--[if lt IE 9]>
-    <meta http-equiv="refresh" content="0;ie.html"/>
-    <![endif]-->
     <script>
         if (window.top !== window.self) {
             window.top.location = window.location
         }
     </script>
 </head>
+<body class="logPanel">
+<!--navbar-->
+<div class="navbar-wrapper">
+    <navbar></navbar>
+</div>
 
-<body class="signin" ms-controller="wxBlog">
+<!--register-->
+<div class="register-wrapper" ng-controller="registerCtrl">
+    <div class="register-box">
+        <div class="form black">
+            <h4 class="no-margins text-center"><i class="glyphicon glyphicon-user"></i></h4>
+            <p class="m-t-md text-center">新会员注册</p>
+            <form id="myform" name="myform">
+                <input ng-keyup="enterEvent($event)" ng-model="username" class="form-control uname" type="text" placeholder="会员账号">
+                <input ng-keyup="enterEvent($event)" ng-model="name" class="form-control uname" type="text" placeholder="昵称">
+                <input ng-keyup="enterEvent($event)" ng-model="email" class="form-control email" type="text" placeholder="电子邮箱">
+                <input ng-keyup="enterEvent($event)"  class="form-control pword" type="password" placeholder="密码">
+                <input ng-keyup="enterEvent($event)" ng-model="password" class="form-control pword" type="password" placeholder="确认密码">
+            </form>
 
-<!--  Navigation Bar -->
-<ms-nav></ms-nav>
-
-<!--Sign up page-->
-<div class="signinpanel">
-    <div class="row">
-        <div class="middle-box">
-            <div class="animated fadeInUp form white">
-                <h4 class="no-margins text-center"><i class="glyphicon glyphicon-user"></i></h4>
-                <p class="m-t-md text-center">Sign up</p>
-                <form id="myform" name="myform">
-                    <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="username" class="form-control uname" type="text" id="username" name="username" placeholder="Username">
-                    <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="name" class="form-control uname" type="text" placeholder="Full Name">
-                    <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="email" class="form-control email" type="text" id="email" name="email" placeholder="Email">
-                    <input ms-on-keyup="handleEnterEvent($event)" class="form-control pword" type="password" id="password" name="password" placeholder="Password">
-                    <input ms-on-keyup="handleEnterEvent($event)" ms-duplex="password" class="form-control pword" type="password" id="repassword" name="repassword" placeholder="Confirm your password">
-                </form>
-
-                <button class="btn btn-info btn-block" ms-on-click="DoRegister()">Sign up</button>
-                <br><br>
-                <h5>Already have an account?</h5>
-                <a href="login.html" class="btn btn-primary btn-block">Sign in</a>
-            </div>
+            <button ng-click="DoRegister()" class="btn btn-primary btn-block">注册</button>
         </div>
     </div>
 </div>
-<div class="container-fluid noPadding">
-    <!-- Footer -->
-    <ms-footer-white></ms-footer-white>
+
+<!--footer-->
+<div class="footer-wrapper">
+    <footer></footer>
 </div>
-<!-- Script (pjb acn)-->
-<script src="js/plugins/avalon/avalon.js"></script>
-<script src="js/jquery-1.11.0.min.js"></script>
 
-<script src="js/jquery.validate.min.js" type="text/javascript"></script>
-
+<script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<!--<script src="js/plugins/vendor/jquery.min.js"></script>-->
-<script src="js/plugins/layer/layer.js"></script>
+<script src="js/layer/layer.js"></script>
+<script src="js/angular.min.js"></script>
 <script src="js/api.js"></script>
-<script src="js/component.js"></script>
 <script src="js/navbar.js"></script>
+<script src="js/footer.js"></script>
 <script type="text/javascript">
-    var vm = avalon.define({
-        $id: "wxBlog",
-        username:'',
-        name:'',
-        email:'',
-        password:'',
-        UserInfo:$.api.GetUserInfo(),
-        DoRegister:function () {
+    app.controller('registerCtrl',function ($scope) {
+        $scope.username = '';
+        $scope.password = '';
+        $scope.email = '';
+        $scope.name = '';
+        $scope.DoRegister = function () {
             $.api.ClearAll();
-            $.api.DoRegister(vm.username,vm.name,vm.email,vm.password);
-        }, handleEnterEvent:function(e){
+            $.api.DoRegister($scope.username,$scope.name,$scope.email,$scope.password);
+        };$scope.enterEvent = function(e) {
             var keycode = window.event?e.keyCode:e.which;
             if(keycode==13){
-                vm.DoRegister();
+                $scope.DoRegister();
             }
         }
-    });
-</script>
-<script type="text/javascript">
-    $.validator.addMethod(
-        //规则名称
-        "userRules",
-        //规则函数
-        function(value,element,params){
-            //输入的内容;被校验的元素对象;规则对应的参数值true false;
-            //对输入的username进行ajax校验
-            var flag=false;
-            $.ajax({
-                "async":false,//表示同步，
-                "url":"${pageContext.request.contextPath }/checkUsername",
-                "data":{"username":value},
-                "type":"POST",
-                "dataType":"json",
-                "success":function(data){
-                    flag = data.isExist;
-                }
-            });
-            //返回false表示该校验器不通过
-            return !flag;
-        }
-    );
-
-
-
-
-    $(function(){
-        $("#myform").validate({
-            rules:{
-                "username":{//必须填，字母开头，6-20，数字字母下划线
-                    "required":true,
-                    "rangelength":[6,20]
-                },
-                "password":{//必须填，字母开头，6-20，数字字母下划线
-                    "required":true,
-                    "rangelength":[6,20]
-                },
-                "repassword":{
-                    "required":true,
-                    "rangelength":[6,12],
-                    "equalTo":"#password"
-                },
-                "email":{
-                    "required":true,
-                    "email":true
-                }
-            },
-            messages:{
-                "username":{
-                    "required":"username should not be none",
-                    "rangelength":"the username must range from 6-20"
-                },
-                "password":{
-                    "required":"password should not be none",
-                    "rangelength":"the password must range from 6-20"
-                },
-                "repassword":{
-                    "required":"password should not be none",
-                    "rangelength":"the password must range from 6-20",
-                    "equalTo":"two passwords must be identical to each other"
-                },
-                "email":{
-                    "required":"mail cannot be none",
-                    "email":"Wrong format！"
-                }
-            }
-        });
-    });
-
-
+    })
 </script>
 </body>
 </html>

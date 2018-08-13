@@ -1,68 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="auShop">
 <head>
-    <title>Search Result</title>
+    <title>商品列表</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0.8, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/globalStyle.css">
-    <link rel="stylesheet" type="text/css" href="css/globalStyle.css">
-
+    <link rel="stylesheet" type="text/css" href="css/auShop.css">
+    <link rel="stylesheet" type="text/css" href="css/user.css">
     <link rel="icon" href="../favicon.ico" />
-    <!--[if lt IE 9]>
-    <meta http-equiv="refresh" content="0;ie.html"/>
-    <![endif]-->
     <script>
         if (window.top !== window.self) {
             window.top.location = window.location
         }
     </script>
 </head>
-
-<body ms-controller="wxBlog" class="signin">
-
-<!--  Navigation Bar -->
-<ms-nav></ms-nav>
-
-<!-- Main Page -->
-<div class="container-fluid noPadding">
-    <h1 class="text-center">Search Result</h1>
-    <div class="container-fluid headpicture"></div>
-
-    <div class="container text-center">
-        <h1>Search Result head</h1>
-        <p class="textStyle">
-            Search Result panel<br>
-            Search Result panel<br>
-            Search Result panel<br>
-            Search Result panel<br>
-            Search Result panel<br>
-            Search Result panel<br>
-            Search Result panel<br>
-            Search Result panel<br>
-
-        </p>
-    </div>
-    <!-- Footer -->
-    <ms-footer-white></ms-footer-white>
+<body>
+<!--navbar-->
+<div class="navbar-wrapper">
+    <navbar></navbar>
 </div>
 
-<!-- Script (pjb acn)-->
-<script src="js/plugins/avalon/avalon.js"></script>
-<script src="js/jquery-1.11.0.min.js"></script>
+<!--register-->
+search
+
+<!--footer-->
+<div class="footer-wrapper">
+    <footer></footer>
+</div>
+
+<script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
+<script src="js/layer/layer.js"></script>
+<script src="js/angular.min.js"></script>
 <script src="js/api.js"></script>
-<script src="js/component.js"></script>
 <script src="js/navbar.js"></script>
-
-<script type="text/javascript">
-    var vm = avalon.define({
-        $id: "wxBlog",
-        UserInfo:$.api.GetUserInfo()
-    })
-</script>
+<script src="js/footer.js"></script>
 
 </body>
 </html>

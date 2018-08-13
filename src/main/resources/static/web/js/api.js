@@ -23,9 +23,8 @@
         var d = parseInt(days / (1000 * 60 * 60 * 24));
         return d;
     },
-    DoLogOut:function () {
-        localStorage.clear();
-        location.href = 'login.html';
+    Developing: function () {
+        $.api.Fail("功能暂未开放！");
     },
     GetUserInfo: function () {
         try {

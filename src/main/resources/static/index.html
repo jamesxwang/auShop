@@ -1,165 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="auShop">
 <head>
-    <title>WxBlog</title>
+    <title>澳澳代购</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
 
     <link rel="stylesheet" type="text/css" href="web/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="web/css/globalStyle.css">
-	<link rel="stylesheet" href="web/css/slide.css"> <!-- Resource style -->
-
-	<link rel="icon" href="favicon.ico" />
-
-    <!--[if lt IE 9]>
-    <meta http-equiv="refresh" content="0;ie.html"/>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="web/css/auShop.css">
+    <link rel="icon" href="favicon.ico" />
     <script>
         if (window.top !== window.self) {
             window.top.location = window.location
         }
     </script>
 </head>
+<body>
 
-<body ms-controller="wxBlog" class="signin">
+<!--navbar-->
+<div class="navbar-wrapper">
+    <navbarindex></navbarindex>
+</div>
 
-    <!-- Navigation Bar -->
-    <ms-nav1></ms-nav1>
-
-    <!-- Main Page -->
-	<div class="container-fluid noPadding">
-
-        <!--slide-->
-		<section class="cd-hero" ms-if="LoggedIn()">
-			<ul class="cd-hero-slider">
-
-				<li class="selected">
-					<div class="cd-half-width">
-						<h2>Introduction</h2>
-						<p>Welcome to WxBlog! This website is an interest project by Xu Wang,
-                            integrated development with Spring Boot and Spring Data Jpa,
-                            automating deployment with Jenkins and Docker on Linux ECS.</p>
-						<a href="web/register.html" class="cd-btn">Start</a>
-						<a href="mailto:xuwang2@student.unimelb.edu.au" class="cd-btn secondary">Contact me</a>
-					</div> <!-- .cd-half-width -->
-
-					<div class="cd-half-width cd-img-container">
-						<img src="web/img/slide-0.png" alt="tech 1">
-					</div> <!-- .cd-half-width.cd-img-container -->
-				</li>
-
-				<li>
-					<div class="cd-half-width cd-img-container">
-						<img src="web/img/slide-1.jpg" alt="tech 2">
-					</div> <!-- .cd-half-width.cd-img-container -->
-
-					<div class="cd-half-width">
-						<h2>About this website</h2>
-						<p>The original intention of making this website is to improve my programming skills
-                            and meanwhile having my own project. Click "Start" to sign it up and check out what's inside this blog!</p>
-						<a href="web/register.html" class="cd-btn">Start</a>
-						<a href="mailto:xuwang2@student.unimelb.edu.au" class="cd-btn secondary">Contact me</a>
-					</div> <!-- .cd-half-width -->
-
-				</li>
-
-				<li>
-					<div class="cd-full-width">
-						<h2>Technical Support and Advices</h2>
-						<p>If you have any idea improving this website, or you are willing to participate in this project,
-                        please click "Contact me" below!</p>
-                        <a href="web/register.html" class="cd-btn">Start</a>
-						<a href="mailto:xuwang2@student.unimelb.edu.au" class="cd-btn secondary">Contact me</a>
-					</div> <!-- .cd-full-width -->
-				</li>
-
-				<li>
-					<div class="cd-full-width">
-						<h2>Links</h2>
-                        <p>Github: <a href="https://github.com/CN-WX" class="btn-link" style="color: #cccccc!important;" target="_blank">&nbsp;&nbsp;https://github.com/CN-WX</a></p>
-						<p>Portfolio:<a href="https://cn-wx.github.io/" class="btn-link" style="color: #cccccc!important;" target="_blank">&nbsp;&nbsp;https://cn-wx.github.io</a></p>
-						<!--<p>CSDN: <a href="https://blog.csdn.net/cn_xuwang" class="btn-link" style="color: #cccccc!important;" target="_blank">&nbsp;&nbsp;https://blog.csdn.net/cn_xuwang</a></p>-->
-						<a href="web/register.html" class="cd-btn">Start</a>
-					</div> <!-- .cd-full-width -->
-				</li>
-			</ul> <!-- .cd-hero-slider -->
-
-			<div class="cd-slider-nav">
-				<nav>
-					<span class="cd-marker item-1"></span>
-
-					<ul>
-						<li class="selected"><a>Intro</a></li>
-						<li><a>About</a></li>
-						<li><a>Support</a></li>
-						<li><a>Links</a></li>
-					</ul>
-				</nav>
-			</div> <!-- .cd-slider-nav -->
-
-		</section> <!-- .cd-hero -->
-
-
-		<div class="container-fluid"></div>
-        <div class="text-center">
-            <br><br><br><br><br><br><br><br>
-            <a class="white">For Developers： </a><a href="/swagger-ui.html" class=" text-center btn btn-info"> API Docs</a>
-            <br><br><br><br>
+<!--banner-->
+<div class="banner-wrapper">
+    <div class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ol>
+        <div class="carousel-inner">
+            <!--http://placehold.it/1700x500-->
+            <div class="item active">
+                <img src="web/img/banner-1.jpg" class="slide-image" alt="Sukin">
+            </div>
+            <div class="item">
+                <img src="web/img/banner-2.jpg" class="slide-image" alt="Aveeno">
+            </div>
+            <div class="item">
+                <img src="web/img/banner-3.jpg" class="slide-image" alt="Goat">
+            </div>
         </div>
-		<div class="container text-center">
-			<h1 class="textStyle white">【Existing functions】</h1>
-            <p class="textStyle white">
-                1.Register<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;Username must start with letters，length: 6~20 bites，numbers and "_" available.<br>
-                &nbsp;&nbsp;Password must be 0~9, a~z, A~Z, special characters contain:<span style="font-style: italic">^ % & ' , ; = ? $</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;length:6~20.<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;E-mail regex check。<br><br>
-                2.Log in<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;Redirecting to the index page after log in, name shown on the navbar at the top.<br><br>
-				3.User info<br>
-				&nbsp;&nbsp;User can edit user informations for themselves, including phone number, email, gender and full name(nick name).<br>
-            </p>
-		</div>
+        <a class="left carousel-control" onclick="prev()">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" onclick="next()">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</div>
 
-		<div class="container textstyle">
-			<div class="row text-center latestProjects">
+<!--footer-->
+<div class="footer-wrapper">
+    <footer></footer>
+</div>
 
-				<div class="col-md-4 col-sm-6">
-				</div>
+<div class="container-fluid">
+    <h4 class="text-center">For Developers： <a href="http://localhost:8082/swagger-ui.html" class=" text-center btn btn-info"> API Docs</a></h4>
+</div>
 
-				<div class="col-md-4 col-sm-6">
-				</div>
-
-				<div class="col-md-4 col-sm-12">
-				</div>
-			</div>
-		</div>
-
-		<!-- Footer -->
-        <ms-footer-white></ms-footer-white>
-	</div>
-
-    <!-- Script (pjb acn)-->
-
-    <script src="web/js/plugins/avalon/avalon.js"></script>
-    <!--<script src="web/js/jquery-1.11.0.min.js"></script>-->
-	<script src="web/js/jquery-2.1.1.js"></script>
-
-	<script src="web/js/bootstrap.min.js"></script>
-    <script src="web/js/api.js"></script>
-    <script src="web/js/component.js"></script>
-    <script src="web/js/navbar.js"></script>
-	<script src="web/js/slide.js"></script>
-
-	<script type="text/javascript">
-        var vm = avalon.define({
-            $id: "wxBlog",
-            UserInfo: $.api.GetUserInfo(),
-			LoggedIn: function () {
-                return vm.UserInfo == null;
-            }
-        });
-		// alert(JSON.stringify(vm.UserInfo));
-    </script>
-
+<script src="web/js/jquery.min.js"></script>
+<script src="web/js/bootstrap.min.js"></script>
+<script src="web/js/layer/layer.js"></script>
+<script src="web/js/angular.min.js"></script>
+<script src="web/js/api.js"></script>
+<script src="web/js/navbar.js"></script>
+<script src="web/js/carousel.js"></script>
+<script src="web/js/footer.js"></script>
 </body>
 </html>
