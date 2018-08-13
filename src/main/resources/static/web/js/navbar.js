@@ -40,13 +40,13 @@ app.directive("navbarindex", function() {
         "         <div class='form-group'>" +
         "          <input type='text' class='form-control' placeholder='请输入商品关键字查询' autocomplete='off'>" +
         "         </div>" +
-        "         <button type='submit' class='btn btn-default grey' onclick='$.api.Developing()'><a href='#'>搜索</a></button>" +
+        "         <a href='#'><button type='submit' class='btn btn-default' onclick='$.api.Developing()'>搜索</button></a>" +
         "         <div class='hidden'></div>" +
         "        </form>" +
         "       </li>" +
         "       <li><a ng-if='!UserInfo' href='web/login.html'>登录</a></li>\n" +
         "       <li><a ng-if='!UserInfo' href='web/register.html'>注册</a></li>\n" +
-        "       <li><a ng-if='UserInfo'>购物车</a></li>" +
+        "       <li><a ng-if='UserInfo' href='#' onclick='$.api.Developing()'>购物车</a></li>" +
         "       <li class='dropdown' ng-click='dropdown()'><a class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' data-toggle='dropdown' ng-if='UserInfo'>欢迎您，{{UserInfo.name}}<span class='caret'></span></a>" +
         "       <ul class='dropdown-menu'>" +
         "         <li><a>账号信息</a></li>" +
@@ -87,13 +87,13 @@ app.directive("navbar", function() {
         "         <div class='form-group'>" +
         "          <input type='text' class='form-control' placeholder='请输入商品关键字查询' autocomplete='off'>" +
         "         </div>" +
-        "         <button type='submit' class='btn btn-default grey' onclick='$.api.Developing()'><a href='#'>搜索</a></button>" +
+        "         <a href='#'><button type='submit' class='btn btn-default' onclick='$.api.Developing()'>搜索</button></a>" +
         "         <div class='hidden'></div>" +
         "        </form>" +
         "       </li>" +
         "       <li><a ng-if='!UserInfo' href='login.html'>登录</a></li>\n" +
         "       <li><a ng-if='!UserInfo' href='register.html'>注册</a></li>\n" +
-        "       <li><a ng-if='UserInfo'>购物车</a></li>" +
+        "       <li><a ng-if='UserInfo' href='#' onclick='$.api.Developing()'>购物车</a></li>" +
         "       <li class='dropdown' ng-click='dropdown()'><a class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' data-toggle='dropdown' ng-if='UserInfo'>欢迎您，{{UserInfo.name}}<span class='caret'></span></a>" +
         "       <ul class='dropdown-menu'>" +
         "         <li><a>账号信息</a></li>" +

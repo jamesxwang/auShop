@@ -129,6 +129,23 @@
             })
         });
     },
+    ListProduct: function () {
+        $.api.Post('/product/query',{"prod_category":"","prod_name": "","prod_price": null},function (result) {
+            setTimeout(function () {
+                $.api.SetProdInfo(result.data);
+            });
+        });
+    },
+    SetProdInfo: function (prodInfo) {
+        localStorage.setItem("prodInfo", JSON.stringify(prodInfo));
+    },
+    GetProdInfo: function () {
+        try{
+            return JSON.parse(localStorage.getItem("prodInfo"));
+        } catch (e){
+            $.api.ListProduct();
+        }
+    },
     ShowLoad: function (text) {
         if (text) {
             loader = layer.msg('&nbsp;' + text + '...', {

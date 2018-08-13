@@ -38,7 +38,7 @@ public class ProductDO {
     @Id
     @Column(name = "prod_id", nullable = false,length = 40,unique = true)
     private String prod_id;
-    @Column(name = "prod_name", nullable = false, length = 40)
+    @Column(name = "prod_name", nullable = false)
     private String prod_name;
     @Column(name = "prod_price", nullable = false, length = 10)
     private Float prod_price;

@@ -14,7 +14,12 @@ body{background: #EEE; width: 100%; position: relative; min-height: 100%; paddin
 .banner-wrapper .slide-image{width: 100%;}
 /*product*/
 .product-wrapper{margin-top: 40px}
+.product-wrapper h4{margin-top: 25px}
+.product-wrapper img{height: 250px;width: 250px}
+.product-wrapper .row .col-lg-3 a{color: #000}
+.product-wrapper .row .col-lg-3 p a{color: #fff}
 .product-wrapper .tab{border-bottom: 3px solid #222}
+.product-wrapper .row  .container-fluid{margin-top: 3px}
 .product-wrapper .square{float: left;width: 9px;height: 27px;background: #222;margin-top: 3px}
 .product-wrapper .tab .tab_title {float: left;color: #222;font-weight: bold;font-size: 20px;margin-top: 3px}
 .product-wrapper .tab .tab_title span{color: orange;font-weight: lighter}

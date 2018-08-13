@@ -30,7 +30,6 @@
             <li></li>
         </ol>
         <div class="carousel-inner">
-            <!--http://placehold.it/1700x500-->
             <div class="item active">
                 <img src="web/img/banner-1.jpg" class="slide-image" alt="Sukin">
             </div>
@@ -51,7 +50,7 @@
 </div>
 
 <!--product-->
-<div class="product-wrapper">
+<div class="product-wrapper" ng-controller="prodCtrl">
     <!--hot-->
     <div class="container-fluid container content">
         <div class="tab">
@@ -63,30 +62,38 @@
         </div>
         <div class="row" style="margin-top: 30px">
             <div class="col-lg-3">
-                <h2>商品一</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
+                <h4>Aptimal 婴儿配方奶粉</h4>
+                <img src="https://cdn.aomai.com.au/attas/orgimg/2015/08/92_P_1438593384843.jpg">
+                <div class="container-fluid">
+                    <a href="">Aptamil 爱他美, 婴儿配方奶粉金装<br>3段（12个月以上）。</a>
+                </div>
                 <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
                 <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
             </div>
             <div class="col-lg-3">
-                <h2>商品二</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
+                <h4>Swisse 蔓越莓胶囊</h4>
+                <img src="https://cdn.aomai.com.au/attas/orgimg/2016/07/20160728054131_57999b0bc2617.jpg">
+                <div class="container-fluid">
+                    <a>Swisse 瑞思, 蔓越莓超浓缩胶囊 30粒, 改善女性泌尿系统健康。</a>
+                </div>
                 <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
                 <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
             </div>
             <div class="col-lg-3">
-                <h2>商品三</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
+                <h4>Swisse 葡萄籽精华</h4>
+                <img src="https://cdn.aomai.com.au/attas/orgimg/2015/12/480_P_1451294691998.jpg">
+                <div class="container-fluid">
+                    <a>Swisse 瑞思 葡萄籽精华 180粒, 源自澳洲，可以口服的化妆品。</a>
+                </div>
                 <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
                 <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
             </div>
             <div class="col-lg-3">
-                <h2>商品四</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
+                <h4>A2 白金幼儿配方奶粉</h4>
+                <img src="https://cdn.aomai.com.au/attas/orgimg/2018/06/20180615120823_5b233bb782321.png">
+                <div class="container-fluid">
+                    <a>A2 Platinum 白金幼儿配方奶粉 3段（12个月以上）。</a>
+                </div>
                 <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
                 <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
             </div>
@@ -310,7 +317,6 @@
 <div class="container-fluid">
     <h4 class="text-center">For Developers： <a href="/swagger-ui.html" class=" text-center btn btn-info"> API Docs</a></h4>
 </div>
-
 <script type="text/javascript" src="web/js/jquery.min.js"></script>
 <script type="text/javascript" src="web/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="web/js/layer/layer.js"></script>
@@ -322,6 +328,10 @@
 <script type="text/javascript">
     app.controller('prodCtrl',function ($scope) {
         $scope.UserInfo = $.api.GetUserInfo();
+        $scope.ProdInfo = $.api.GetProdInfo();
+        setTimeout(function () {
+            console.log($scope.ProdInfo);
+        });
     })
 </script>
 </body>

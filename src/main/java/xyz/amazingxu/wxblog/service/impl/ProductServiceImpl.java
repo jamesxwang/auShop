@@ -31,31 +31,33 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public ProductDTO getProductById(String prod_id) {
         ProductDO productDO = productDAO.findOne(prod_id);
-        return productMapper.from(productDO);    }
+        return productMapper.from(productDO);
+    }
 
+    @SuppressWarnings("unchecked")
     public List<ProductDTO> productQuery(ProductQueryDTO productQueryDTO) {
         List<ProductDTO> result = null;
-        Specification specification = (Specification<ProductDTO>) (root, query, cb) -> {
-            List<Predicate> predicates = new ArrayList<>();
-            if (productQueryDTO == null){
-                //TODO 返回所有商品
-                return null;
-            } else {
+        if (productQueryDTO.getProd_name().equals("") && productQueryDTO.getProd_category().equals("") && productQueryDTO.getProd_price() == null ){
+            return productMapper.from(productDAO.findAll());
+        }else {
+            Specification specification = (Specification<ProductDTO>) (root, query, cb) -> {
+                List<Predicate> predicates = new ArrayList<>();
                 //TODO 搜索条件优化
-                if (null != productQueryDTO.getProd_name()){
-                    predicates.add(cb.like(root.get("prod_name"),"%"+productQueryDTO.getProd_name()+"%"));
+                if (null != productQueryDTO.getProd_name()) {
+                    predicates.add(cb.like(root.get("prod_name"), "%" + productQueryDTO.getProd_name() + "%"));
                 }
-                if (null != productQueryDTO.getProd_category()){
-                    predicates.add(cb.like(root.get("prod_category"),"%"+productQueryDTO.getProd_category()+"%"));
+                if (null != productQueryDTO.getProd_category()) {
+                    predicates.add(cb.like(root.get("prod_category"), "%" + productQueryDTO.getProd_category() + "%"));
                 }
-                if (null != productQueryDTO.getProd_price()){
-                    predicates.add(cb.lessThan(root.get("prod_price"),productQueryDTO.getProd_price()));
+                if (null != productQueryDTO.getProd_price()) {
+                    predicates.add(cb.lessThan(root.get("prod_price"), productQueryDTO.getProd_price()));
                 }
-            }
-            return cb.and(predicates.toArray(new Predicate[predicates.size()]));
-        };
+                return cb.and(predicates.toArray(new Predicate[predicates.size()]));
+            };
 
-        result = productDAO.findAll(specification);
+        result = productMapper.from(productDAO.findAll(specification));
         return result;
+        }
     }
+
 }
