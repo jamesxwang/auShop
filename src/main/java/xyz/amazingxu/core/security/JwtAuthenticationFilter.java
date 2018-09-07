@@ -13,8 +13,8 @@ import xyz.amazingxu.core.security.model.SimpleAuthority;
 import xyz.amazingxu.core.utils.SystemVars;
 import xyz.amazingxu.core.utils.WebResults;
 import xyz.amazingxu.core.utils.WebUtils;
-import xyz.amazingxu.wxblog.dto.UserContextDTO;
-import xyz.amazingxu.wxblog.service.IUserService;
+import xyz.amazingxu.auShop.dto.UserContextDTO;
+import xyz.amazingxu.auShop.service.IUserService;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

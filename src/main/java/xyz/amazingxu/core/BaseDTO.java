@@ -2,7 +2,7 @@ package xyz.amazingxu.core;
 
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.security.core.context.SecurityContextHolder;
-import xyz.amazingxu.wxblog.dto.UserContextDTO;
+import xyz.amazingxu.auShop.dto.UserContextDTO;
 
 import java.util.Date;
 import java.util.UUID;

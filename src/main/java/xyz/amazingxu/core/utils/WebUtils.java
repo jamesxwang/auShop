@@ -7,7 +7,7 @@ import io.jsonwebtoken.Jwts;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.util.StringUtils;
 import xyz.amazingxu.core.security.model.SimpleAuthority;
-import xyz.amazingxu.wxblog.dto.UserContextDTO;
+import xyz.amazingxu.auShop.dto.UserContextDTO;
 
 import java.util.ArrayList;
 import java.util.Arrays;

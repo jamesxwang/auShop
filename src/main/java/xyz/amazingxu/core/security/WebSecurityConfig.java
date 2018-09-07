@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.web.cors.CorsUtils;
-import xyz.amazingxu.wxblog.service.IUserService;
+import xyz.amazingxu.auShop.service.IUserService;
 
 /**
  * @author 496382223@qq.com 白の狐狸
