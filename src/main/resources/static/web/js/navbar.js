@@ -49,8 +49,8 @@ app.directive("navbarindex", function() {
         "       <li><a ng-if='UserInfo' href='#' onclick='$.api.Developing()'>购物车</a></li>" +
         "       <li class='dropdown' ng-click='dropdown()'><a class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' data-toggle='dropdown' ng-if='UserInfo'>欢迎您，{{UserInfo.name}}<span class='caret'></span></a>" +
         "       <ul class='dropdown-menu'>" +
-        "         <li><a>账号信息</a></li>" +
-        "         <li><a>设置</a></li>" +
+        "         <li><a href='web/account.html'>账号信息</a></li>" +
+        "         <li><a onclick='$.api.Developing()'>设置</a></li>" +
         "       </ul>" +
         "       </li>" +
         "       <li><a ng-if='UserInfo' href='#' ng-click='DoLogOut()'>退出登录</a></li>" +
@@ -96,8 +96,8 @@ app.directive("navbar", function() {
         "       <li><a ng-if='UserInfo' href='#' onclick='$.api.Developing()'>购物车</a></li>" +
         "       <li class='dropdown' ng-click='dropdown()'><a class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' data-toggle='dropdown' ng-if='UserInfo'>欢迎您，{{UserInfo.name}}<span class='caret'></span></a>" +
         "       <ul class='dropdown-menu'>" +
-        "         <li><a>账号信息</a></li>" +
-        "         <li><a>设置</a></li>" +
+        "         <li><a href='account.html'>账号信息</a></li>" +
+        "         <li><a onclick='$.api.Developing()'>设置</a></li>" +
         "       </ul>" +
         "       </li>" +
         "       <li><a ng-if='UserInfo' href='#' ng-click='DoLogOut()'>退出登录</a></li>" +

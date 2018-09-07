@@ -1,4 +1,4 @@
 spring:
     profiles:
       #prod为正式环境，dev为开发环境
-      active: dev
+      active: prod
