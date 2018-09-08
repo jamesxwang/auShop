@@ -170,10 +170,10 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
                 userDO.setPassword(changePasswordReqDTO.getNewPassword());
                 userDAO.save(userDO);
             }else {
-                throw new wxblogException("Incorrect password format!");
+                throw new wxblogException("密码格式不正确！");
             }
         }else {
-            throw new wxblogException("Please check your original password！");
+            throw new wxblogException("请检查旧密码！");
         }
     }
 
