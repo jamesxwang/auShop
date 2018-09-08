@@ -14,21 +14,47 @@
             window.top.location = window.location
         }
     </script>
+    <script src="js/navbar.js"></script>
 </head>
-<body>
+<body ng-controller="accountCtrl">
 <!--navbar-->
 <div class="navbar-wrapper">
     <navbar></navbar>
 </div>
 
 <!--account-->
-<div id="account-banner-wrap" class="container-fluid">
-    <div class="row">
-        <div class="col-md-4 ">
-            <div>aa</div>
+<div id="account-wrapper">
+    <div class="account-left-side">
+        <ul>
+            <li class="account-setting active">个人信息</li>
+            <li class="account-change-password">更改密码</li>
+            <li class="account-change-address">收货地址</li>
+            <li class="advice">意见反馈</li>
+        </ul>
+    </div>
+    <div id="border">
+        <div id="line" class="one"></div>
+    </div>
+    <div class="account-right-side">
+        <div id="first" class="active">
+            <h1>title-1</h1>
+            <p>text. text. text. text. text. text. text. text. text. text. text. text. </p>
         </div>
-        <div class="col-md-8 ">
-            <div>bb</div>
+        <div id="second">
+            <div class="form">
+                <input class="form-control" type="password" ng-model="oldpwd" placeholder="请输入旧密码">
+                <input class="form-control" type="password" placeholder="请输入新密码">
+                <input class="form-control" type="password" ng-model="newpwd" placeholder="请再次输入新密码" ng-keyup="enterEvent($event)" >
+                <button class="btn btn-primary btn-block" ng-click="ChangePassword()">确认更改</button>
+            </div>
+        </div>
+        <div id="third">
+            <h1>title-3</h1>
+            <p>text. text. text. text. text. text. text. text. text. text. text. text. </p>
+        </div>
+        <div id="fourth">
+            <h1>title-4</h1>
+            <p>text. text. text. text. text. text. text. text. text. text. text. text. </p>
         </div>
     </div>
 
@@ -45,7 +71,24 @@
 <script type="text/javascript" src="js/angular.min.js"></script>
 <script type="text/javascript" src="js/api.js"></script>
 <script type="text/javascript" src="js/navbar.js"></script>
+<script type="text/javascript" src="js/account.js"></script>
 <script type="text/javascript" src="js/footer.js"></script>
+<script type="text/javascript">
+    app.controller('accountCtrl',function ($scope) {
+        $scope.oldpwd = '';
+        $scope.newpwd = '';
+        $scope.UserInfo = $.api.GetUserInfo();
+        $scope.ChangePassword = function () {
+            $.api.ChangePassword($scope.oldpwd,$scope.newpwd);
+        };$scope.enterEvent = function(e) {
+            var keycode = window.event?e.keyCode:e.which;
+            if(keycode==13){
+                $scope.ChangePassword();
+            }
+        }
+    })
+
+</script>
 
 </body>
 </html>

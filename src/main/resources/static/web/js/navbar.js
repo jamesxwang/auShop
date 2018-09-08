@@ -91,25 +91,25 @@ app.directive("navbarindex", function() {
 
 app.directive("navbar", function() {
     return {
-        template : "<nav ng-controller='navCtrl' class='navbar navbar-inverse navbar-fixed-top' role='navigation'>\n" +
-        "  <div class='container'>\n" +
-        "    <div class='navbar-header'>\n" +
-        "      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbar-ex1-collapse'>\n" +
+        template : "<nav ng-controller='navCtrl' class='navbar navbar-inverse navbar-fixed-top' role='navigation'>" +
+        "  <div class='container'>" +
+        "    <div class='navbar-header'>" +
+        "      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbar-ex1-collapse'>" +
         "        <span class='sr-only'>Toggle navigation</span>" +
-        "        <span class='icon-bar'></span>\n" +
-        "        <span class='icon-bar'></span>\n" +
-        "        <span class='icon-bar'></span>\n" +
-        "      </button>\n" +
-        "      <a class='navbar-brand' href='../index.html'>澳澳代购</a>\n" +
-        "    </div>\n" +
+        "        <span class='icon-bar'></span>" +
+        "        <span class='icon-bar'></span>" +
+        "        <span class='icon-bar'></span>" +
+        "      </button>" +
+        "      <a class='navbar-brand' href='../index.html'>澳澳代购</a>" +
+        "    </div>" +
         "   <div class='collapse navbar-collapse noPadding' id='navbar-ex1-collapse' role='navigation'>" +
-        "     <ul class='nav navbar-nav'>\n" +
-        "       <li><a href='https://cn-wx.github.io/about' target='_blank'>关于我们</a></li>\n" +
-        "       <li><a href='mailto:xuwang2@student.unimelb.edu.au'>联系我们</a></li>\n" +
-        "       <li><a href='#' onclick='$.api.Developing()'>网站地图</a></li>\n" +
-        "     </ul>\n" +
-        "\n" +
-        "     <ul class='nav navbar-nav navbar-right'>\n" +
+        "     <ul class='nav navbar-nav'>" +
+        "       <li><a href='https://cn-wx.github.io/about' target='_blank'>关于我们</a></li>" +
+        "       <li><a href='mailto:xuwang2@student.unimelb.edu.au'>联系我们</a></li>" +
+        "       <li><a href='#' onclick='$.api.Developing()'>网站地图</a></li>" +
+        "     </ul>" +
+        "" +
+        "     <ul class='nav navbar-nav navbar-right'>" +
         "       <li>" +
         "        <form class='navbar-form'>" +
         "         <div class='form-group'>" +
@@ -119,8 +119,8 @@ app.directive("navbar", function() {
         "         <div class='hidden'></div>" +
         "        </form>" +
         "       </li>" +
-        "       <li><a ng-if='!UserInfo' href='login.html'>登录</a></li>\n" +
-        "       <li><a ng-if='!UserInfo' href='register.html'>注册</a></li>\n" +
+        "       <li><a ng-if='!UserInfo' href='login.html'>登录</a></li>" +
+        "       <li><a ng-if='!UserInfo' href='register.html'>注册</a></li>" +
         "       <li><a ng-if='UserInfo' href='#' onclick='$.api.Developing()'>购物车</a></li>" +
         "       <li class='dropdown' ng-if='UserInfo'>" +
         "         <a href='#' class='dropdown-toggle' data-toggle='dropdown'>我的账户<b class='caret'></b></a>" +
@@ -158,9 +158,9 @@ app.directive("navbar", function() {
         "         </ul>" +
         "       </li>" +
         "     </ul>" +
-        "   </div>\n" +
-        "  </div>\n" +
-        "</nav>\n"
+        "   </div>" +
+        "  </div>" +
+        "</nav>"
     };
 });
 

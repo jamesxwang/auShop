@@ -121,13 +121,20 @@
                 setTimeout(function () {
                     $.api.Post('/user/getMyUserContext',{},function (userinfo) {
                         $.api.SetUserInfo(userinfo.data);
-                        $.api.Success("Update successful, please refresh the page.");
+                        $.api.Success("更改成功，请刷新页面。");
                         // location.reload(true);
 
                     })
                 });
             })
         });
+    },
+    ChangePassword:function (oldpwd,newpwd) {
+      $.api.Post('/user/changePassword',{oldPassword:oldpwd,newPassword:newpwd},function (result) {
+          setTimeout(function () {
+              $.api.DoRefreshUserInfo();
+          })
+      })
     },
     ListProduct: function () {
         $.api.Post('/product/query',{"prod_category":"","prod_name": "","prod_price": null},function (result) {
