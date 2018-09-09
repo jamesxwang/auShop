@@ -29,6 +29,9 @@
 .account-right-side #first,.account-right-side #second,.account-right-side #third,.account-right-side #fourth{position: absolute;height: 500px;width: 75%;-webkit-transition: all .6s ease-in-out;transition: all .6s ease-in-out;margin-top: -350px;opacity: 0;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-align: center;-webkit-align-items: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;-webkit-box-orient: vertical;-webkit-box-direction: normal;-webkit-flex-direction: column;-ms-flex-direction: column;flex-direction: column;}
 .account-right-side #first.active,.account-right-side #second.active,.account-right-side #third.active,.account-right-side #fourth.active{margin-top: 0px;opacity: 1;-webkit-transition: all .6s ease-in-out;transition: all .6s ease-in-out;}
 .account-right-side #second .form .form-control{margin: 15px 0 15px 0}
+.account-right-side #second .form{width: 250px}
+.account-right-side #first .form{width: 450px}
+.account-right-side #first .form a img{margin: 0 0 10px 0}
 
 #border {height: 288px;width: 1px;background-color: rgba(51, 51, 51, 0.2);}
 #border #line.one {width: 5px;height: 54px;background-color: #E74C3C;margin-left: -2px;margin-top: 35px;-webkit-transition: all .4s ease-in-out;transition: all .4s ease-in-out;}

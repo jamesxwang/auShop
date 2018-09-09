@@ -54,7 +54,7 @@ app.directive("navbarindex", function() {
         "           <div class='navbar-content'>" +
         "             <div class='row'>" +
         "               <div class='col-md-5'>" +
-        "                 <img src='http://placehold.it/120x120' alt='Alternate Text' class='img-responsive' />" +
+        "                 <img src='http://placehold.it/120x120' alt='User Image' class='img-responsive' />" +
         "                   <p class='text-center small'><a href='#' onclick='$.api.Developing()'>更换照片</a></p>" +
         "               </div>" +
         "               <div class='col-md-7'>" +
@@ -129,7 +129,7 @@ app.directive("navbar", function() {
         "           <div class='navbar-content'>" +
         "             <div class='row'>" +
         "               <div class='col-md-5'>" +
-        "                 <img src='http://placehold.it/120x120' alt='Alternate Text' class='img-responsive' />" +
+        "                 <img src='http://placehold.it/120x120' alt='User Image' class='img-responsive' />" +
         "                   <p class='text-center small'><a href='#' onclick='$.api.Developing()'>更换照片</a></p>" +
         "               </div>" +
         "               <div class='col-md-7'>" +

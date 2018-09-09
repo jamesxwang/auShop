@@ -32,19 +32,129 @@
             <li class="advice">意见反馈</li>
         </ul>
     </div>
+
     <div id="border">
         <div id="line" class="one"></div>
     </div>
+
     <div class="account-right-side">
         <div id="first" class="active">
-            <h1>title-1</h1>
-            <p>text. text. text. text. text. text. text. text. text. text. text. text. </p>
+            <div class="form">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href=""><img src="https://placehold.it/120x120"></a>
+                        <p class='text-center small'><a href='#' onclick='$.api.Developing()'>更换照片</a></p>
+                    </div>
+                    <div class="col-md-8 p-t-md">
+                        <p>会员名： {{UserInfo.name}}</p>
+                        <div style="height: 1px;margin: 9px 0;overflow: hidden;background-color: #e5e5e5"></div>
+                        <!--height ='1px';margin:9px 0;overflow='hidden';background-color='#e5e5e5'-->
+                        <p class='text-muted small'>{{UserInfo.email}}</p>
+                    </div>
+
+                </div>
+
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <!--telephone-->
+                    <div class="panel panel-default m-b-sm">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <div class="collapsed" role="button" data-toggle="collapse" href="#collapseOne" data-parent="#accordion" aria-expanded="false" aria-controls="collapseOne">
+                                    <ul class="list-inline">
+                                        <li class="titleName">手机号: <span class="text-muted" ng-if="!UserInfo.phone">未设置</span></li>
+                                        <!--TODO 隐藏部分电话号码-->
+                                        <li class=" text-muted"> {{UserInfo.phone}}</li>
+                                        <li class=" pull-right"><a href="#">更改>></a></li>
+                                    </ul>
+                                </div>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <div>
+                                    <input type="text" ng-model="oldPhone" placeholder="原手机号码（如果没有请勿填写）" class=" form-control m-b-sm">
+                                    <input type="text" ng-model="newPhone" placeholder="新手机号码" class=" form-control m-b-sm" ng-keyup="enterPhone($event)">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <button class="btn btn-primary" ng-click="ChangePhone()">保存</button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button class="btn btn-default">取消</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--gender-->
+                    <div class="panel panel-default m-b-sm">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <div class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo" data-parent="#accordion" aria-expanded="false" aria-controls="collapseTwo">
+                                    <ul class="list-inline">
+                                        <li class="titleName">性别: <span class="text-muted" ng-if="!UserInfo.phone">未设置</span></li>
+                                        <li class="titleContent text-muted "> {{UserInfo.gender}}</li>
+                                        <li class="titleOption pull-right"><a href="#">更改>></a></li>
+                                    </ul>
+                                </div>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <div>
+                                    <div class="input-group m-b-sm">
+                                        <p>请选择您的性别:</p>
+                                        <input type="radio" name="gender" ng-model="newGender" value="男">男
+                                        <input type="radio" name="gender" ng-model="newGender" value="女" style="margin-left: 20px">女
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <button class="btn btn-primary" ng-click="ChangeGender()">保存</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--email-->
+                    <div class="panel panel-default m-b-sm">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <div class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <ul class="list-inline">
+                                        <li class="titleName">电子邮箱: </li>
+                                        <li class="titleContent text-muted "> {{UserInfo.email}}</li>
+                                        <li class="titleOption pull-right"><a href="#">更改>></a></li>
+                                    </ul>
+                                </div>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <div>
+                                    <p>原邮箱: <span>{{UserInfo.email}}</span></p>
+                                    <input type="text" ng-model="newEmail" placeholder="新邮箱" class=" form-control m-b-sm" ng-keyup="enterEmail($event)">
+                                    <div class="row">
+                                        <div class="col-sm-2 m-r-sm">
+                                            <button class="btn btn-primary" ng-click="ChangeEmail()">保存</button>
+                                        </div>
+                                        <div class="col-sm-2 ">
+                                            <button class="btn btn-default">取消</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div id="second">
             <div class="form">
                 <input class="form-control" type="password" ng-model="oldpwd" placeholder="请输入旧密码">
                 <input class="form-control" type="password" placeholder="请输入新密码">
-                <input class="form-control" type="password" ng-model="newpwd" placeholder="请再次输入新密码" ng-keyup="enterEvent($event)" >
+                <input class="form-control" type="password" ng-model="newpwd" placeholder="请再次输入新密码" ng-keyup="enterPassword($event)" >
                 <button class="btn btn-primary btn-block" ng-click="ChangePassword()">确认更改</button>
             </div>
         </div>
@@ -77,15 +187,46 @@
     app.controller('accountCtrl',function ($scope) {
         $scope.oldpwd = '';
         $scope.newpwd = '';
+        $scope.oldPhone = '';
+        $scope.newPhone = '';
+        $scope.newEmail = '';
         $scope.UserInfo = $.api.GetUserInfo();
         $scope.ChangePassword = function () {
             $.api.ChangePassword($scope.oldpwd,$scope.newpwd);
-        };$scope.enterEvent = function(e) {
+        };$scope.enterPassword = function(e) {
             var keycode = window.event?e.keyCode:e.which;
             if(keycode==13){
                 $scope.ChangePassword();
             }
-        }
+        };
+        $scope.ChangePhone = function () {
+            if ($scope.newPhone.trim() == ''){
+                $.api.Fail("新号码不能为空！")
+            } else {
+                $.api.ChangePhone($scope.oldPhone,$scope.newPhone);
+            }
+        };$scope.enterPhone = function(e) {
+            var keycode = window.event?e.keyCode:e.which;
+            if(keycode==13){
+                $scope.ChangePhone();
+            }
+        };
+        $scope.ChangeGender = function () {
+            if ($scope.newGender != null){
+                $.api.ChangeGender($scope.newGender);
+            } else {
+                $.api.Fail("请选择您的性别。")
+            }
+        };
+        $scope.ChangeEmail = function () {
+            $.api.ChangeEmail($scope.newEmail.trim());
+        };$scope.enterEmail = function(e) {
+            var keycode = window.event?e.keyCode:e.which;
+            if(keycode==13){
+                $scope.ChangeEmail();
+            }
+        };
+
     })
 
 </script>

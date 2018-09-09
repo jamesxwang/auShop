@@ -130,11 +130,32 @@
         });
     },
     ChangePassword:function (oldpwd,newpwd) {
-      $.api.Post('/user/changePassword',{oldPassword:oldpwd,newPassword:newpwd},function (result) {
+      $.api.Post('/user/changePassword',{oldPassword:oldpwd,newPassword:newpwd},function () {
           setTimeout(function () {
               $.api.DoRefreshUserInfo();
           })
       })
+    },
+    ChangePhone:function (oldPhone,newPhone) {
+        $.api.Post('/user/changePhone',{oldPhone:oldPhone,newPhone:newPhone},function () {
+            setTimeout(function () {
+                $.api.DoRefreshUserInfo();
+            })
+        })
+    },
+    ChangeGender:function (newGender) {
+      $.api.Post('/user/changeGender',{newGender:newGender},function () {
+          setTimeout(function () {
+              $.api.DoRefreshUserInfo();
+          })
+      })
+    },
+    ChangeEmail:function (newEmail) {
+        $.api.Post('/user/changeEmail',{newEmail:newEmail},function () {
+            setTimeout(function(){
+                $.api.DoRefreshUserInfo();
+            })
+        })
     },
     ListProduct: function () {
         $.api.Post('/product/query',{"prod_category":"","prod_name": "","prod_price": null},function (result) {
