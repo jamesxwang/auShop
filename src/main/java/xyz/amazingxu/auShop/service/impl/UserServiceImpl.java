@@ -173,7 +173,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
                 throw new wxblogException("密码格式不正确！");
             }
         }else {
-            throw new wxblogException("请检查旧密码！");
+            throw new wxblogException("请检查原密码！");
         }
     }
 
@@ -187,7 +187,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
                     userDO.setPhone(changePhoneReqDTO.getNewPhone());
                     userDAO.save(userDO);
                 }else {
-                    throw new wxblogException("Please check your original phone! ");
+                    throw new wxblogException("请检查原手机号！");
                 }
             } else  {
                 userDO.setPhone(changePhoneReqDTO.getNewPhone());
@@ -227,7 +227,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
             userDO.setEmail(changeEmailReqDTO.getNewEmail());
             userDAO.save(userDO);
         } else {
-            throw new wxblogException("Incorrect e-mail format!");
+            throw new wxblogException("邮箱格式不正确！");
         }
     }
 }
