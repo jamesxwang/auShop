@@ -46,7 +46,7 @@ public class ProductDO {
     private String prod_name;
     @Column(name = "prod_price", nullable = false, length = 10)
     private Float prod_price;
-    @Column(name = "prod_category", nullable =false, length = 20)
+    @Column(name = "prod_category", length = 20)
     private String prod_category;
     @Column(name = "prod_amount",length = 10)
     private int prod_amount;
