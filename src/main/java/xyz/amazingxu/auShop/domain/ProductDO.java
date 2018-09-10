@@ -52,7 +52,7 @@ public class ProductDO {
     private int prod_amount;
     @Column(name = "prod_image",length = 200)
     private String prod_image;
-    @Column(name = "prod_size",nullable = false, length = 10)
+    @Column(name = "prod_size", length = 10)
     private String prod_size;
     @Column(name = "is_deleted",nullable = false)
     private boolean deleted;
