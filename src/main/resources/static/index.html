@@ -52,7 +52,7 @@
 <!--product-->
 <div class="product-wrapper" ng-controller="prodCtrl">
     <!--hot-->
-    <div class="container-fluid container content">
+    <div class="container container-fluid content">
         <div class="tab">
             <div class="square"></div>
             <div class="tab_title">
@@ -61,248 +61,226 @@
             </div>
         </div>
         <div class="row" style="margin-top: 30px">
-            <div class="col-lg-3">
-                <h4>Aptimal 婴儿配方奶粉</h4>
-                <img src="https://cdn.aomai.com.au/attas/orgimg/2015/08/92_P_1438593384843.jpg">
+            <div class="col-lg-3" for="" ng-repeat="item in ProdInfo">
+                <h4>{{item.prod_name}}</h4>
+                <img src="{{item.prod_image}}">
                 <div class="container-fluid">
-                    <a href="">Aptamil 爱他美, 婴儿配方奶粉金装<br>3段（12个月以上）。</a>
-                </div>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h4>Swisse 蔓越莓胶囊</h4>
-                <img src="https://cdn.aomai.com.au/attas/orgimg/2016/07/20160728054131_57999b0bc2617.jpg">
-                <div class="container-fluid">
-                    <a>Swisse 瑞思, 蔓越莓超浓缩胶囊 30粒, 改善女性泌尿系统健康。</a>
-                </div>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h4>Swisse 葡萄籽精华</h4>
-                <img src="https://cdn.aomai.com.au/attas/orgimg/2015/12/480_P_1451294691998.jpg">
-                <div class="container-fluid">
-                    <a>Swisse 瑞思 葡萄籽精华 180粒, 源自澳洲，可以口服的化妆品。</a>
-                </div>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h4>A2 白金幼儿配方奶粉</h4>
-                <img src="https://cdn.aomai.com.au/attas/orgimg/2018/06/20180615120823_5b233bb782321.png">
-                <div class="container-fluid">
-                    <a>A2 Platinum 白金幼儿配方奶粉 3段（12个月以上）。</a>
+                    <a>{{item.prod_desc}}</a>
                 </div>
                 <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
                 <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
             </div>
         </div>
+
     </div>
-    <!--1F-->
-    <div class="container-fluid container content">
-        <div class="tab">
-            <div class="square"></div>
-            <div class="tab_title">
-                &nbsp;<span>1F</span>&nbsp;母婴专场&nbsp;•&nbsp;
-                <span>澳洲品质 安心之选</span>
-            </div>
-        </div>
-        <div class="row" style="margin-top: 30px">
-            <div class="col-lg-3">
-                <h2>商品一</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品二</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品三</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品四</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品五</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品六</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品七</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品八</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-        </div>
-    </div>
-    <!--2F-->
-    <div class="container-fluid container content">
-        <div class="tab">
-            <div class="square"></div>
-            <div class="tab_title">
-                &nbsp;<span>2F</span>&nbsp;营养保健&nbsp;•&nbsp;
-                <span>澳洲标准 效果看得见</span>
-            </div>
-        </div>
-        <div class="row" style="margin-top: 30px">
-            <div class="col-lg-3">
-                <h2>商品一</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品二</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品三</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品四</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品五</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品六</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品七</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品八</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-        </div>
-    </div>
-    <!--3F-->
-    <div class="container-fluid container content">
-        <div class="tab">
-            <div class="square"></div>
-            <div class="tab_title">
-                &nbsp;<span>3F</span>&nbsp;美妆护肤&nbsp;•&nbsp;
-                <span>天然有机 焕发自然之美</span>
-            </div>
-        </div>
-        <div class="row" style="margin-top: 30px">
-            <div class="col-lg-3">
-                <h2>商品一</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品二</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品三</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品四</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品五</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品六</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品七</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-            <div class="col-lg-3">
-                <h2>商品八</h2>
-                <img src="https://placehold.it/260x200">
-                <p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>
-                <p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>
-                <p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>
-            </div>
-        </div>
-    </div>
+
+
+
+
+    <!--&lt;!&ndash;1F&ndash;&gt;-->
+    <!--<div class="container-fluid container content">-->
+        <!--<div class="tab">-->
+            <!--<div class="square"></div>-->
+            <!--<div class="tab_title">-->
+                <!--&nbsp;<span>1F</span>&nbsp;母婴专场&nbsp;•&nbsp;-->
+                <!--<span>澳洲品质 安心之选</span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row" style="margin-top: 30px">-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品一</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品二</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品三</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品四</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品五</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品六</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品七</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品八</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;2F&ndash;&gt;-->
+    <!--<div class="container-fluid container content">-->
+        <!--<div class="tab">-->
+            <!--<div class="square"></div>-->
+            <!--<div class="tab_title">-->
+                <!--&nbsp;<span>2F</span>&nbsp;营养保健&nbsp;•&nbsp;-->
+                <!--<span>澳洲标准 效果看得见</span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row" style="margin-top: 30px">-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品一</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品二</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品三</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品四</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品五</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品六</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品七</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品八</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;3F&ndash;&gt;-->
+    <!--<div class="container-fluid container content">-->
+        <!--<div class="tab">-->
+            <!--<div class="square"></div>-->
+            <!--<div class="tab_title">-->
+                <!--&nbsp;<span>3F</span>&nbsp;美妆护肤&nbsp;•&nbsp;-->
+                <!--<span>天然有机 焕发自然之美</span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row" style="margin-top: 30px">-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品一</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品二</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品三</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品四</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品五</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品六</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品七</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3">-->
+                <!--<h2>商品八</h2>-->
+                <!--<img src="https://placehold.it/260x200">-->
+                <!--<p>这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍，这里是商品介绍。</p>-->
+                <!--<p ng-if='!UserInfo'><a class="btn btn-primary btn-block" href="web/login.html"  role="button">登录查看会员价 »</a></p>-->
+                <!--<p ng-if='UserInfo'><a class="btn btn-primary btn-block" href="#" onclick="$.api.Developing()" role="button">加入购物车 »</a></p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 
 </div>
 
@@ -328,10 +306,8 @@
 <script type="text/javascript">
     app.controller('prodCtrl',function ($scope) {
         $scope.UserInfo = $.api.GetUserInfo();
+        $.api.ListProduct();
         $scope.ProdInfo = $.api.GetProdInfo();
-        setTimeout(function () {
-            console.log($scope.ProdInfo);
-        });
     })
 </script>
 </body>

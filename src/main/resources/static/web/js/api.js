@@ -158,9 +158,12 @@
         })
     },
     ListProduct: function () {
-        $.api.Post('/product/query',{"prod_category":"","prod_name": "","prod_price": null},function (result) {
+        $.api.Post('/product/query',{},function (result) {
             setTimeout(function () {
                 $.api.SetProdInfo(result.data);
+                setTimeout(function () {
+                    $.api.GetProdInfo();
+                })
             });
         });
     },

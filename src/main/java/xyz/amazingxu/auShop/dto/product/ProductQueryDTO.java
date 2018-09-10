@@ -9,27 +9,36 @@ public class ProductQueryDTO {
     public String toString() {
 
         return "ProductQueryDTO{" +
-//                "prod_id='" + prod_id + '\'' +
                 "prod_name='" + prod_name + '\'' +
                 "prod_price='" + prod_price + '\'' +
                 "prod_category='" + prod_category + '\'' +
+                "prod_image='" + prod_image + '\'' +
+                "prod_desc='" + prod_desc + '\'' +
                 '}';
     }
 
-
-
-//    private String prod_id;
+    //TODO - design the table
     private String prod_name;
     private Float prod_price;
     private String prod_category;
+    private String prod_image;
+    private String prod_desc;
 
-//    public String getProd_id() {
-//        return prod_id;
-//    }
+    public String getProd_desc() {
+        return prod_desc;
+    }
 
-//    public void setProd_id(String prod_id) {
-//        this.prod_id = prod_id;
-//    }
+    public void setProd_desc(String prod_desc) {
+        this.prod_desc = prod_desc;
+    }
+
+    public String getProd_image() {
+        return prod_image;
+    }
+
+    public void setProd_image(String prod_image) {
+        this.prod_image = prod_image;
+    }
 
     public String getProd_name() {
         return prod_name;

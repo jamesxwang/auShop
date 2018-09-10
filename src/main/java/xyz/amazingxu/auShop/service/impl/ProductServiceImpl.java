@@ -37,12 +37,12 @@ public class ProductServiceImpl implements IProductService {
     @SuppressWarnings("unchecked")
     public List<ProductDTO> productQuery(ProductQueryDTO productQueryDTO) {
         List<ProductDTO> result = null;
-        if (productQueryDTO.getProd_name().equals("") && productQueryDTO.getProd_category().equals("") && productQueryDTO.getProd_price() == null ){
+        if (productQueryDTO == null){
             return productMapper.from(productDAO.findAll());
         }else {
             Specification specification = (Specification<ProductDTO>) (root, query, cb) -> {
                 List<Predicate> predicates = new ArrayList<>();
-                //TODO 搜索条件优化
+                //TODO - 搜索条件优化
                 if (null != productQueryDTO.getProd_name()) {
                     predicates.add(cb.like(root.get("prod_name"), "%" + productQueryDTO.getProd_name() + "%"));
                 }

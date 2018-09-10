@@ -19,6 +19,7 @@ public class ProductDO {
 
     public ProductDO(){
         this.deleted = false;
+//        this.is_hot = 0;
     }
 
     @Override
@@ -31,7 +32,10 @@ public class ProductDO {
                 "prod_price='" + prod_price + '\'' +
                 "prod_category='" + prod_category + '\'' +
                 "prod_number='" + prod_amount + '\'' +
+                "prod_image='" + prod_image + '\'' +
                 "prod_size='" + prod_size + '\'' +
+                "prod_desc='" + prod_desc + '\'' +
+                "is_hot='" + is_hot + '\'' +
                 '}';
     }
 
@@ -46,11 +50,40 @@ public class ProductDO {
     private String prod_category;
     @Column(name = "prod_amount",length = 10)
     private int prod_amount;
+    @Column(name = "prod_image",length = 200)
+    private String prod_image;
     @Column(name = "prod_size",nullable = false, length = 10)
     private String prod_size;
     @Column(name = "is_deleted",nullable = false)
     private boolean deleted;
+    @Column(name = "prod_desc")
+    private String prod_desc;
+    @Column(name = "is_hot")
+    private int is_hot;
 
+    public int getIs_hot() {
+        return is_hot;
+    }
+
+    public void setIs_hot(int is_hot) {
+        this.is_hot = is_hot;
+    }
+
+    public String getProd_desc() {
+        return prod_desc;
+    }
+
+    public void setProd_desc(String prod_desc) {
+        this.prod_desc = prod_desc;
+    }
+
+    public String getProd_image() {
+        return prod_image;
+    }
+
+    public void setProd_image(String prod_image) {
+        this.prod_image = prod_image;
+    }
 
     public String getProd_id() {
         return prod_id;

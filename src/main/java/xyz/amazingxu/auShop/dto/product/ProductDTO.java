@@ -18,8 +18,11 @@ public class ProductDTO {
                 "prod_name='" + prod_name + '\'' +
                 "prod_price='" + prod_price + '\'' +
                 "prod_category='" + prod_category + '\'' +
-                "prod_amount='" + prod_amount + '\'' +
+                "prod_number='" + prod_amount + '\'' +
+                "prod_image='" + prod_image + '\'' +
                 "prod_size='" + prod_size + '\'' +
+                "prod_desc='" + prod_desc + '\'' +
+                "is_hot='" + is_hot + '\'' +
                 '}';
     }
 
@@ -32,6 +35,9 @@ public class ProductDTO {
     private String prod_category;
     private int prod_amount;
     private String prod_size;
+    private String prod_image;
+    private String prod_desc;
+    private int is_hot;
     @ApiModelProperty(hidden = true)
     private boolean deleted;
 
@@ -90,5 +96,29 @@ public class ProductDTO {
 
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
+    }
+
+    public String getProd_image() {
+        return prod_image;
+    }
+
+    public void setProd_image(String prod_image) {
+        this.prod_image = prod_image;
+    }
+
+    public String getProd_desc() {
+        return prod_desc;
+    }
+
+    public void setProd_desc(String prod_desc) {
+        this.prod_desc = prod_desc;
+    }
+
+    public int getIs_hot() {
+        return is_hot;
+    }
+
+    public void setIs_hot(int is_hot) {
+        this.is_hot = is_hot;
     }
 }
