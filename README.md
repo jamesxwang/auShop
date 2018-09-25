@@ -15,3 +15,8 @@ If you have any advice, please contact me: xuwang2@student.unimelb.edu.au
 + search
 + shopping cart (order)
 + ...
+
+
+#### Log  
+2018-09-15 MySQL under attacked... ToT  
+2018-09-26 Add secure authentication to database
