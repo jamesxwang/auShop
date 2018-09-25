@@ -69,7 +69,6 @@
             data: pars,
             dataType: "json",
             success: function (data) {
-                console.log(data);
                 if (callback) {
                     if (data.code == 0) {
                         callback(data);
