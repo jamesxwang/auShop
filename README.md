@@ -1,4 +1,5 @@
-Visit www.amazingxu.xyz to find more!
+~Visit www.amazingxu.xyz to find more!~  
+Server is under attacked... I will fix it ASAP
 =============
 This is a personal interest website.  
 If you have any advice, please contact me: xuwang2@student.unimelb.edu.au
