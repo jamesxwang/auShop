@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>AuShop - Log In</title>
+    <title>AuShop - My Account</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../img/icon/favicon.ico">
@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
-
 </head>
 <body class="home-1">
 <!--[if lt IE 8]>
@@ -198,6 +197,7 @@
                                 <li><a href="../web/about-us.html">about us</a></li>
                                 <li class="active1"><a href="#">Pages</a>
                                     <ul>
+                                        <li><a href="../web/about-us.html">about us</a></li>
                                         <li><a href="../web/checkout.html">checkout</a></li>
                                         <li><a href="../web/contact-us.html">Contacts</a></li>
                                         <li><a href="../web/shop.html">shop</a></li>
@@ -243,50 +243,19 @@
 </header>
 <!-- end header_area
 ============================================ -->
-<!--start login area
-============================================ -->
-<div class="container container-fluid" data-ng-controller="formCtrl">
-    <div class="row login-panel">
-        <div class="Login easy-res">
-            <h3>Login</h3>
-        </div>
-        <p class="log">Please log in below:</p>
-        <form action="#">
-            <div class="input-one form-list">
-                <label class="required">
-                    Username
-                    <em>*</em>
-                </label>
-                <input data-ng-keyup="enterEvent($event)" data-ng-model="username" class="email" type="text" required="">
-            </div>
-            <div class="input-one form-list">
-                <label class="required">
-                    Password
-                    <em>*</em>
-                </label>
-                <input data-ng-keyup="enterEvent($event)" data-ng-model="password" class="email" type="password" required="">
-            </div>
-        </form>
-        <div class="block-button-right">
-            <div class="col-sm-8 noPadding">
-                <a href="#" onclick="$.api.Developing()">Forgot your password?</a><br>
-                <a href="register.html">Don't have an account?</a>
-            </div>
-            <div class="col-sm-4 noPadding">
-                <button data-ng-click="DoLogin()" class="button2 get" type="button" title="">
-                    <span>Login</span>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--end login area
-============================================ -->
+<br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
 <footer4web></footer4web>
 <div id="toTop">
     <i class="fa fa-chevron-up"></i>
 </div>
-
 <!-- JS
 ============================================ -->
 <script src="../js/vendor/jquery-1.11.3.min.js"></script>
@@ -306,26 +275,5 @@
 <script src="../js/api.js" type="text/javascript"></script>
 <script src="../js/navbar.js" type="text/javascript"></script>
 <script src="../js/footer.js" type="text/javascript" ></script>
-<script type="text/javascript">
-    app.controller('formCtrl',function ($scope) {
-        $scope.username = '';
-        $scope.password = '';
-        $scope.UserInfo = $.api.GetUserInfo();
-        $scope.DoLogin = function () {
-            if (($scope.username == "")||($scope.password == "")){
-                $.api.Fail("Username or password cannot be empty!");
-            }else {
-                $.api.ClearAll();
-                $.api.DoLogin($scope.username,$scope.password);
-            }
-        };$scope.enterEvent = function(e) {
-            var keycode = window.event?e.keyCode:e.which;
-            if(keycode==13){
-                $scope.DoLogin();
-            }
-        }
-    })
-</script>
-
 </body>
 </html>

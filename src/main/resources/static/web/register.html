@@ -1,66 +1,333 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="auShop">
+<!doctype html>
+<html class="no-js" lang="" data-ng-app="auShop">
 <head>
-    <title>新会员注册</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AuShop - Register</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../img/icon/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/auShop.css">
-    <link rel="stylesheet" type="text/css" href="css/user.css">
-    <link rel="icon" href="../favicon.ico" />
-    <script>
-        if (window.top !== window.self) {
-            window.top.location = window.location
-        }
-    </script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/owl.carousel.css">
+    <link rel="stylesheet" href="../css/owl.theme.css">
+    <link rel="stylesheet" href="../css/owl.transitions.css">
+    <link rel="stylesheet" href="../lib/css/nivo-slider.css" type="text/css" />
+    <link rel="stylesheet" href="../lib/css/preview.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/meanmenu.min.css">
+    <link rel="stylesheet" href="../css/img-zoom/jquery.simpleLens.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body class="logPanel">
-<!--navbar-->
-<div class="navbar-wrapper">
-    <navbar></navbar>
-</div>
+<body class="home-1">
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
 
-<!--register-->
-<div class="register-wrapper" ng-controller="registerCtrl">
-    <div class="register-box">
-        <div class="form black">
-            <h4 class="no-margins text-center"><i class="glyphicon glyphicon-user"></i></h4>
-            <p class="m-t-md text-center">新会员注册</p>
-            <form id="myform" name="myform">
-                <input ng-keyup="enterEvent($event)" ng-model="username" class="form-control uname" type="text" placeholder="会员账号">
-                <input ng-keyup="enterEvent($event)" ng-model="name" class="form-control uname" type="text" placeholder="昵称">
-                <input ng-keyup="enterEvent($event)" ng-model="email" class="form-control email" type="text" placeholder="电子邮箱">
-                <input ng-keyup="enterEvent($event)"  class="form-control pword" type="password" placeholder="密码">
-                <input ng-keyup="enterEvent($event)" ng-model="password" class="form-control pword" type="password" placeholder="确认密码">
-            </form>
-
-            <button ng-click="DoRegister()" class="btn btn-primary btn-block">注册</button>
+<!-- start header_area
+============================================ -->
+<header class="header_area" ng-controller="navCtrl">
+    <nav4web></nav4web>
+    <div class="top-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-5">
+                    <div class="left-category-menu  hidden-xs">
+                        <div class="left-product-cat">
+                            <div class="category-heading">
+                                <h2>Category</h2>
+                            </div>
+                            <div class="category-menu-list">
+                                <ul>
+                                    <li class="arrow-plus">
+                                        <a href="../web/shop.html">
+                                                    <span class="cat-thumb">
+                                                        <i class="fas fa-prescription-bottle"></i>
+                                                    </span>
+                                            Nutrition & Health care
+                                        </a>
+                                        <div class="cat-left-drop-menu ">
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Health supplement</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Nutritional Milk Powder</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Vitamins</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Honey propolis</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Health care</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Hyperlipidemia</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Hypertension</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Hyperglycemia</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Category 3</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Category 4</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="arrow-plus">
+                                        <a href="../web/shop.html">
+                                                    <span class="cat-thumb">
+                                                        <i class="fas fa-gift"></i>
+                                                    </span>
+                                            Beauty care
+                                        </a>
+                                        <div class="cat-left-drop-menu">
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Bags </a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Bootees  Bags</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Blazers</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Clothing </a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">coats</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">T-shirts</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Lingerie </a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Bands</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Furniture</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Handbag</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Bands</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Funiture</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Lifestyle</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="../web/shop.html">
+                                                    <span class="cat-thumb ">
+                                                        <i class="fas fa-cookie-bite"></i>
+                                                    </span>
+                                            Snacks
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-sm-7">
+                    <div class="home_menu">
+                        <nav class="navToggle" onclick="click()" data-ng-click="click()">
+                            <ul>
+                                <li><a href="../web/about-us.html">about us</a></li>
+                                <li class="active1"><a href="#">Pages</a>
+                                    <ul>
+                                        <li><a href="../web/checkout.html">checkout</a></li>
+                                        <li><a href="../web/contact-us.html">Contacts</a></li>
+                                        <li><a href="../web/shop.html">shop</a></li>
+                                        <li><a href="../web/single-product.html">single-product</a></li>
+                                        <li><a href="../web/shopping-cart.html">shopping-cart</a></li>
+                                        <li><a href="../web/wishlist.html">wishlist</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="../web/contact-us.html">Contacts</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mobile-menu">
+                        <nav id="dropdown">
+                            <ul>
+                                <li><a href="../web/about-us.html">about us</a></li>
+                                <li class="active1"><a href="#">Pages</a>
+                                    <ul>
+                                        <li><a href="../web/about-us.html">about us</a></li>
+                                        <li><a href="../web/checkout.html">checkout</a></li>
+                                        <li><a href="../web/contact-us.html">Contacts</a></li>
+                                        <li><a href="../web/shop.html">shop</a></li>
+                                        <li><a href="../web/single-product.html">single-product</a></li>
+                                        <li><a href="../web/shopping-cart.html">shopping-cart</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="../web/contact-us.html">Contacts</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- end header_area
+============================================ -->
+<div class="container container-fluid" data-ng-controller="registerCtrl">
+    <div class="row login-panel">
+        <div class="Login easy-res">
+            <h3>Sign up</h3>
+        </div>
+        <p class="log">Please sign up below:</p>
+        <form action="#">
+            <div class="input-one form-list">
+                <label class="required">
+                    Username
+                    <em>*</em>
+                </label>
+                <input data-ng-keyup="enterEvent($event)" data-ng-model="username" class="email" type="text" required="">
+            </div>
+            <div class="input-one form-list">
+                <label class="required">
+                    Email
+                    <em>*</em>
+                </label>
+                <input data-ng-keyup="enterEvent($event)" data-ng-model="email" class="email" type="text" required="">
+            </div>
+            <div class="input-one form-list">
+                <label class="required">
+                    Password
+                    <em>*</em>
+                </label>
+                <input data-ng-keyup="enterEvent($event)" data-ng-model="password1" class="email" type="password" required="">
+            </div>
+            <div class="input-one form-list">
+                <label class="required">
+                    Confirm Password
+                    <em>*</em>
+                </label>
+                <input data-ng-keyup="enterEvent($event)" data-ng-model="password2" class="email" type="password" required="">
+            </div>
+        </form>
+        <div class="block-button-right">
+            <a href="login.html">Already have an account?</a>
+            <button data-ng-click="DoRegister()" class="button2 get" type="button" title="">
+                <span>Sign up</span>
+            </button>
         </div>
     </div>
 </div>
 
-<!--footer-->
-<div class="footer-wrapper">
-    <footer></footer>
+<footer4web></footer4web>
+<div id="toTop">
+    <i class="fa fa-chevron-up"></i>
 </div>
-
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/layer/layer.js"></script>
-<script type="text/javascript" src="js/angular.min.js"></script>
-<script type="text/javascript" src="js/api.js"></script>
-<script type="text/javascript" src="js/navbar.js"></script>
-<script type="text/javascript" src="js/footer.js"></script>
+<!-- JS
+============================================ -->
+<script src="../js/vendor/jquery-1.11.3.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/wow.min.js"></script>
+<script src="../js/jquery-price-slider.js"></script>
+<script src="../js/img-zoom/jquery.simpleLens.min.js"></script>
+<script src="../js/jquery.meanmenu.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="../js/jquery.scrollUp.min.js"></script>
+<script src="../lib/js/jquery.nivo.slider.js" type="text/javascript"></script>
+<script src="../lib/home.js" type="text/javascript"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/layer/layer.js" type="text/javascript"></script>
+<script src="../js/angular.min.js" type="text/javascript"></script>
+<script src="../js/api.js" type="text/javascript"></script>
+<script src="../js/navbar.js" type="text/javascript"></script>
+<script src="../js/footer.js" type="text/javascript" ></script>
 <script type="text/javascript">
     app.controller('registerCtrl',function ($scope) {
         $scope.username = '';
-        $scope.password = '';
         $scope.email = '';
-        $scope.name = '';
+        $scope.password1 = '';
+        $scope.password2 = '';
         $scope.DoRegister = function () {
-            $.api.ClearAll();
-            $.api.DoRegister($scope.username,$scope.name,$scope.email,$scope.password);
+            if(($scope.username=="")||($scope.email=="")||($scope.password1=="")||($scope.password2=="")){
+                $.api.Fail("Please check your input!")
+            }else {
+                if ( $scope.password1 != $scope.password2){
+                    $.api.Fail("The two passwords you entered did not m-atch!")
+                }
+                else {
+                    $.api.ClearAll();
+                    $.api.DoRegister($scope.username,$scope.name,$scope.email,$scope.password2);
+                }
+            }
         };$scope.enterEvent = function(e) {
             var keycode = window.event?e.keyCode:e.which;
             if(keycode==13){

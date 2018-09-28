@@ -1,0 +1,442 @@
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1169px){
+    .container {
+        width: 970px;
+    }
+    #search_mini_form {
+        max-width: 70%;
+    }
+    .home_menu ul li a {
+        padding: 15px 15px 16px;
+    }    
+    .home-1 .content_right {
+        display: none;
+    }
+    .category-menu-list ul li .cat-left-drop-menu {
+        width: 700px; 
+    }
+    .category-menu-list ul li .cat-left-drop-menu-left {
+        width: 150px;
+    }
+    .home-1 .banner a {
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+    .home-1 .login-panel{
+        width: 400px;
+    }
+    .footer-static-content .link-follow {
+        text-align: left;
+    }
+    .footer-static-content .link-follow li.first a {
+        font-size: 18px;
+        height: 48px;
+        line-height: 40px;
+        margin-right: 5px;
+        text-align: center;
+        width: 48px;
+    }
+    .dropit .dropit-trigger .submenu {
+        left: -50px;
+    }
+    /* shop details */
+    .home-1 .product-img-right {
+        margin-right: 5px;
+        width: 90px;
+    }
+    .login-panel .block-button-right span{
+        padding: 0;
+    }
+}
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+		width: 750px;
+	}
+    .home-1 .call_us {
+        display: none;
+    }
+    .home-1 .top-wishlist, .home-1 .top-compare {
+        display: none;
+    }
+    .social-footer {
+        margin-top: 35px;
+    }
+    .footer-static-top .f-col::before {
+        border-left: none;
+    }
+    .cat-left-drop-menu {
+        display: none;
+    }
+    .home_menu ul li a {
+        padding: 15px 19px 16px;
+    }
+    .home-1 .home_menu {
+        margin-left: 0;
+    }
+        /* shop details */
+    .text {
+        margin-top: 40px;
+    }
+    .form-add {
+        margin-top: 40px;
+    }
+    .cart-collaterals .totals {
+        margin-top: 30px;
+    }
+    .cart-collaterals .totals .button2.get {
+        width: inherit;
+    }
+    .about-optima-img {
+        margin-top: 20px;
+    }
+    .about-optima-img img {
+        width: 100%;
+    }
+    .contact-text p::before, .contact-text p::after {
+        left: 200px;
+    }
+    .contact-text p::after {
+        left: 460px;
+    }
+    .col-md-6.contactemail.npr {
+        padding-left: 0;
+    }
+    .col-md-6.npl {
+        padding-right: 0;
+    }
+    .home-1 .cat-left-drop-menu {
+        visibility: hidden;
+    }
+    #search_mini_form {
+        display: none;
+    }
+    .home-1 #search_mini_form {
+        display: block;
+    }
+    .cat-left-drop-menu {
+        visibility: hidden;
+    }
+    .home-1 .s-email{
+        margin-bottom: 10px;
+    }
+    .top-compare {
+        display: none;
+    }
+    .header-wrapper.clearfix {
+        overflow: hidden;
+    }
+}
+/* small mobile :320px. */
+@media (max-width: 767px) {
+    .container {
+        width:300px;
+    }
+    .home-1 .call_us {
+        display: none;
+    }
+    .home-1 .english {
+        display: none;
+    }
+    .home-1 .top-wishlist, .home-1 .top-compare {
+        display: none;
+    }
+    .home-1 .home_menu {
+        margin-left: 0px;
+    }
+    .home-1 .login-panel{
+        margin: 0 auto;
+        width: 270px;
+    }
+    .features-tab .nav-tabs > li > a {
+        font-size: 15px;
+        margin: 0 20px 0 0;
+    }
+    .primary-img {
+        width: 100%;
+    }
+    .product.col-md-4.col-sm-4.col-xs-12 img {
+        width: 100%;
+    }
+    .home-1 .banner a {
+        margin-top: 30px;
+    }
+    .pull-left {
+        max-width: 53%;
+    }
+    .media-body {
+        max-width: 47%;
+    }
+    .social-footer {
+        margin-top: 30px;
+    }
+    .footer-static-content .link-follow li.first a {
+        font-size: 13px;
+        height: 42px;
+        line-height: 33px;
+        margin-right: 6px;
+        text-align: center;
+        width: 42px;
+    }
+    .footer-payment {
+        float: left;
+        margin-top: 15px;
+    }
+    .footer-static-top .f-col::before {
+        border-left: none;
+    }
+    .ma-footer-static .pt-menu-links {
+        margin-bottom: 0px;
+    }   
+    .footer-static-title {
+        margin-bottom: 15px;
+        margin-top: 40px;
+    }
+    .home-1 .home_menu {
+        margin-left: 0;
+        display: none;
+    }
+    .mobile-menu{
+        display: block;
+    }
+    #search_mini_form {
+        margin-bottom: 0px;
+        max-width: 100%;
+    }
+    .footer-payment img {
+        width: 100%;
+    }
+    .media-body > img {
+        display: none;
+    }
+    .ma-footer-static .pt-menu-links {
+        display: none;
+    }
+    .footer-address .container-inner address {
+        font-size: 13px;
+        text-align: left;
+    }
+    .first {
+        margin-bottom: 15px;
+    }
+    /* shop 3 */
+    .features-tab .shop-all-tab .shop6 {
+        display: none;
+    }
+    .features-tab .shop-all-tab .two-part {
+        width: 100%;
+    }
+    .ma-title {
+        margin-top: 30px;
+    }
+    .cras .product-name h1 {
+        font-size: 29px;
+    }
+    .client-text {
+        padding: 0 0px;
+    }
+    .about-optima-text h1, .about-sec-head h2, h2.creative-member, .contact-content-area h2 {
+        font-size: 22px;
+    }
+    .about-optima-img {
+        margin-top: 20px;
+    }
+    .owl-item {
+        padding-bottom: 10px;
+    }
+    .signup-newsletter .blog-search {
+        width: 90%;
+    }
+    .blog-search button {
+        font-size: 14px;
+    }
+    .signup-newsletter > h2 {
+        font-size: 15px;
+    }
+    .banner-block img {
+        width: 100%;
+    }
+    .contact-text p::before, .contact-text p::after {
+        left: 10px;
+    }
+    .contact-text p::after {
+        left: 210px;
+    }
+    .col-md-6.contactemail.npr {
+        padding-left: 0;
+    }
+    .col-md-6.npl {
+        padding-right: 0;
+    }
+  .contact-text {
+        padding: 100px 0px;
+    }
+    .about-optima-text h1, .about-sec-head h2, h2.creative-member, .contact-content-area h2 {
+        font-size: 17px;
+    }
+    .contactHead > h3, .contactfrom h1, .contact-map h3 {
+        font-size: 17px;
+    }
+    .about-optima-text h1, .about-sec-head h2, h2.creative-member, .contact-content-area h2 {
+        font-size: 17px;
+    }
+    .form-search input.input-text {
+        padding: 0;
+        width: 40%;
+    }
+    .form-search select.select {
+        padding: 0 0 0 4px;
+        position: inherit;
+        width: 102px;
+    }
+    .form-search::after {
+        bottom: 14px;
+        left: 90px;
+    }    
+    .home-1 #search_mini_form {
+        width: 100%;
+    }
+    #search_mini_form {
+        width: 100%;
+    }
+    .form-search button.button .fa {
+        height: 37px;
+    }
+    .top-cart-wrapper .home {
+        position: relative;
+        z-index: 99999999;
+    }
+    .home-1 .s-email{
+        margin-bottom: 10px;
+    }
+    .title-container.s-tb-c.title-compress h1 {
+        display: none;
+    }
+    .title-container.s-tb-c.title-compress h2 {
+        display: none;
+    }
+    .title-container.s-tb-c h1.title4 {
+        display: none;
+    }
+    .s-title a {
+        padding: 5px 10px;
+        display: inline-block;
+    }
+    .preview-2 .nivo-controlNav {
+        z-index: -1;
+    }
+    .title-container.s-tb-c h3.title3 {
+        margin: 0px 0 20px;
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+    .title-container.s-tb-c {
+        padding-right: 100px;
+        padding-top: 40px;
+    }
+    .mean-container .mean-bar {
+        z-index: inherit;
+    }
+    .product{
+        margin-bottom: 15px;
+    }
+    .banner > a {
+        display: none;
+    }
+    .home-1 .lenovo {
+        margin-top: 0px;
+    }
+    .banner_area {
+        display: none;
+    }
+    .pull-left {
+        max-width: 100%;
+    }
+    .top-compare {
+        display: none;
+    }
+    .top-cart-wrapper {
+        margin: 10px 0;
+    }
+    .product.pro.col-md-6.col-sm-6 {
+        overflow: hidden;
+    }
+    .galaxy {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .npr {
+      padding-left: 0;
+    }
+    .home-1 .header {
+      padding: 10px 0 0;
+    }
+    .blog-right-sidebar .sp-module-title {
+        margin-top: 30px;
+    }
+    .easy-res{
+        margin-top: 40px;
+    }
+    .button2.btn-cart.btn-a {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .coupon{
+        padding-top: 30px;
+    }
+    .cart-collaterals {
+        padding: 0px 0 0;
+    }
+    .button2.notice {
+        margin-left: 0;
+    }
+    .cart-form .a-all {
+        margin-left: 0px;
+    }
+    .cart-form {
+        padding-bottom: 30px;
+    }
+    .select-wrapper .select {
+        background: none;
+    }
+    .laptop {
+        width: 100%;
+    }
+    .lenovo{
+        margin-bottom: 20px;
+    }
+    .laptop > a {
+        display: inherit;
+    }
+    .home-1 .header{
+        margin-bottom: 10px;
+    }
+    .home-1 .login-panel{
+        margin: 10px auto 40px auto;
+    }
+}
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .container {
+        width:450px
+    }
+    .footer-payment img {
+        width: 100%;
+    }
+    .footer-static-content .link-follow {
+        text-align: left;
+    }
+    .cras .product-name h1 {
+        font-size: 34px;
+    }
+    .contact-text p::before, .contact-text p::after {
+        left: 70px;
+    }
+    .contact-text p::after {
+        left: 295px;
+    }
+    .s-title a {
+        padding: 5px 20px;
+        display: inline-block;
+    }
+}

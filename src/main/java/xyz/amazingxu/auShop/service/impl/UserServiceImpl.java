@@ -55,7 +55,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
             );
         });
         if (userDO == null) {
-            throw new wxblogException("账号或密码不正确!");
+            throw new wxblogException("Incorrect username or password!");
         } else if (userDO.getDeleted()) {
             throw new wxblogException("User has been banned!");
         } else {
@@ -126,24 +126,22 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void register(UserRegisterReqDTO userRegisterReqDTO) {
-        if (userRegisterReqDTO.getUsername().equals("") || userRegisterReqDTO.getName().equals("") ||userRegisterReqDTO.getEmail().equals("")|| userRegisterReqDTO.getPassword().equals("")) {
-            throw new wxblogException("注册信息不能为空！");
+        if (userRegisterReqDTO.getUsername().equals("") ||userRegisterReqDTO.getEmail().equals("")|| userRegisterReqDTO.getPassword().equals("")) {
+            throw new wxblogException("Register information cannot be null!");
         } else if (!userRegisterReqDTO.getUsername().matches(usernamePattern)){
             if (userRegisterReqDTO.getUsername().length()<6 || userRegisterReqDTO.getUsername().length()>20){
-                throw new wxblogException("账号必须为6~20个字符！");
+                throw new wxblogException("Username must be 6 to 20 characters!");
             }else {
-                throw new wxblogException("账号必须是字母开头，可包含数字和下划线！");
+                throw new wxblogException("Username must begins with a letter!");
             }
-        } else if (userRegisterReqDTO.getName().length()>40){
-                throw new wxblogException("昵称不能超过40个字符！");
         } else if (!userRegisterReqDTO.getPassword().matches(passwordPattern)) {
             if (userRegisterReqDTO.getPassword().length()<6 || userRegisterReqDTO.getPassword().length()>20){
-                throw new wxblogException("密码必须为6~20个字符！");
+                throw new wxblogException("Password must be 6 to 20 characters!");
             }else {
-                throw new wxblogException("密码只能使用字母、数字和下划线！");
+                throw new wxblogException("Password can only contain letters, numbers and underscores!");
             }
         } else if (!userRegisterReqDTO.getEmail().matches(emailPattern)){
-           throw new wxblogException("请输入正确的邮箱！");
+           throw new wxblogException("Incorrect email!");
         } else {
             //查找账号是否存在
             long count = userDAO.count((root, query, cb) -> {
@@ -151,7 +149,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
                 return cb.equal(usernamePath, userRegisterReqDTO.getUsername());
             });
             if (count>0){
-                throw new wxblogException("该账号已存在！");
+                throw new wxblogException("The username already exists!");
             } else {
                 UserDO userDO = userRegisterReqMapper.to(userRegisterReqDTO);
                 userDAO.save(userDO);

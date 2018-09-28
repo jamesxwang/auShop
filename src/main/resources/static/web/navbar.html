@@ -1,0 +1,81 @@
+<div class="top-link">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="top-logo">
+                    <a href="../index.html"><img src="../img/logo/logo.gif.png" alt=""></a>
+                </div>
+                <div class="content_right">
+                    <div class="call_us">
+                        <a href="mailto:xuwang2@student.unimelb.edu.au"><p>
+                            Contact me:
+                            <span> xuwang2@student.unimelb.edu.au</span>
+                        </p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="english">
+                    <ul>
+                        <li><a href="#">English<i class="fa fa-caret-down"></i></a>
+                            <ul>
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">中文</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">AUD<i class="fa fa-caret-down"></i></a>
+                            <ul>
+                                <li><a href="#">AUD</a></li>
+                                <li><a href="#">人民币</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropit-trigger">
+                            <a class="parent-link login_click" href="#"><i class="fa fa-key"></i></a>
+                            <ul class="submenu">
+                                <li><a ng-if="!UserInfo" href="login.html">Log In</a></li>
+                                <li><a ng-if="!UserInfo" href="register.html">Sign Up</a></li>
+                                <li><a ng-if="UserInfo" href="account.html">My Account</a></li>
+                                <li><a ng-if="UserInfo" href="#" data-ng-click='DoLogOut()'>Sign Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                <form action="#" id="search_mini_form">
+                    <div class="form-search s-same" >
+                        <div class="select-wrapper">
+                            <select class="select">
+                                <option value="">All Categories</option>
+                                <option value="">Nutrition & Health care</option>
+                                <option value="">Beauty care</option>
+                                <option value="">Snacks</option>
+                            </select>
+                        </div>
+                        <input class="input-text" type="text" placeholder="Search entire store here">
+                        <button class="button" title="Search" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="header-wrapper">
+                    <div class="top-cart-wrapper">
+                        <div class="top-cart-contain">
+                            <div class="top-cart-title">
+                                <a href="#" onclick="$.api.Developing()" class="my-cart">Shopping cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

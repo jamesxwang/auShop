@@ -23,7 +23,6 @@ public interface UserRegisterReqMapper {
             @Mapping(source = "id",target = "id"),
             @Mapping(source = "username",target = "username"),
             @Mapping(source = "password",target = "password"),
-            @Mapping(source = "name",target = "name"),
             @Mapping(source = "email",target = "email")
     })
     public UserRegisterReqDTO from(UserDO userDO);

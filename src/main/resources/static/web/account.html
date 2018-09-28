@@ -1,235 +1,278 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="auShop">
+<!doctype html>
+<html class="no-js" lang="" data-ng-app="auShop">
 <head>
-    <title>账号设置</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AuShop - My Account</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../img/icon/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/auShop.css">
-    <link rel="stylesheet" type="text/css" href="css/user.css">
-    <link rel="icon" href="../favicon.ico" />
-    <script>
-        if (window.top !== window.self) {
-            window.top.location = window.location
-        }
-    </script>
-    <script src="js/navbar.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/owl.carousel.css">
+    <link rel="stylesheet" href="../css/owl.theme.css">
+    <link rel="stylesheet" href="../css/owl.transitions.css">
+    <link rel="stylesheet" href="../lib/css/nivo-slider.css" type="text/css" />
+    <link rel="stylesheet" href="../lib/css/preview.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/meanmenu.min.css">
+    <link rel="stylesheet" href="../css/img-zoom/jquery.simpleLens.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body ng-controller="accountCtrl">
-<!--navbar-->
-<div class="navbar-wrapper">
-    <navbar></navbar>
-</div>
+<body class="home-1">
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
 
-<!--account-->
-<div id="account-wrapper">
-    <div class="account-left-side">
-        <ul>
-            <li class="account-setting active">个人信息</li>
-            <li class="account-change-password">更改密码</li>
-            <li class="account-change-address">收货地址</li>
-            <li class="advice">意见反馈</li>
-        </ul>
-    </div>
-
-    <div id="border">
-        <div id="line" class="one"></div>
-    </div>
-
-    <div class="account-right-side">
-        <div id="first" class="active">
-            <div class="form">
-                <div class="row">
-                    <div class="col-md-4">
-                        <a href=""><img src="https://placehold.it/120x120"></a>
-                        <p class='text-center small'><a href='#' onclick='$.api.Developing()'>更换照片</a></p>
+<!-- start header_area
+============================================ -->
+<header class="header_area" ng-controller="navCtrl">
+    <nav4web></nav4web>
+    <div class="top-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-5">
+                    <div class="left-category-menu  hidden-xs">
+                        <div class="left-product-cat">
+                            <div class="category-heading">
+                                <h2>Category</h2>
+                            </div>
+                            <div class="category-menu-list">
+                                <ul>
+                                    <li class="arrow-plus">
+                                        <a href="../web/shop.html">
+                                                    <span class="cat-thumb">
+                                                        <i class="fas fa-prescription-bottle"></i>
+                                                    </span>
+                                            Nutrition & Health care
+                                        </a>
+                                        <div class="cat-left-drop-menu ">
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Health supplement</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Nutritional Milk Powder</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Vitamins</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Honey propolis</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Health care</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Hyperlipidemia</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Hypertension</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Hyperglycemia</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Category 3</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Category 4</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">xxxx</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="arrow-plus">
+                                        <a href="../web/shop.html">
+                                                    <span class="cat-thumb">
+                                                        <i class="fas fa-gift"></i>
+                                                    </span>
+                                            Beauty care
+                                        </a>
+                                        <div class="cat-left-drop-menu">
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Bags </a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Bootees  Bags</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Blazers</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Clothing </a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">coats</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">T-shirts</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Lingerie </a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Bands</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Furniture</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="cat-left-drop-menu-left">
+                                                <a class="menu-item-heading" href="#">Handbag</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Bands</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Funiture</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Lifestyle</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="../web/shop.html">
+                                                    <span class="cat-thumb ">
+                                                        <i class="fas fa-cookie-bite"></i>
+                                                    </span>
+                                            Snacks
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-8 p-t-md">
-                        <p>会员名： {{UserInfo.name}}</p>
-                        <div style="height: 1px;margin: 9px 0;overflow: hidden;background-color: #e5e5e5"></div>
-                        <!--height ='1px';margin:9px 0;overflow='hidden';background-color='#e5e5e5'-->
-                        <p class='text-muted small'>{{UserInfo.email}}</p>
-                    </div>
-
                 </div>
-
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                    <!--telephone-->
-                    <div class="panel panel-default m-b-sm">
-                        <div class="panel-heading" role="tab" id="headingOne">
-                            <h4 class="panel-title">
-                                <div class="collapsed" role="button" data-toggle="collapse" href="#collapseOne" data-parent="#accordion" aria-expanded="false" aria-controls="collapseOne">
-                                    <ul class="list-inline">
-                                        <li class="titleName">手机号: <span class="text-muted" ng-if="!UserInfo.phone">未设置</span></li>
-                                        <!--TODO 隐藏部分电话号码-->
-                                        <li class=" text-muted"> {{UserInfo.phone}}</li>
-                                        <li class=" pull-right"><a href="#">更改>></a></li>
+                <div class="col-lg-9 col-md-8 col-sm-7">
+                    <div class="home_menu">
+                        <nav class="navToggle" onclick="click()" data-ng-click="click()">
+                            <ul>
+                                <li><a href="../web/about-us.html">about us</a></li>
+                                <li class="active1"><a href="#">Pages</a>
+                                    <ul>
+                                        <li><a href="../web/checkout.html">checkout</a></li>
+                                        <li><a href="../web/contact-us.html">Contacts</a></li>
+                                        <li><a href="../web/shop.html">shop</a></li>
+                                        <li><a href="../web/single-product.html">single-product</a></li>
+                                        <li><a href="../web/shopping-cart.html">shopping-cart</a></li>
+                                        <li><a href="../web/wishlist.html">wishlist</a></li>
                                     </ul>
-                                </div>
-                            </h4>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body">
-                                <div>
-                                    <input type="text" ng-model="oldPhone" placeholder="原手机号码（如果没有请勿填写）" class=" form-control m-b-sm">
-                                    <input type="text" ng-model="newPhone" placeholder="新手机号码" class=" form-control m-b-sm" ng-keyup="enterPhone($event)">
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <button class="btn btn-primary" ng-click="ChangePhone()">保存</button>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <button class="btn btn-default">取消</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--gender-->
-                    <div class="panel panel-default m-b-sm">
-                        <div class="panel-heading" role="tab" id="headingTwo">
-                            <h4 class="panel-title">
-                                <div class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo" data-parent="#accordion" aria-expanded="false" aria-controls="collapseTwo">
-                                    <ul class="list-inline">
-                                        <li class="titleName">性别: <span class="text-muted" ng-if="!UserInfo.phone">未设置</span></li>
-                                        <li class="titleContent text-muted "> {{UserInfo.gender}}</li>
-                                        <li class="titleOption pull-right"><a href="#">更改>></a></li>
-                                    </ul>
-                                </div>
-                            </h4>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                            <div class="panel-body">
-                                <div>
-                                    <div class="input-group m-b-sm">
-                                        <p>请选择您的性别:</p>
-                                        <input type="radio" name="gender" ng-model="newGender" value="男">男
-                                        <input type="radio" name="gender" ng-model="newGender" value="女" style="margin-left: 20px">女
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <button class="btn btn-primary" ng-click="ChangeGender()">保存</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--email-->
-                    <div class="panel panel-default m-b-sm">
-                        <div class="panel-heading" role="tab" id="headingThree">
-                            <h4 class="panel-title">
-                                <div class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <ul class="list-inline">
-                                        <li class="titleName">电子邮箱: </li>
-                                        <li class="titleContent text-muted "> {{UserInfo.email}}</li>
-                                        <li class="titleOption pull-right"><a href="#">更改>></a></li>
-                                    </ul>
-                                </div>
-                            </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                            <div class="panel-body">
-                                <div>
-                                    <p>原邮箱: <span>{{UserInfo.email}}</span></p>
-                                    <input type="text" ng-model="newEmail" placeholder="新邮箱" class=" form-control m-b-sm" ng-keyup="enterEmail($event)">
-                                    <div class="row">
-                                        <div class="col-sm-2 m-r-sm">
-                                            <button class="btn btn-primary" ng-click="ChangeEmail()">保存</button>
-                                        </div>
-                                        <div class="col-sm-2 ">
-                                            <button class="btn btn-default">取消</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                </li>
+                                <li><a href="../web/contact-us.html">Contacts</a></li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
-
-        </div>
-        <div id="second">
-            <div class="form">
-                <input class="form-control" type="password" ng-model="oldpwd" placeholder="请输入旧密码">
-                <input class="form-control" type="password" placeholder="请输入新密码">
-                <input class="form-control" type="password" ng-model="newpwd" placeholder="请再次输入新密码" ng-keyup="enterPassword($event)" >
-                <button class="btn btn-primary btn-block" ng-click="ChangePassword()">确认更改</button>
-            </div>
-        </div>
-        <div id="third">
-            <h1>title-3</h1>
-            <p>text. text. text. text. text. text. text. text. text. text. text. text. </p>
-        </div>
-        <div id="fourth">
-            <h1>title-4</h1>
-            <p>text. text. text. text. text. text. text. text. text. text. text. text. </p>
         </div>
     </div>
+    <div class="mobile-menu-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mobile-menu">
+                        <nav id="dropdown">
+                            <ul>
+                                <li><a href="../web/about-us.html">about us</a></li>
+                                <li class="active1"><a href="#">Pages</a>
+                                    <ul>
+                                        <li><a href="../web/about-us.html">about us</a></li>
+                                        <li><a href="../web/checkout.html">checkout</a></li>
+                                        <li><a href="../web/contact-us.html">Contacts</a></li>
+                                        <li><a href="../web/shop.html">shop</a></li>
+                                        <li><a href="../web/single-product.html">single-product</a></li>
+                                        <li><a href="../web/shopping-cart.html">shopping-cart</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="../web/contact-us.html">Contacts</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- end header_area
+============================================ -->
+<br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
 
+
+
+
+
+
+<footer4web></footer4web>
+<div id="toTop">
+    <i class="fa fa-chevron-up"></i>
 </div>
-
-<!--footer-->
-<div class="footer-wrapper">
-    <footer></footer>
-</div>
-
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/layer/layer.js"></script>
-<script type="text/javascript" src="js/angular.min.js"></script>
-<script type="text/javascript" src="js/api.js"></script>
-<script type="text/javascript" src="js/navbar.js"></script>
-<script type="text/javascript" src="js/account.js"></script>
-<script type="text/javascript" src="js/footer.js"></script>
-<script type="text/javascript">
-    app.controller('accountCtrl',function ($scope) {
-        $scope.oldpwd = '';
-        $scope.newpwd = '';
-        $scope.oldPhone = '';
-        $scope.newPhone = '';
-        $scope.newEmail = '';
-        $scope.UserInfo = $.api.GetUserInfo();
-        $scope.ChangePassword = function () {
-            $.api.ChangePassword($scope.oldpwd,$scope.newpwd);
-        };$scope.enterPassword = function(e) {
-            var keycode = window.event?e.keyCode:e.which;
-            if(keycode==13){
-                $scope.ChangePassword();
-            }
-        };
-        $scope.ChangePhone = function () {
-            if ($scope.newPhone.trim() == ''){
-                $.api.Fail("新号码不能为空！")
-            } else {
-                $.api.ChangePhone($scope.oldPhone,$scope.newPhone);
-            }
-        };$scope.enterPhone = function(e) {
-            var keycode = window.event?e.keyCode:e.which;
-            if(keycode==13){
-                $scope.ChangePhone();
-            }
-        };
-        $scope.ChangeGender = function () {
-            if ($scope.newGender != null){
-                $.api.ChangeGender($scope.newGender);
-            } else {
-                $.api.Fail("请选择您的性别。")
-            }
-        };
-        $scope.ChangeEmail = function () {
-            $.api.ChangeEmail($scope.newEmail.trim());
-        };$scope.enterEmail = function(e) {
-            var keycode = window.event?e.keyCode:e.which;
-            if(keycode==13){
-                $scope.ChangeEmail();
-            }
-        };
-
-    })
-
-</script>
-
+<!-- JS
+============================================ -->
+<script src="../js/vendor/jquery-1.11.3.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/wow.min.js"></script>
+<script src="../js/jquery-price-slider.js"></script>
+<script src="../js/img-zoom/jquery.simpleLens.min.js"></script>
+<script src="../js/jquery.meanmenu.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="../js/jquery.scrollUp.min.js"></script>
+<script src="../lib/js/jquery.nivo.slider.js" type="text/javascript"></script>
+<script src="../lib/home.js" type="text/javascript"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/layer/layer.js" type="text/javascript"></script>
+<script src="../js/angular.min.js" type="text/javascript"></script>
+<script src="../js/api.js" type="text/javascript"></script>
+<script src="../js/navbar.js" type="text/javascript"></script>
+<script src="../js/footer.js" type="text/javascript" ></script>
 </body>
 </html>

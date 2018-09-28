@@ -38,7 +38,7 @@ public class AuShopApplication {
 	public EmbeddedServletContainerCustomizer containerCustomizer() {
 		return (container -> {
 			ErrorPage FORBIDDEN = new ErrorPage(HttpStatus.FORBIDDEN, "/index.html");
-			ErrorPage NOT_FOUND = new ErrorPage(HttpStatus.NOT_FOUND, "/404.html");
+			ErrorPage NOT_FOUND = new ErrorPage(HttpStatus.NOT_FOUND, "/index.html");
 			container.addErrorPages(FORBIDDEN,NOT_FOUND);
 		});
 	}

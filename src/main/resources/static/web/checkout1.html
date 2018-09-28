@@ -1,0 +1,961 @@
+<!doctype html>
+<html class="no-js" lang="" data-ng-app="auShop">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AuShop - Checkout</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../img/icon/favicon.ico">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/owl.carousel.css">
+    <link rel="stylesheet" href="../css/owl.theme.css">
+    <link rel="stylesheet" href="../css/owl.transitions.css">
+    <link rel="stylesheet" href="../lib/css/nivo-slider.css" type="text/css" />
+    <link rel="stylesheet" href="../lib/css/preview.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/meanmenu.min.css">
+    <link rel="stylesheet" href="../css/img-zoom/jquery.simpleLens.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+    <body class="home-1">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!-- Add your site or application content here -->
+        <!-- start header_area
+		============================================ -->
+        <header class="header_area" ng-controller="navCtrl">
+            <nav4web></nav4web>
+            <div class="top-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-5">
+                            <div class="left-category-menu  hidden-xs">
+                                <div class="left-product-cat">
+                                    <div class="category-heading">
+                                        <h2>Category</h2>
+                                    </div>
+                                    <div class="category-menu-list">
+                                        <ul>
+                                            <li class="arrow-plus">
+                                                <a href="../web/shop.html">
+                                                    <span class="cat-thumb">
+                                                        <i class="fas fa-prescription-bottle"></i>
+                                                    </span>
+                                                    Nutrition & Health care
+                                                </a>
+                                                <div class="cat-left-drop-menu ">
+                                                    <div class="cat-left-drop-menu-left">
+                                                        <a class="menu-item-heading" href="#">Health supplement</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">Nutritional Milk Powder</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Vitamins</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Honey propolis</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="cat-left-drop-menu-left">
+                                                        <a class="menu-item-heading" href="#">Health care</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">Hyperlipidemia</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Hypertension</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Hyperglycemia</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="cat-left-drop-menu-left">
+                                                        <a class="menu-item-heading" href="#">Category 3</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">xxxx</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">xxxx</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">xxxx</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">xxxx</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="cat-left-drop-menu-left">
+                                                        <a class="menu-item-heading" href="#">Category 4</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">xxxx</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">xxxx</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">xxxx</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">xxxx</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="arrow-plus">
+                                                <a href="../web/shop.html">
+                                                    <span class="cat-thumb">
+                                                        <i class="fas fa-gift"></i>
+                                                    </span>
+                                                    Beauty care
+                                                </a>
+                                                <div class="cat-left-drop-menu">
+                                                    <div class="cat-left-drop-menu-left">
+                                                        <a class="menu-item-heading" href="#">Bags </a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">Bootees  Bags</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Blazers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="cat-left-drop-menu-left">
+                                                        <a class="menu-item-heading" href="#">Clothing </a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">coats</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">T-shirts</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="cat-left-drop-menu-left">
+                                                        <a class="menu-item-heading" href="#">Lingerie </a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">Bands</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Furniture</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="cat-left-drop-menu-left">
+                                                        <a class="menu-item-heading" href="#">Handbag</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">Bands</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Funiture</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">Lifestyle</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="../web/shop.html">
+                                                    <span class="cat-thumb ">
+                                                        <i class="fas fa-cookie-bite"></i>
+                                                    </span>
+                                                    Snacks
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-8 col-sm-7">
+                            <div class="home_menu">
+                                <nav class="navToggle" onclick="click()" data-ng-click="click()">
+                                    <ul>
+                                        <li><a href="../web/about-us.html">about us</a></li>
+                                        <li class="active1"><a href="#">Pages</a>
+                                            <ul>
+                                                <li><a href="../web/checkout.html">checkout</a></li>
+                                                <li><a href="../web/contact-us.html">Contacts</a></li>
+                                                <li><a href="../web/shop.html">shop</a></li>
+                                                <li><a href="../web/single-product.html">single-product</a></li>
+                                                <li><a href="../web/shopping-cart.html">shopping-cart</a></li>
+                                                <li><a href="../web/wishlist.html">wishlist</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="../web/contact-us.html">Contacts</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul>
+                                        <li><a href="../web/about-us.html">about us</a></li>
+                                        <li class="active1"><a href="#">Pages</a>
+                                            <ul>
+                                                <li><a href="../web/about-us.html">about us</a></li>
+                                                <li><a href="../web/checkout.html">checkout</a></li>
+                                                <li><a href="../web/contact-us.html">Contacts</a></li>
+                                                <li><a href="../web/shop.html">shop</a></li>
+                                                <li><a href="../web/single-product.html">single-product</a></li>
+                                                <li><a href="../web/shopping-cart.html">shopping-cart</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="../web/contact-us.html">Contacts</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- end header_area
+		============================================ -->
+        <section class="collapse_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 col-sm-9">
+                        <div class="check">
+                            <h1>Checkout</h1>
+                        </div>
+                        <div class="faq-accordion">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed method" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                <span class="number">1</span>
+                                                Checkout Method
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" >
+                                        <div class="row">
+                                            <div class="easy">
+                                                <div class="col-sm-6">
+                                                    <div class="Register">
+                                                        <h3>Checkout as a Guest or Register</h3>
+                                                    </div>
+                                                    <p>Register with us for future convenience:</p>
+                                                    <div class="method-input-box">
+                                                        <p>
+                                                            <input type="radio" checked="" value="Checkout" name="checkout">
+                                                            <label>Checkout as Guest</label>
+                                                        </p>
+                                                        <p>
+                                                            <input type="radio" value="Register" name="checkout">
+                                                            <label>Register</label>
+                                                        </p>
+                                                    </div>
+                                                    <div class="easy-text">
+                                                        <h4>Register and save time!</h4>
+                                                        <p>Register with us for future convenience:</p>
+                                                        <p>Fast and easy check out</p>
+                                                        <p>Register with us for future convenience:</p>
+                                                    </div>
+                                                    <div class="block-button-left">
+                                                        <button class="button2 get" type="button" title="">
+                                                            <span>Continue</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="Register easy-res">
+                                                        <h3>Login</h3>
+                                                    </div>
+                                                    <div class="easy-text">
+                                                        <h4>Already registered?</h4>
+                                                    </div>
+                                                    <p class="log">Please log in below:</p>
+                                                    <form action="#">
+                                                        <div class="input-one form-list">
+                                                            <label class="required">
+                                                                Email Address
+                                                                <em>*</em>
+                                                            </label>
+                                                            <input class="email" type="text" required="">
+                                                        </div>
+                                                        <div class="input-one form-list">
+                                                            <label class="required">
+                                                                Password
+                                                                <em>*</em>
+                                                            </label>
+                                                            <input class="email" type="password" required="">
+                                                        </div>
+                                                    </form>
+                                                    <div class="block-button-right">
+                                                        <a href="#">Forgot your pasword?</a>
+                                                        <button class="button2 get" type="button" title="">
+                                                            <span>Login</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                <span class="number">2</span>
+                                                Billing Information
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false" style="height: 0px;">
+                                        <div class="row">
+                                            <div class="easy">
+                                                <div class="billing-info">
+                                                    <div class="input-one form-list col-sm-4">
+                                                        <label class="required">
+                                                            First Name
+                                                            <em>*</em>
+                                                        </label>
+                                                        <input class="email" type="text" required="">
+                                                    </div>
+                                                    <div class="input-one form-list col-sm-4">
+                                                        <label class="required">Middle Name/Initial</label>
+                                                        <input class="email" type="text" required="">
+                                                    </div>
+                                                    <div class="input-one form-list col-sm-4">
+                                                        <label class="required">
+                                                            Last Name
+                                                            <em>*</em>
+                                                        </label>
+                                                        <input class="email" type="text" required="">
+                                                    </div>
+                                                    <div class="input-one form-list col-sm-6">
+                                                        <label class="required">Company</label>
+                                                        <input class="email" type="text" required="">
+                                                    </div>
+                                                    <div class="input-one form-list col-sm-6">
+                                                        <label class="required">
+                                                            Email Address
+                                                            <em>*</em>
+                                                        </label>
+                                                        <input class="email" type="text" required="">
+                                                    </div>
+                                                    <div class="input-one form-list col-sm-12">
+                                                        <label class="required">
+                                                            Address
+                                                            <em>*</em>
+                                                        </label>
+                                                        <input class="email" type="text" required="">
+                                                    </div>
+                                                    <div class="input-one form-list col-sm-6">
+                                                        <label class="required">
+                                                            City
+                                                            <em>*</em>
+                                                        </label>
+                                                        <input class="email" type="text" required="">
+                                                    </div>
+                                                    <div class="input-one form-list col-sm-6">
+                                                        <label class="required">
+                                                            State/Province
+                                                            <em>*</em>
+                                                        </label>
+                                                        <input class="email" type="text" required="">
+                                                    </div>
+                                                    <div class="input-one form-list col-sm-6">
+                                                        <label class="required">
+                                                            Zip/Postal Code
+                                                            <em>*</em>
+                                                        </label>
+                                                        <input class="email" type="text" required="">
+                                                    </div>
+                                                    <div class="input-one form-listcol col-sm-6">
+                                                        <div class="country-select">
+                                                            <label class="required">
+                                                                Country
+                                                                <em>*</em>
+                                                            </label>
+                                                            <select class="email s-email">
+                                                                <option value="1">United State</option>
+                                                                <option value="2">Azerbaijan</option>
+                                                                <option value="3">Bahamas</option>
+                                                                <option value="4">Bahrain</option>
+                                                                <option value="5">Bangladesh</option>
+                                                                <option value="6">Barbados</option>
+                                                                <option value="7">Belarus</option>
+                                                                <option value="8">Belgium</option>
+                                                                <option value="9">Belize</option>
+                                                                <option value="10">Benin</option>
+                                                                <option value="11">Bermuda</option>
+                                                                <option value="12">Bhutan</option>
+                                                                <option value="13">Bolivia</option>
+                                                                <option value="14">Bosnia and Herzegovina</option>
+                                                                <option value="15">Botswana</option>
+                                                                <option value="16">Bouvet Island</option>
+                                                                <option value="17">Brazil</option>
+                                                                <option value="18">British Indian Ocean Territory</option>
+                                                                <option value="19">British Virgin Islands</option>
+                                                                <option value="20">Brunei</option>
+                                                                <option value="21">United State</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-one form-list col-sm-6">
+                                                        <label class="required">
+                                                            Telephone
+                                                            <em>*</em>
+                                                        </label>
+                                                        <input class="email" type="text" required="">
+                                                    </div>
+                                                    <div class="input-one form-list col-sm-6">
+                                                        <label class="required">
+                                                            Fax
+                                                            <em>*</em>
+                                                        </label>
+                                                        <input class="email" type="text" required="">
+                                                    </div>
+                                                    <div class="form-group col-sm-12">
+                                                        <div class="method-input-box">
+                                                            <p>
+                                                                <input type="radio" checked="" value="address" name="address">
+                                                                <label>Ship to this address</label>
+                                                            </p>
+                                                            <p>
+                                                                <input type="radio" value="dadress" name="address">
+                                                                <label>Ship to different address</label>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="block-button-right">
+                                                        <a class="o-back-to" href="#">
+                                                            <i class="fa fa-arrow-up"></i>
+                                                            Back
+                                                        </a>
+                                                        <button class="button2 get" type="button" title="">
+                                                            <span>Get a Quote</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                                                <span class="number">3</span>
+                                                Shipping Information
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false" style="height: 0px;">
+                                        <div class="easy">
+                                            <div class="left-info ship-info">
+                                                <div class="left-up">
+                                                    <span>BootExpert</span>
+                                                    <span>Bonosrie</span>
+                                                    <span>D- Block</span>
+                                                    <span>Dkaka, 1201</span>
+                                                    <span>Bangladesh</span>
+                                                    <span>T: +8800 879 9876 </span>
+                                                </div>
+                                                <a href="#">Edit Address</a>
+                                                <div class="use-billing-add">
+                                                    <div class="country-select">
+                                                        <select class="email s-email s-wid">
+                                                            <option>Select Your Address</option>
+                                                            <option>Add New Address</option>
+                                                            <option>Boot Experts, Bonosrie D- Block, Dkaka, 1201, Bangladesh</option>
+                                                        </select>
+                                                    </div>
+                                                    <p>
+                                                        <input type="checkbox" name="billadddress">
+                                                        <label>Use Billing Address</label>
+                                                    </p>
+                                                </div>
+                                                <div class="block-button-right back">
+                                                    <a class="o-back-to" href="#">
+                                                    <i class="fa fa-arrow-up"></i>
+                                                    Back
+                                                    </a>
+                                                    <button class="button2 get" type="button" title="">
+                                                        <span>Continue</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingFour">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                <span class="number">4</span>
+                                                Shipping Method 
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour" aria-expanded="false" style="height: 0px;">
+                                        <div class="easy">
+                                            <div class="shiping-method">
+                                                <p>Flat Rate</p>
+                                                <p>Fixed $40.00</p>
+                                                <div class="block-button-right">
+                                                    <a class="o-back-to" href="#">
+                                                    <i class="fa fa-arrow-up"></i>
+                                                    Back
+                                                    </a>
+                                                    <button class="button2 get" type="button" title="">
+                                                        <span>Continue</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingFive">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                <span class="number">5</span>
+                                                Payment Information
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive" aria-expanded="false" style="height: 0px;">
+                                        <div class="easy">
+                                            <div class="checkout-option">
+                                                <div class="method-input-box">
+                                                    <p>
+                                                        <input type="radio" value="check" name="payment">
+                                                        <label>Check / Money order </label>
+                                                    </p>
+                                                    <p>
+                                                        <input type="radio" checked="" value="card" name="payment">
+                                                        <label>Credit Card (saved) </label>
+                                                    </p>
+                                                </div>
+                                                <div class="master-card-info">
+                                                    <form action="#">
+                                                        <div class="input-one form-list col-sm-12">
+                                                            <label class="required">
+                                                                Name on Card
+                                                                <em>*</em>
+                                                            </label>
+                                                            <input class="email" type="text" required="">
+                                                        </div>
+                                                        <div class=" input-one form-list col-sm-12">
+                                                            <label class="required">Credit Card Type</label>
+                                                            <select class="email s-email s-wid">
+                                                                <option>--Please Select--</option>
+                                                                <option>American Express</option>
+                                                                <option>Visa</option>
+                                                                <option>MasterCard</option>
+                                                                <option>Discover</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="input-one form-list col-sm-12">
+                                                            <label class="required">
+                                                                Credit Card Number
+                                                                <em>*</em>
+                                                            </label>
+                                                            <input class="email" type="text" required="">
+                                                        </div>
+                                                        <div class="experi">
+                                                            <div class="input-one form-list col-sm-12">
+                                                                <label class="required">Expiration Date</label>
+                                                            
+                                                            </div>
+                                                            <div class="date">
+                                                                <select class="email s-email">
+                                                                    <option>--Month--</option>
+                                                                    <option>01 - January</option>
+                                                                    <option>02 - February</option>
+                                                                    <option>03 - March</option>
+                                                                    <option>04 - April</option>
+                                                                    <option>05 - May</option>
+                                                                    <option>06 - June</option>
+                                                                    <option>07 - July</option>
+                                                                    <option>08 - August</option>
+                                                                    <option>09 - September</option>
+                                                                    <option>10 - October</option>
+                                                                    <option>11 - November</option>
+                                                                    <option>12 - December</option>
+                                                                </select>
+                                                                <select class="email s-email">
+                                                                    <option>--Year--</option>
+                                                                    <option>2015</option>
+                                                                    <option>2016</option>
+                                                                    <option>2017</option>
+                                                                    <option>2018</option>
+                                                                    <option>2019</option>
+                                                                    <option>2020</option>
+                                                                    <option>2021</option>
+                                                                    <option>2022</option>
+                                                                    <option>2023</option>
+                                                                    <option>2024</option>
+                                                                    <option>2025</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="verificationcard input-one form-list col-sm-12">
+                                                            <label class="required">
+                                                                Card Verification Number
+                                                                <em>*</em>
+                                                            </label>
+                                                            <input class="email" type="text" required="">
+                                                        </div>
+                                                    </form>
+                                                    <div class="block-button-right">
+                                                        <a class="o-back-to" href="#">
+                                                            <i class="fa fa-arrow-up"></i>
+                                                            Back
+                                                        </a>
+                                                        <button class="button2 get" type="button" title="">
+                                                            <span>Continue</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingSix">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                                <span class="number">6</span>
+                                                Order Review
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix" aria-expanded="false" style="height: 0px;">
+                                        <div class="easy">
+                                            <div class="order-review">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="width-1">Product Name</th>
+                                                                <th class="width-2">Price</th>
+                                                                <th class="width-3">Qty</th>
+                                                                <th class="width-4">Subtotal</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="o-pro-dec">
+                                                                        <p>Fusce aliquam</p>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="o-pro-price">
+                                                                        <p>$236.00</p>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="o-pro-qty">
+                                                                        <p>2</p>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="o-pro-subtotal">
+                                                                        <p>$236.00</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="o-pro-dec">
+                                                                        <p>Primis in faucibus</p>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="o-pro-price">
+                                                                        <p>$265.00</p>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="o-pro-qty">
+                                                                        <p>3</p>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="o-pro-subtotal">
+                                                                        <p>$265.00</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="o-pro-dec">
+                                                                        <p>Etiam gravida</p>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="o-pro-price">
+                                                                        <p>$363.00</p>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="o-pro-qty">
+                                                                        <p>2</p>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="o-pro-subtotal">
+                                                                        <p>$363.00</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="o-pro-dec">
+                                                                        <p>Quisque in arcu</p>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="o-pro-price">
+                                                                        <p>$328.00</p>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="o-pro-qty">
+                                                                        <p>2</p>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="o-pro-subtotal">
+                                                                        <p>$328.00</p>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                        <tfoot>
+                                                            <tr>
+                                                                <td colspan="3">Subtotal </td>
+                                                                <td colspan="1">$4,001.00</td>
+                                                            </tr>
+                                                            <tr class="tr-f">
+                                                                <td colspan="3">Shipping & Handling (Flat Rate - Fixed</td>
+                                                                <td colspan="1">$45.00</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">Grand Total</td>
+                                                                <td colspan="1">$4,722.00</td>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                </div>
+                                                <div class="block-right">
+                                                    <span>
+                                                        Forgot an Item?
+                                                        <a class="o-back-to" href="#"> Edit Your Cart</a>
+                                                        
+                                                    </span>
+                                                    <button class="button2 get" type="button" title="">
+                                                        <span>Continue</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <div class="Register4">
+                            <h3>Checkout Progress</h3>
+                            <div class="Checkout-sidebar">
+                                <ul>
+                                    <li><a href="#"> Checkout Method</a></li>
+                                    <li><a href="#">Billing information</a></li>
+                                    <li><a href="#">Shipping information</a></li>
+                                    <li><a href="#">Shipping Method</a></li>
+                                    <li><a href="#">Payment information</a></li>
+                                    <li><a href="#">order review</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- start shop_area
+		============================================ -->
+        <section class="shop_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title ma-title lab">
+                            <h2>
+                                Our brands
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">          
+                    <div class="item_all indicator-style item-down">
+                        <div class="col-md-12">
+                            <img class="primary-img" src="../img/item/br1.jpg" alt="" />
+                        </div>
+                        <div class="col-md-12">
+                            <img class="primary-img" src="../img/item/br1.jpg" alt="" />
+                        </div>
+                        <div class="col-md-12">
+                            <img class="primary-img" src="../img/item/br1.jpg" alt="" />
+                        </div>
+                        <div class="col-md-12">
+                            <img class="primary-img" src="../img/item/br1.jpg" alt="" />
+                        </div>
+                        <div class="col-md-12">
+                            <img class="primary-img" src="../img/item/br1.jpg" alt="" />
+                        </div>
+                        <div class="col-md-12">
+                            <img class="primary-img" src="../img/item/br1.jpg" alt="" />
+                        </div>
+                        <div class="col-md-12">
+                            <img class="primary-img" src="../img/item/br1.jpg" alt="" />
+                        </div>
+                        <div class="col-md-12">
+                            <img class="primary-img" src="../img/item/br1.jpg" alt="" />
+                        </div>
+                        <div class="col-md-12">
+                            <img class="primary-img" src="../img/item/br1.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<!-- end shop_area
+		============================================ -->
+        <!-- start tweets_area
+		============================================ -->
+        <section class="tweets_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="tweet-content">
+                            <div class="tweet-title ma-title">
+                                <h2>Latest Tweets</h2>
+                            </div>
+                            <div class="twitter-article">
+                                <div class="twitter-pic">
+                                    <a href="#"><img src="../img/tweet/sMv5yar__normal.png" alt="" /></a>
+                                </div>
+                                <div class="twitter-text">
+                                    <span class="tweetprofilelink">
+                                        <strong>
+                                        <a href="">Magento themes Club</a>
+                                        </strong>
+                                        <a href="">@plazathemes</a>
+                                    </span>
+                                    <br>
+                                        Check Out "Optician - Responsive #OpenCart #Digital #Theme" on #envatomarket by
+                                        <a href="">@posthemes</a>
+                                        #themeforest
+                                        <a href="">https://t.co/NGqqa3v0tf</a>
+                                    <br>
+                                    <span class="tweet-time">
+                                        <a href="">11h</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="social-footer">
+                            <div class="ma-title">
+                                <h2>Stay Connected</h2>
+                            </div>
+                            <div class="footer-static-content">
+                                <ul class="link-follow">
+                                    <li class="first">
+                                        <a class="twitter fa fa-twitter" href="#"></a>
+                                    </li>
+                                    <li class="first">
+                                        <a class="google fa fa-google-plus" href="#"></a>
+                                    </li>
+                                    <li class="first">
+                                        <a class="facebook fa fa-facebook" href="#"></a>
+                                    </li>
+                                    <li class="first">
+                                        <a class="linkedin fa fa-linkedin" href="#"></a>
+                                    </li>
+                                    <li class="first">
+                                        <a class="youtube fa fa-youtube" href="#"></a>
+                                    </li>
+                                    <li class="first">
+                                        <a class="rss fa fa-rss" href="#"></a>
+                                    </li>
+                                    <li class="first">
+                                        <a class="vimeo-square fa fa-vimeo-square" href="#"></a>
+                                    </li>
+                                    <li class="first">
+                                        <a class="instagram fa fa-instagram" href="#"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end tweets_area
+		============================================ -->
+
+        <footer4web></footer4web>
+        <div id="toTop">
+            <i class="fa fa-chevron-up"></i>
+        </div>
+        <!-- JS
+        ============================================ -->
+        <script src="../js/vendor/jquery-1.11.3.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/wow.min.js"></script>
+        <script src="../js/jquery-price-slider.js"></script>
+        <script src="../js/img-zoom/jquery.simpleLens.min.js"></script>
+        <script src="../js/jquery.meanmenu.js"></script>
+        <script src="../js/owl.carousel.min.js"></script>
+        <script src="../js/jquery.scrollUp.min.js"></script>
+        <script src="../lib/js/jquery.nivo.slider.js" type="text/javascript"></script>
+        <script src="../lib/home.js" type="text/javascript"></script>
+        <script src="../js/plugins.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/layer/layer.js" type="text/javascript"></script>
+        <script src="../js/angular.min.js" type="text/javascript"></script>
+        <script src="../js/api.js" type="text/javascript"></script>
+        <script src="../js/navbar.js" type="text/javascript"></script>
+        <script src="../js/footer.js" type="text/javascript" ></script>
+
+    </body>
+</html>
