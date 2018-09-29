@@ -368,8 +368,7 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDln5UYbN31gIDC-MMKN-L5J50x-Pp2NY"></script>
         <script>
             var myCenter=new google.maps.LatLng(-37.8033478, 144.9638535);
-            function initialize()
-            {
+            function initialize() {
                 var mapProp = {
                     center:myCenter,
                     scrollwheel: false,
@@ -383,7 +382,6 @@
                     icon:'../img/map_marker.png',
                     map: map
                 });
-
                 marker.setMap(map);
             }
             google.maps.event.addDomListener(window, 'load', initialize);
