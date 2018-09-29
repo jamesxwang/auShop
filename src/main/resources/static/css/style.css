@@ -31,6 +31,19 @@ img {
     max-width:100%;
     height:auto
 }
+.notfound-container{
+    margin: 40px auto 90px;
+}
+.notfound-image{
+    background: url("../img/page-404.png") center center no-repeat;
+    height: 155px;
+    -webkit-background-size: 150px auto;
+    margin-bottom: 20px;
+
+}
+.notfound-reason ul li{
+
+}
 .fix {
     overflow:hidden
 }

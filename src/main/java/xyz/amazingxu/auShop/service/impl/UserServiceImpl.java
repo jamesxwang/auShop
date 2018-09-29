@@ -7,14 +7,13 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import xyz.amazingxu.core.security.JwtAuthenticationFilter;
 import xyz.amazingxu.core.utils.SystemVars;
 import xyz.amazingxu.core.utils.WebUtils;
 import xyz.amazingxu.auShop.dao.IUserDAO;
 import xyz.amazingxu.auShop.domain.UserDO;
 import xyz.amazingxu.auShop.dto.*;
 import xyz.amazingxu.auShop.dto.userinfo.*;
-import xyz.amazingxu.auShop.exception.wxblogException;
+import xyz.amazingxu.auShop.exception.auShopException;
 import xyz.amazingxu.auShop.mapper.UserRegisterReqMapper;
 import xyz.amazingxu.auShop.service.IUserService;
 
@@ -55,9 +54,9 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
             );
         });
         if (userDO == null) {
-            throw new wxblogException("Incorrect username or password!");
+            throw new auShopException("Incorrect username or password!");
         } else if (userDO.getDeleted()) {
-            throw new wxblogException("User has been banned!");
+            throw new auShopException("User has been banned!");
         } else {
             Map<String, Object> claims = new HashMap<>();
             UserContextDTO userContextDTO  = getUserContextById(userDO.getId());
@@ -127,21 +126,21 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
     @Transactional(rollbackFor = Exception.class)
     public void register(UserRegisterReqDTO userRegisterReqDTO) {
         if (userRegisterReqDTO.getUsername().equals("") ||userRegisterReqDTO.getEmail().equals("")|| userRegisterReqDTO.getPassword().equals("")) {
-            throw new wxblogException("Register information cannot be null!");
+            throw new auShopException("Register information cannot be null!");
         } else if (!userRegisterReqDTO.getUsername().matches(usernamePattern)){
             if (userRegisterReqDTO.getUsername().length()<6 || userRegisterReqDTO.getUsername().length()>20){
-                throw new wxblogException("Username must be 6 to 20 characters!");
+                throw new auShopException("Username must be 6 to 20 characters!");
             }else {
-                throw new wxblogException("Username must begins with a letter!");
+                throw new auShopException("Username must begins with a letter!");
             }
         } else if (!userRegisterReqDTO.getPassword().matches(passwordPattern)) {
             if (userRegisterReqDTO.getPassword().length()<6 || userRegisterReqDTO.getPassword().length()>20){
-                throw new wxblogException("Password must be 6 to 20 characters!");
+                throw new auShopException("Password must be 6 to 20 characters!");
             }else {
-                throw new wxblogException("Password can only contain letters, numbers and underscores!");
+                throw new auShopException("Password can only contain letters, numbers and underscores!");
             }
         } else if (!userRegisterReqDTO.getEmail().matches(emailPattern)){
-           throw new wxblogException("Incorrect email!");
+           throw new auShopException("Incorrect email!");
         } else {
             //查找账号是否存在
             long count = userDAO.count((root, query, cb) -> {
@@ -149,7 +148,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
                 return cb.equal(usernamePath, userRegisterReqDTO.getUsername());
             });
             if (count>0){
-                throw new wxblogException("The username already exists!");
+                throw new auShopException("The username already exists!");
             } else {
                 UserDO userDO = userRegisterReqMapper.to(userRegisterReqDTO);
                 userDAO.save(userDO);
@@ -168,10 +167,10 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
                 userDO.setPassword(changePasswordReqDTO.getNewPassword());
                 userDAO.save(userDO);
             }else {
-                throw new wxblogException("密码格式不正确！");
+                throw new auShopException("密码格式不正确！");
             }
         }else {
-            throw new wxblogException("请检查原密码！");
+            throw new auShopException("请检查原密码！");
         }
     }
 
@@ -185,7 +184,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
                     userDO.setPhone(changePhoneReqDTO.getNewPhone());
                     userDAO.save(userDO);
                 }else {
-                    throw new wxblogException("请检查原手机号！");
+                    throw new auShopException("请检查原手机号！");
                 }
             } else  {
                 userDO.setPhone(changePhoneReqDTO.getNewPhone());
@@ -225,7 +224,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
             userDO.setEmail(changeEmailReqDTO.getNewEmail());
             userDAO.save(userDO);
         } else {
-            throw new wxblogException("邮箱格式不正确！");
+            throw new auShopException("邮箱格式不正确！");
         }
     }
 }
