@@ -1,9 +1,14 @@
-Visit www.amazingxu.xyz to find more!  
+Please visit www.amazingxu.xyz to find more!  
 =============
 This is a personal interest website.  
 If you have any advice, please contact me: xuwang2@student.unimelb.edu.au
 
-#### TODO LIST  
+### Table of Contents  
++ [TODO LIST](#todo-list)  
++ [LOG](#log)  
+
+
+## TODO LIST  
 + ~user login~
 + ~user register~
 + ~change password~
@@ -16,6 +21,7 @@ If you have any advice, please contact me: xuwang2@student.unimelb.edu.au
 + ...
 
 
-#### Log  
+## LOG  
 2018-09-15 MySQL under attacked... ToT  
-2018-09-26 Add secure authentication to database
+2018-09-26 Add secure authentication to database  
+2018-09-29 Update a new version for front-end  
