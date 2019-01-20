@@ -24,4 +24,5 @@ If you have any advice, please contact me: xuwang2@student.unimelb.edu.au
 ## LOG  
 2018-09-15 MySQL under attacked... ToT  
 2018-09-26 Add secure authentication to database  
-2018-09-29 Update a new version for front-end  
+2018-09-28 Update a new version for front-end  
+2018-09-29 Add Google Map to 'contact-us.html'  (Visiters in China may need a VPN)  
